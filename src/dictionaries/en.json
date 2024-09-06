@@ -1,0 +1,76 @@
+{
+	"components": {
+		"currencySwitcher": ""
+	},
+	"page": {
+		"hero": {
+			"heading_one": "Make faster, fairer",
+			"heading_two": "money transfers",
+			"cta": "Get started",
+			"rating": "Rated 4.7 - Excellent",
+			"reviews": "From 100 reviews on",
+			"review_link": "Trustpilot"
+		},
+		"calculator": {
+			"title": "Send love and money home with TransferGo",
+			"description": "Join the 7 million people making international money transfers with our app.",
+			"cta": "Get started",
+			"arrives_in_minutes": "Arrives in minutes",
+			"sending_from": "Sending from",
+			"receiver_gets": "Receiver gets",
+			"free": "Free"
+		},
+		"usp": {
+			"heading": "Reliable transfers every time you send money back home",
+			"cards": {
+				"one": {
+					"image": "safe",
+					"title": "Safe and Secure",
+					"description": "End-to-end encryption protects our customers’ money and data safeguard transfers.",
+					"cta": "Contact sales"
+				},
+				"two": {
+					"image": "fast",
+					"title": "Fast and Reliable",
+					"description": "We are closely regulated by EU and UK law, working closely with international law enforcement to spot and prevent money laundering.",
+					"cta": "Contact sales"
+				},
+				"three": {
+					"image": "support",
+					"title": "24/7 Customer Support",
+					"description": "And if anything ever does go wrong, our Customer Support team is friendly, professional, and always quick to respond",
+					"cta": "Contact sales"
+				}
+			}
+		},
+		"faqs": {
+			"heading": "Frequently asked questions",
+			"questions": {
+				"one": {
+					"title": "What is TransferGo?",
+					"description": "TransferGo is a digital money service that aims to improve the lives of hard-working people through simpler, better financial services. It began with developing fast, cheap international money transfers, and is now spreading out its offering to remove barriers for customers, especially migrants, who need financial services."
+				},
+				"two": {
+					"title": "Is TransferGo Safe?",
+					"description": "TransferGo is closely regulated by EU and UK law. We work closely with international law enforcement to spot and prevent money laundering, and to keep our 7 million customers and their money safe. Our end-to-end encryption protects our customers’ money and data. Should a transfer ever fail, there are special safeguarding measures in place to ensure that everyone gets their money back. Of course, customers must still look out for fraud and stay safe online. As with all fraud, once the money has been sent, it’s very hard to get it back."
+				},
+				"three": {
+					"title": "Can I trust TransferGo?",
+					"description": "Millions of users around the world trust TransferGo with their money. With a rating of ‘Excellent’ from over 35,000 reviews on Trustpilot, the TransferGo app is highly recommended by customers. It also helps that TransferGo has excellent Customer Service in English and 9 other languages."
+				},
+				"four": {
+					"title": "How does TransferGo work?",
+					"description": "Years ago, TransferGo found an elegant solution to the problem of expensive international transfers. By opening bank accounts in each country we served, we could use local transfers only to receive money in the send country, and to send money in the receiving country. Local transfers at both ends allowed us to cut out almost all of the costs, and pass the savings on to our customers. That’s why TransferGo rates are famously low. Now that fintech infrastructure has grown so much, we have more transfer options now than we did then, with superfast card-to-card payments, payments to e-wallets, and even cash transfers. But whatever the format, we’re always trying to make it as affordable as we can for our customers—while ensuring the transfers are secure and on time"
+				},
+				"five": {
+					"title": "How to use TransferGo",
+					"description": "It’s simple. Download the TransferGo app, register your identity, and then follow the prompts. You can download the TransferGo app for iOS, Android and Huawei from the App Store, Google Play and Huawei Gallery. You can also register online using your computer, if you prefer."
+				},
+				"six": {
+					"title": "How to send money withTransferGo",
+					"description": "The first step is your TransferGo verification: proving your identity so we can keep you and your money safe. After that, you simply choose the currency and amount that you’re sending, and the details of the person you’re sending it to. Finally, you choose how you want to pay for the transfer—and that’s how to transfer money with TransferGo!"
+				}
+			}
+		}
+	}
+}

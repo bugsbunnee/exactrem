@@ -1,0 +1,71 @@
+import React from 'react';
+
+import { Box, Container, Flex, Grid, Heading, Text } from '@radix-ui/themes';
+import { FcCustomerSupport } from 'react-icons/fc';
+import { BsLightningChargeFill } from 'react-icons/bs';
+import { BiLock } from 'react-icons/bi';
+
+import AppButton from '@/components/ui/Button';
+import UspSkeleton from './UspSkeleton';
+
+import useDictionary from '@/hooks/useDictionary';
+
+const Usp = () => {
+	const dictionary = useDictionary();
+	if (!dictionary) return <UspSkeleton />;
+
+	const getMatchingIcon = (icon: string) => {
+		switch (icon) {
+			case 'safe':
+				return <BiLock size={50} className="text-slate-800" />;
+			case 'fast':
+				return <BsLightningChargeFill size={50} className="text-slate-800" />;
+			case 'support':
+				return <FcCustomerSupport size={50} className="text-slate-800" />;
+		}
+	};
+
+	return (
+		<section className="p-16">
+			<Heading className="text-center mb-10" size="8">
+				{dictionary.page.usp.heading}
+			</Heading>
+
+			<Container>
+				<Grid columns="3" justify="center" align="center" gap="2">
+					{Object.values(dictionary.page.usp.cards).map((card) => (
+						<Box className="p-10 rounded-3xl" key={card.description}>
+							<Flex align="center" justify="center">
+								<Box className="w-28 h-28 flex items-center justify-center mb-8 rounded-3xl bg-sky-100 dark:bg-[#222]">
+									{getMatchingIcon(card.image)}
+								</Box>
+							</Flex>
+
+							<Heading
+								className="leading-3 font-bold text-center my-6"
+								size="4"
+							>
+								{card.title}
+							</Heading>
+
+							<Box className="min-h-36">
+								<Text as="p" className="leading-6 text-center" size="2">
+									{card.description}
+								</Text>
+							</Box>
+
+							<Box mt="5" className="flex items-center justify-center">
+								<AppButton
+									label={card.cta}
+									onClick={() => console.log(card.cta)}
+								/>
+							</Box>
+						</Box>
+					))}
+				</Grid>
+			</Container>
+		</section>
+	);
+};
+
+export default Usp;
