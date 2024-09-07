@@ -1,7 +1,6 @@
 'use client';
 
 import React, { BaseSyntheticEvent, useState } from 'react';
-import Image from 'next/image';
 
 import classNames from 'classnames';
 import _ from 'lodash';
@@ -11,7 +10,6 @@ import { Controller, useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 import { useTheme } from 'next-themes';
 
-import { CountryCode, isValidPhoneNumber } from 'libphonenumber-js';
 import { zodResolver } from '@hookform/resolvers/zod';
 import {
 	Box,
@@ -25,32 +23,21 @@ import {
 	Separator,
 	TextArea,
 } from '@radix-ui/themes';
-import {
-	EnvelopeClosedIcon,
-	InfoCircledIcon,
-	MobileIcon,
-	PersonIcon,
-} from '@radix-ui/react-icons';
+import { EnvelopeClosedIcon, InfoCircledIcon, PersonIcon } from '@radix-ui/react-icons';
 
 import { contactSchema } from '@/components/sections/Contact/schema';
+import { CountryOption } from '@/utils/models';
 
 import Conditional from '@/components/common/Conditional';
 import ContactSkeleton from '@/components/sections/Contact/ContactSkeleton';
 import ErrorMessage from '@/components/common/ErrorMessage';
 import Picker from '@/components/common/Picker';
+import PhoneInput from '@/components/ui/PhoneInput';
 import SocialLinks from '@/components/ui/SocialLinks';
 
 import useCountries from '@/hooks/useCountries';
 
 type ContactData = z.infer<typeof contactSchema>;
-
-type CountryOption = {
-	label: string;
-	src: string;
-	value: string;
-	phoneCode: string;
-	cca2: CountryCode;
-};
 
 const Contact: React.FC = () => {
 	const [error, setError] = useState('');
@@ -152,7 +139,7 @@ const Contact: React.FC = () => {
 											size="3"
 											{...register('firstName')}
 										>
-											<TextField.Slot className="border-r-2">
+											<TextField.Slot>
 												<PersonIcon height="16" width="16" />
 											</TextField.Slot>
 										</TextField.Root>
@@ -177,7 +164,7 @@ const Contact: React.FC = () => {
 											size="3"
 											{...register('lastName')}
 										>
-											<TextField.Slot className="border-r-2">
+											<TextField.Slot>
 												<PersonIcon height="16" width="16" />
 											</TextField.Slot>
 										</TextField.Root>
@@ -211,7 +198,7 @@ const Contact: React.FC = () => {
 											className="focus:outline-0 text-sm"
 											{...register('email')}
 										>
-											<TextField.Slot className="border-r-2">
+											<TextField.Slot>
 												<EnvelopeClosedIcon height="16" width="16" />
 											</TextField.Slot>
 										</TextField.Root>
@@ -253,74 +240,15 @@ const Contact: React.FC = () => {
 									gap="9"
 									direction={{ lg: 'row', initial: 'column' }}
 								>
-									<Box className="w-full">
-										<Text size="2" className="font-bold">
-											Phone number:
-										</Text>
-
-										<Controller
-											name="phoneNumber"
-											control={control}
-											rules={{ required: true }}
-											render={({ field }) => (
-												<TextField.Root
-													disabled={!selectedCountry}
-													radius="small"
-													mt="3"
-													variant="surface"
-													color="gray"
-													size="3"
-													className="focus:outline-0 text-sm"
-													{...field}
-													onChange={(event) => {
-														const phoneNumber = event.target.value;
-														setValue('phoneNumber', phoneNumber);
-
-														const isValid = isValidPhoneNumber(
-															phoneNumber,
-															selectedCountry!.cca2
-														);
-
-														if (isValid) {
-															return setFieldError('phoneNumber', {
-																message: undefined,
-															});
-														}
-
-														setFieldError('phoneNumber', {
-															message: 'Invalid phone number',
-														});
-													}}
-												>
-													<TextField.Slot className="border-r-2">
-														{selectedCountry ? (
-															<>
-																<Image
-																	src={selectedCountry.src}
-																	alt={selectedCountry.label}
-																	width={15}
-																	height={15}
-																	className="object-contain rounded-sm"
-																/>
-
-																<Text size="1">
-																	({selectedCountry.phoneCode})
-																</Text>
-															</>
-														) : (
-															<MobileIcon height="16" width="16" />
-														)}
-													</TextField.Slot>
-												</TextField.Root>
-											)}
-										/>
-
-										{formState.errors.phoneNumber && (
-											<ErrorMessage>
-												{formState.errors.phoneNumber.message}
-											</ErrorMessage>
-										)}
-									</Box>
+									<PhoneInput 
+										name="phoneNumber"
+										control={control as any} 
+										selectedCountry={selectedCountry}
+										label="Phone number:"
+										onSetError={(errorMessage) => setFieldError('phoneNumber', { message: errorMessage })}
+										onSetValue={(phoneNumber) => setValue('phoneNumber', phoneNumber)}
+										errorMessage={formState.errors.phoneNumber ? formState.errors.phoneNumber.message : undefined}
+									/>
 
 									<Box className="w-full">
 										<Text size="2" className="font-bold">

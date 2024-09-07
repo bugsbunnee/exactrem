@@ -5,11 +5,13 @@ import Conditional from '@/components/common/Conditional';
 import Link from 'next/link';
 
 import { Box, Flex, Heading, Text } from '@radix-ui/themes';
+import { useRouter } from 'next/navigation';
 
 import useDictionary from '@/hooks/useDictionary';
 
 const Hero = () => {
 	const dictionary = useDictionary();
+	const router = useRouter();
 
 	return (
 		<section className="p-20">
@@ -28,7 +30,7 @@ const Hero = () => {
 				align="center"
 				className="mt-10"
 			>
-				<Button label={dictionary.page.hero.cta} onClick={console.log} />
+				<Button label={dictionary.page.hero.cta} onClick={() => router.push('/register')} />
 
 				<Conditional isVisible={false}>
 					<Box className="mt-5">

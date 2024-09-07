@@ -24,50 +24,68 @@ import {
 
 import { accountTypes } from '@/utils/constants';
 import { registrationFormOneSchema, RegistrationFormData } from './schema';
-import { initializeUser } from '@/firebase/service';
+import { getMatchingUser, initializeUser } from '@/firebase/service';
+import { CountryOption } from '@/utils/models';
 
 import Conditional from '@/components/common/Conditional';
 import ErrorMessage from '@/components/common/ErrorMessage';
 import Picker from '@/components/common/Picker';
+import PhoneInput from '@/components/ui/PhoneInput';
 import RegistrationFormOneSkeleton from './RegistrationFormOneSkeleton';
 
 import useCountries from '@/hooks/useCountries';
 
-const RegistrationFormOne: React.FC = () => {
+interface Props {
+    onInitializeUser: (userId: string) => void;
+}
+
+const RegistrationFormOne: React.FC<Props> = ({ onInitializeUser }) => {
 	const [error, setError] = useState('');
+	const [selectedCountry, setSelectedCountry] = useState<CountryOption>();
 
 	const { countries, isFetching } = useCountries();
-	const { control, handleSubmit, reset, setValue, formState } = useForm<RegistrationFormData>({
+	const { control, handleSubmit, setError: setFieldError, setValue, watch, formState } = useForm<RegistrationFormData>({
 		resolver: zodResolver(registrationFormOneSchema),
 		mode: 'all',
 	});
 
 	const handleSubmitRegistrationFormOne = React.useCallback(
-		async (
-			data: RegistrationFormData,
-			event: BaseSyntheticEvent<any, any, any> | undefined
-		) => {
+		async (data: RegistrationFormData, event: BaseSyntheticEvent<any, any, any> | undefined) => {
 			if (event) event.preventDefault();
 
 			try {
-                const result = await initializeUser(data);
-                result.id
-				toast.success("Thank you! We'll be in touch!");
+                const existingUser = await getMatchingUser('phoneNumber', data.phoneNumber);
+                if (existingUser) return setError('A user with the phone number already exists!');
 
-				reset();
+                const userId = await initializeUser(data);
+				toast.success("Data saved!");
+
+                onInitializeUser(userId);
 			} catch (error) {
 				setError('Ooops! Looks like something went wrong. Please try again.');
 			}
 		},
-		[reset]
+		[onInitializeUser]
 	);
 
+    React.useEffect(() => {
+		const subscription = watch((value, option) => {
+			if (option.name === 'country' && value.country) {
+				const option = countries.find((country) => country.value === value.country);
+				if (option) setSelectedCountry(option);
+			}
+		});
+
+		return () => subscription.unsubscribe();
+	}, [watch, countries]);
+
 	if (isFetching) return <RegistrationFormOneSkeleton />;
+
 
 	return (
         <Container>
             <Flex flexGrow="1" justify="center" p={{ md: '9', initial: '3' }}>
-                <Box as="div" className="w-full max-w-96">
+                <Box as="div" className="w-full max-w-[30rem]">
                     <Conditional isVisible={!!error}>
                         <Callout.Root color="red" className="mb-5">
                             <Callout.Icon>
@@ -79,7 +97,7 @@ const RegistrationFormOne: React.FC = () => {
 
                     <form id="registration-one-form" onSubmit={handleSubmit(handleSubmitRegistrationFormOne)}>
                         <Heading size="7">What type of account would you like to create?</Heading>
-                        <Text as='p' className="my-4" size="2">Select the account type that best meets your needs.</Text>
+                        <Text as='p' className="my-4 text-gray-500" size="2">Select the account type that best meets your needs.</Text>
 
                         <Box className="w-full mt-2">
                             <Text size="2">
@@ -101,6 +119,18 @@ const RegistrationFormOne: React.FC = () => {
                                     {formState.errors.country.message}
                                 </ErrorMessage>
                             )}
+                        </Box>
+
+                        <Box className="w-full mt-5">
+                            <PhoneInput
+                                name="phoneNumber"
+                                control={control as any} 
+                                selectedCountry={selectedCountry}
+                                label="Phone number:"
+                                onSetError={(errorMessage?: string) => setFieldError('phoneNumber', { message: errorMessage })}
+                                onSetValue={(phoneNumber: string) => setValue('phoneNumber', phoneNumber)}
+                                errorMessage={formState.errors.phoneNumber ? formState.errors.phoneNumber.message : undefined}
+                            />
                         </Box>
 
                         <Box className='mt-4'>
@@ -150,15 +180,21 @@ const RegistrationFormOne: React.FC = () => {
                                     );
                                 }}
                             />
+
+                            {formState.errors.accountType && (
+                                <ErrorMessage>
+                                    {formState.errors.accountType.message}
+                                </ErrorMessage>
+                            )}
                         </Box>
                  
                         <Button
-                            className="w-full mt-4 text-sm bg-slate-800 disabled:bg-gray-600 disabled:text-white dark:bg-[#222]"
+                            className="w-full mt-9 text-sm bg-slate-800 disabled:bg-gray-600 disabled:text-white dark:bg-[#222]"
                             form="registration-one-form"
                             variant="solid"
                             size="4"
                             radius="small"
-                            disabled={formState.isSubmitting || !formState.isValid}
+                            disabled={formState.isSubmitting}
                         >
                             Save and Continue
                             {formState.isSubmitting && <Spinner />}

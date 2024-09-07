@@ -1,6 +1,16 @@
+import { CountryCode } from 'libphonenumber-js';
 import { IconType } from 'react-icons';
+import { ACCOUNT_TYPES } from './constants';
 
 export type Currency = 'NGN' | 'USD' | 'CAD';
+
+export interface CountryOption {
+	label: string;
+	src: string;
+	value: string;
+	phoneCode: string;
+	cca2: CountryCode;
+};
 
 export interface CurrencyOption {
 	src: string;
@@ -17,4 +27,17 @@ export interface NavItem {
 		title: string;
 		description: string;
 	}[];
+}
+
+export interface RegisteredUser {
+	accountType: typeof ACCOUNT_TYPES.INDIVIDUAL | typeof ACCOUNT_TYPES.CORPORATE;
+	businessName: string;
+	country: string;
+	email: string;
+	firstName: string;
+	lastName: string;
+	phoneNumber: string;
+	promotions: boolean;
+	createdAt: string;
+	updatedAt: string;
 }
