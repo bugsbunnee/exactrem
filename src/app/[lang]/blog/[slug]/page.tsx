@@ -1,4 +1,6 @@
 
+'use server';
+
 import React from 'react';
 import Image from 'next/image';
 import _ from 'lodash';
@@ -78,7 +80,7 @@ const BlogPostPage: React.FC<Props> = ({ params }) => {
                     </Flex>
                 
                     <article>
-                        <MDXContent source={post?.content ?? ''} />
+                        <MDXContent source={post.content} />
                     </article>
                 </Grid>
 
@@ -103,7 +105,7 @@ const BlogPostPage: React.FC<Props> = ({ params }) => {
     );
 };
 
-export const generateMetadata = ({ params }: Props) => {
+export const generateMetadata = async ({ params }: Props) => {
     const post = getPostBySlug(params.slug);
     if (!post) return {};
   
@@ -113,7 +115,7 @@ export const generateMetadata = ({ params }: Props) => {
     }
 };
 
-export function generateStaticParams() {
+export const generateStaticParams = async () => {
     return posts.map(({ slug }) => ({ slug }))
 }
 

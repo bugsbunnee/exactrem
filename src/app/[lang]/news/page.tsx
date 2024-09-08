@@ -1,36 +1,41 @@
 
 'use client';
 
-import React from 'react';
+import React, { useRef } from 'react';
 import _ from 'lodash';
 
 import Image from 'next/image';
 import Link from 'next/link';
+import Slider from 'react-slick';
 
-import BlogCategoryFilter from './_components/BlogCategoryFilter';
-import BlogHeroLoading from './_components/BlogHeroLoading';
-import BlogPostLoading from './_components/BlogPostLoading';
-import BlogPostSearch from './_components/BlogPostSearch';
-import BlogPost from './_components/BlogPost';
-import BlogCategoryFilterLoading from './_components/BlogCategoryFilterLoading';
+import { Box, Container, Flex, Grid, Heading, IconButton, Text } from '@radix-ui/themes';
+import { ChevronLeftIcon, ChevronRightIcon } from '@radix-ui/react-icons';
+import { FcEmptyFilter, FcHome } from 'react-icons/fc';
+
+import AppSlider from '@/components/ui/Slider';
+import BlogCategoryFilter from '@/app/[lang]/blog/_components/BlogCategoryFilter';
+import BlogPostSearch from '@/app/[lang]/blog/_components/BlogPostSearch';
+import BlogCategoryFilterLoading from '@/app/[lang]/blog/_components/BlogCategoryFilterLoading';
 import Conditional from '@/components/common/Conditional';
 import Footer from '@/components/sections/Footer/Footer';
+import TrendingNewsLoading from '@/app/[lang]/news/_components/TrendingNewsLoading';
+import NewsItemLoading from '@/app/[lang]/news/_components/NewsItemLoading';
+import NewsItem from '@/app/[lang]/news/_components/NewsItem';
 import NavBar from '@/components/sections/NavBar/NavBar';
 import Pagination from '@/components/common/Pagination';
 
-import { formatDate, getReadingTime, summarize } from '@/utils/lib';
+import { summarize } from '@/utils/lib';
 import { SearchParams } from '@/utils/models';
-import { Box, Container, Flex, Grid, Heading, Text } from '@radix-ui/themes';
-import { FcEmptyFilter, FcHome } from 'react-icons/fc';
 
-import useBlogPosts from '@/hooks/useBlogPosts';
+import useNews from '@/hooks/useNews';
 
 interface Props {
     searchParams: SearchParams;
 }
 
 const Blog: React.FC<Props> = ({ searchParams }) => {
-    const { allBlogPosts, blogPostCount, categories, hero, isLoading, page, pageSize } = useBlogPosts(searchParams);
+    const { categories, isLoading, page, pageSize, newsCount, allNews, trendingNews } = useNews(searchParams);
+    const sliderRef = useRef<Slider>(null);
    
     return ( 
         <>
@@ -41,7 +46,7 @@ const Blog: React.FC<Props> = ({ searchParams }) => {
                     <Container>
                         <Flex className='w-full' align='center' justify='center'>
                             <Box className="text-center max-w-[35rem]">
-                                <Heading size='8'>Blog</Heading>
+                                <Heading size='8'>Newsroom</Heading>
 
                                 <Box className='mb-7 mt-5'>
                                     <Text>
@@ -52,63 +57,81 @@ const Blog: React.FC<Props> = ({ searchParams }) => {
                                 </Box>
 
                                 <Box className='mt-12'>
-                                    <Link className='bg-slate-900 text-white dark:border dark:border-stone-50 dark:bg-transparent text-sm p-5 rounded-full ' href='/register'>
-                                        Create account
+                                    <Link className='bg-slate-900 text-white dark:border dark:border-stone-50 dark:bg-transparent text-sm p-5 rounded-full ' href='/contact'>
+                                        Contact sales
                                     </Link>
                                 </Box>
                             </Box>
                         </Flex>
 
                         <Conditional isVisible={!isLoading}>
-                            {hero ? (
-                                <Flex align='center' className='p-10 mt-16 bg-stone-50 dark:bg-[#222] border-stone-200 border rounded-2xl' gap='7'>
-                                    <Image
-                                        src={hero.src}
-                                        alt={hero.title}
-                                        width={0} 
-                                        height={0} 
-                                        className='rounded-xl w-96 h-72 object-cover' 
-                                    />
+                            <AppSlider
+                                autoplay
+                                autoplaySpeed={3000}
+                                arrows={false}
+                                speed={500}
+                                infinite
+                                dots
+                                slidesToShow={1}
+                            >
+                                {trendingNews.map((news) => (
+                                    <Flex key={news.slug} className='mt-16 mb-3' justify='center' align='center'>
+                                        <Flex align='center' className='p-10 bg-stone-50 dark:bg-[#222] border-stone-200 border rounded-2xl' gap='7'>
+                                            <figure className='relative w-[30rem] h-[20rem]'>
+                                                <Image
+                                                    src={news.src}
+                                                    alt={news.title}
+                                                    width={0} 
+                                                    height={0} 
+                                                    className='rounded-3xl w-full h-full object-cover' 
+                                                />
 
-                                    <Box>
-                                        <Text className='uppercase text-sky-500 font-semibold tracking-wide' size='2'>
-                                            {hero.category}
-                                        </Text>
+                                                <figcaption className='uppercase text-sky-500 font-semibold tracking-wide bg-stone-50 p-2 rounded-md text-xs top-4 right-4 absolute'>
+                                                    {news.category}
+                                                </figcaption>
+                                            </figure>
 
-                                        <Heading size='5' className='mt-3 mb-5'>
-                                            <Link href={`/blog/${hero.slug}`}>{hero.title}</Link>
-                                        </Heading>
+                                            <Box className='max-w-[30rem]'>
+                                                <Heading size='8' className='mt-3 mb-5'>
+                                                    <Link href={`/news/${news.slug}`} className='hover:underline'>{news.title}</Link>
+                                                </Heading>
 
-                                        <Text as='p' className='max-w-[40rem]'>
-                                            {summarize(hero.description, 150)}
-                                        </Text>
+                                                <Text as='p' size='5' >
+                                                    {summarize(news.description, 150)}
+                                                </Text>
 
-                                        <Box className='my-5'>
-                                            <Text size='1' className='font-semibold uppercase'>
-                                                {formatDate(hero.createdAt)} · <span className='text-gray-500 font-medium'>{getReadingTime(hero.content)}</span>
-                                            </Text>
-                                        </Box>
+                                                <Box className='mt-9'>
+                                                    <Link className='bg-orange-600 text-white dark:border dark:border-stone-50 dark:bg-transparent text-sm p-5 rounded-full ' href={`/news/${news.slug}`}>
+                                                        Read more
+                                                    </Link>
+                                                </Box>
+                                            </Box>
+                                        </Flex>
+                                    </Flex>
+                                ))}
+                            </AppSlider>
 
-                                        <Box className='mt-9'>
-                                            <Link className='bg-slate-900 text-white dark:border dark:border-stone-50 dark:bg-transparent text-sm p-5 rounded-full ' href={`/blog/${hero.slug}`}>
-                                                Read more
-                                            </Link>
-                                        </Box>
-                                    </Box>
-                                </Flex>
-                            ) : null}
+                            <Flex justify='end' gap='2' align='center' my='8'>
+                                <IconButton variant='ghost' size='3' onClick={() => sliderRef.current?.slickPrev()}>
+                                    <ChevronLeftIcon width='30' height='30' />
+                                </IconButton>
+                                
+                                <IconButton variant='ghost' size='3' onClick={() => sliderRef.current?.slickNext()}>
+                                    <ChevronRightIcon width='30' height='30' />
+                                </IconButton>
+                            </Flex>
                         </Conditional>
 
                         <Conditional isVisible={isLoading}>
-                            <BlogHeroLoading />
+                            <TrendingNewsLoading />
                         </Conditional>
 
-                        <BlogPostSearch />
+                        <BlogPostSearch redirectPath='/news' placeholder='Search news' />
                     </Container>
                 </Box>
 
                 <Conditional isVisible={!isLoading}>
-                    <BlogCategoryFilter categories={categories} />
+                    <BlogCategoryFilter categories={categories} redirectPath='/news' />
                 </Conditional>
 
                 <Conditional isVisible={isLoading}>
@@ -116,7 +139,9 @@ const Blog: React.FC<Props> = ({ searchParams }) => {
                 </Conditional>
 
                 <Container className='py-16'>
-                    <Conditional isVisible={!isLoading && allBlogPosts.length === 0}>
+                    <Heading className='mb-12' size='8'>Latest News</Heading>
+
+                    <Conditional isVisible={!isLoading && allNews.length === 0}>
                         <Flex align='center' justify='center'>
                             <Box className='w-96 border border-stone-200 dark:bg-[#222] text-center p-9 rounded-2xl'>
                                 <Flex className='w-full' justify='center' align='center'>
@@ -125,8 +150,8 @@ const Blog: React.FC<Props> = ({ searchParams }) => {
                                     </Flex>
                                 </Flex>
 
-                                <Heading className='mt-7'>No blog posts found</Heading>
-                                <Text as='p' className='mt-3'>Oops! Looks like no blog posts have been added yet.</Text>
+                                <Heading className='mt-7'>No news found</Heading>
+                                <Text as='p' className='mt-3'>Oops! Looks like no news has been added yet.</Text>
 
                                 <Flex justify='center' className='mt-9'>
                                     <Link href='/' className='flex items-center gap-4 bg-slate-900 text-white dark:bg-stone-100 dark:text-black p-4 rounded-full'>
@@ -140,14 +165,14 @@ const Blog: React.FC<Props> = ({ searchParams }) => {
                     </Conditional>
 
                     <Grid columns='3' align='center' justify='center' gap='9'>
-                        <Conditional isVisible={!isLoading && allBlogPosts.length > 0}>
-                            {allBlogPosts.map((post) => (
-                                <BlogPost key={post.slug} blogPost={post} />
+                        <Conditional isVisible={!isLoading && allNews.length > 0}>
+                            {allNews.map((newsItem) => (
+                                <NewsItem key={newsItem.slug} newsItem={newsItem} />
                             ))}
                         </Conditional>
 
                         <Conditional isVisible={isLoading}>
-                            <BlogPostLoading />
+                            <NewsItemLoading />
                         </Conditional>
                     </Grid>
 
@@ -156,7 +181,7 @@ const Blog: React.FC<Props> = ({ searchParams }) => {
                             <Pagination
                                 pageSize={pageSize}
                                 currentPage={page}
-                                itemCount={blogPostCount}
+                                itemCount={newsCount}
                             />
                         </Flex>
                     </Conditional>

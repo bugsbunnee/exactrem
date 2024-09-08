@@ -71,7 +71,7 @@ const FAQs: React.FC = () => {
 					})}
 				</Box>
 
-				<Box className="flex-1 bg-stone-50 dark:bg-[#222] p-20 pl-40 rounded-2xl h-[43rem]">
+				<Box className="flex-1 bg-stone-50 dark:bg-[#222] p-20 pl-40 rounded-2xl min-h-[43rem]">
 					<Text as="p" size="4" className="leading-9">
 						{selectedFAQ!.description}
 					</Text>

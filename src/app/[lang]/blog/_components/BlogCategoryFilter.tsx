@@ -9,10 +9,11 @@ import { ALL_KEYWORD } from '@/utils/constants';
 
 
 interface Props {
-    categories: string[]
+    categories: string[];
+    redirectPath
 }
 
-const BlogCategoryFilter: React.FC<Props>= ({ categories }) => {
+const BlogCategoryFilter: React.FC<Props>= ({ categories, redirectPath}) => {
     const router = useRouter();
     const searchParams = useSearchParams();
 
@@ -23,7 +24,7 @@ const BlogCategoryFilter: React.FC<Props>= ({ categories }) => {
         if (searchParams.get('orderBy')) params.append('orderBy', searchParams.get('orderBy')!);
 
         const query = params.size ? '?' + params.toString() : '';
-        router.push('/blog' + query);
+        router.push(redirectPath + query);
     };
 
     const getIsCategoryActive = useCallback((category: string) => {

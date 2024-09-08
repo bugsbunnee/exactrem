@@ -7,6 +7,9 @@ import _ from 'lodash';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { Box, Container, Flex, Grid, Heading, Text } from '@radix-ui/themes';
+import { FcEmptyFilter, FcHome } from 'react-icons/fc';
+
 import BlogCategoryFilter from './_components/BlogCategoryFilter';
 import BlogHeroLoading from './_components/BlogHeroLoading';
 import BlogPostLoading from './_components/BlogPostLoading';
@@ -20,8 +23,6 @@ import Pagination from '@/components/common/Pagination';
 
 import { formatDate, getReadingTime, summarize } from '@/utils/lib';
 import { SearchParams } from '@/utils/models';
-import { Box, Container, Flex, Grid, Heading, Text } from '@radix-ui/themes';
-import { FcEmptyFilter, FcHome } from 'react-icons/fc';
 
 import useBlogPosts from '@/hooks/useBlogPosts';
 
@@ -76,7 +77,7 @@ const Blog: React.FC<Props> = ({ searchParams }) => {
                                         </Text>
 
                                         <Heading size='5' className='mt-3 mb-5'>
-                                            <Link href={`/blog/${hero.slug}`}>{hero.title}</Link>
+                                            <Link href={`/blog/${hero.slug}`} className='hover:underline'>{hero.title}</Link>
                                         </Heading>
 
                                         <Text as='p' className='max-w-[40rem]'>
@@ -103,12 +104,12 @@ const Blog: React.FC<Props> = ({ searchParams }) => {
                             <BlogHeroLoading />
                         </Conditional>
 
-                        <BlogPostSearch />
+                        <BlogPostSearch redirectPath='/blog' placeholder='Search blogs' />
                     </Container>
                 </Box>
 
                 <Conditional isVisible={!isLoading}>
-                    <BlogCategoryFilter categories={categories} />
+                    <BlogCategoryFilter categories={categories} redirectPath='/blog' />
                 </Conditional>
 
                 <Conditional isVisible={isLoading}>
@@ -167,5 +168,8 @@ const Blog: React.FC<Props> = ({ searchParams }) => {
         </>
     );
 };
+
+export const dynamic = 'force-dynamic';
+
  
 export default Blog;

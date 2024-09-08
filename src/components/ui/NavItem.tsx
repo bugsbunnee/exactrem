@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import classNames from 'classnames';
 
 import { ChevronRightIcon } from '@radix-ui/react-icons';
@@ -23,16 +23,19 @@ const NavItem: React.FC<NavItemModel> = ({ label, options, route }) => {
 		router.push(`/${params.lang}/${route}`);
 	}, [route, router, params.lang]);
 
+	const className = useMemo(() => {
+		const isRouteMatch = `/${params.lang}/${route}` === pathname;
+
+		return classNames({
+			"cursor-pointer active:bg-stone-50 active:outline-0 hover:bg-stone-50 dark:hover:text-black font-medium": true,
+			"bg-stone-50 text-slate-800 dark:border dark:border-stone-100": isRouteMatch,
+			"dark:text-white ": !isRouteMatch
+		});
+	}, [params, pathname, route]);
+
 	if (options.length === 0) {
 		return (
-			<Button
-				variant="ghost"
-				onClick={handleClick}
-				className={classNames({
-					"text-slate-800 cursor-pointer dark:text-white active:bg-stone-50 active:outline-0 hover:bg-stone-50 dark:hover:text-black font-medium": true,
-					"bg-stone-50 dark:text-slate-800 dark:border dark:border-stone-100": `/${params.lang}/${route}` === pathname
-				})}
-			>
+			<Button variant="ghost" onClick={handleClick} className={className}>
 				{label}
 			</Button>
 		);
@@ -41,13 +44,7 @@ const NavItem: React.FC<NavItemModel> = ({ label, options, route }) => {
 	return (
 		<DropdownMenu.Root open={isOpen} onOpenChange={setOpen}>
 			<DropdownMenu.Trigger onMouseOver={() => setOpen(true)}>
-				<Button
-					variant="ghost"
-					className={classNames({
-						"text-slate-800 cursor-pointer dark:text-white active:bg-stone-50 active:outline-0 hover:bg-stone-50 dark:hover:text-black font-medium": true,
-						"bg-stone-50 dark:bg-[#222]": `/${params.lang}/${route}` === pathname
-					})}
-				>
+				<Button variant="ghost" className={className}>
 					{label}
 					<DropdownMenu.TriggerIcon className="ml-2" />
 				</Button>

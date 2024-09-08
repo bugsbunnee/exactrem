@@ -28,7 +28,7 @@ const Loader = () => {
                 </Container>
             </Flex>
 
-            <Flex justify='center' align='center' className='bg-stone-50 w-dvw h-dvh z-50'>
+            <Flex justify='center' align='center' className='bg-stone-50 dark:bg-[#222] w-dvw h-dvh z-50'>
                 <Spinner />
             </Flex>
         </>

@@ -6,7 +6,12 @@ import { MagnifyingGlassIcon } from '@radix-ui/react-icons';
 import { Flex, TextField } from '@radix-ui/themes';
 import { useRouter, useSearchParams } from 'next/navigation';
 
-const BlogPostSearch: React.FC = () => {
+interface Props {
+    placeholder: string;
+    redirectPath: string;
+}
+
+const BlogPostSearch: React.FC<Props> = ({ placeholder, redirectPath }) => {
     const searchParams = useSearchParams();
     const router = useRouter();
 
@@ -20,14 +25,14 @@ const BlogPostSearch: React.FC = () => {
         }
 
         const path = params.size ? '?' + params.toString() : '';
-        router.replace('/blog' + path);
+        router.replace(redirectPath + path);
     };
 
     return (
         <Flex justify='center' align='center' className='w-full mt-10'>
             <TextField.Root 
                 className='w-full max-w-96' 
-                placeholder='Search blogs' 
+                placeholder={placeholder}
                 size='3' 
                 variant='soft' 
                 defaultValue={searchParams.get('query')?.toString()}

@@ -37,6 +37,12 @@ const Footer = () => {
                                 Blog
                             </Link>
                         </Box>
+                        
+                        <Box className="my-3">
+                            <Link className='underline' href='/news'>
+                                Newsroom
+                            </Link>
+                        </Box>
                     </Box>
                     
                     <Box>

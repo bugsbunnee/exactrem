@@ -37,7 +37,7 @@ const useBlogPosts = (searchParams: SearchParams) => {
         const categories = _.uniq(blogState.list.map((post) => post.category))
 
         return { allBlogPosts, blogPostCount: blogState.list.length, categories, hero: blogState.hero, isLoading, page, pageSize }
-    }, [searchParams, blogState]);
+    }, [searchParams, isLoading, page, blogState]);
 
     useEffect(() => {
         const timeout = setTimeout(() => {
@@ -45,7 +45,7 @@ const useBlogPosts = (searchParams: SearchParams) => {
 
             setBlogState({ hero: publishedPosts.length > 0 ? publishedPosts[0] : null, list: publishedPosts })
             setLoading(false);
-        }, 3000);
+        }, 1500);
         
         return () => clearTimeout(timeout);
     }, []);

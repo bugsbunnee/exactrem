@@ -37,6 +37,7 @@ const news = defineCollection({
             description: s.string().max(1000),
             createdAt: s.isodate(),
             author: s.string(),
+            isTrending: s.boolean().default(true),
             isPublished: s.boolean().default(true),
             content: s.mdx(),
         }).transform(computedFields),

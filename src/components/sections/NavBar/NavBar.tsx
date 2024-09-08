@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
 
 import { Button, Container, Flex, Text } from '@radix-ui/themes';
 import { navigationItems } from '@/utils/constants';
@@ -9,7 +10,6 @@ import NavItem from '@/components/ui/NavItem';
 import LocaleSwitcher from '@/components/common/LocaleSwitcher';
 import Logo from '@/components/ui/Logo';
 import ThemeSwitcher from '@/components/common/ThemeSwitcher';
-import Link from 'next/link';
 
 const NavBar = () => {
 	return (

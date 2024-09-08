@@ -28,8 +28,6 @@ export default function Home() {
 
 			<Hero />
 
-			<Partners displayHeading={false} />
-
 			<Customer />
 
 			<Usp />
@@ -40,7 +38,9 @@ export default function Home() {
 
 			<Coverage />
 
-			<section className='p-9'>
+			<Partners displayHeading={false} />
+
+			<section className='my-32'>
 				<Contact />
 			</section>
 

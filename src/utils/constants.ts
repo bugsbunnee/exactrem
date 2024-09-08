@@ -85,6 +85,11 @@ export const navigationItems: NavItem[] = [
 		options: [],
 	},
 	{
+		route: 'news',
+		label: 'Newsroom',
+		options: [],
+	},
+	{
 		route: 'contact',
 		label: 'Contact us',
 		options: [],
