@@ -39,8 +39,8 @@ const FAQs: React.FC = () => {
 								onClick={() => setSelectedFAQ(faq)}
 								className={classNames({
 									'bg-sky-50': isSelected,
-									'bg-white dark:bg-[#222]': !isSelected,
-									'flex min-h-20 w-full p-6 shadow-2xl cursor-pointer rounded-xl hover:scale-110 transition-all ease-in-out duration-300':
+									'bg-white dark:bg-[#222] dark:text-white': !isSelected,
+									'text-gray-900 flex min-h-20 w-full p-6 shadow-2xl cursor-pointer rounded-xl hover:scale-110 transition-all ease-in-out duration-300':
 										true,
 								})}
 							>
@@ -53,7 +53,7 @@ const FAQs: React.FC = () => {
 								/>
 
 								<Box className="flex-1 text-left ml-3">
-									<Text className="text-left font-bold text-gray-900" size="3">
+									<Text className="text-left font-bold" size="3">
 										{faq.title}
 									</Text>
 								</Box>

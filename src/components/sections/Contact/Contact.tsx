@@ -98,7 +98,7 @@ const Contact: React.FC = () => {
 	if (isFetching) return <ContactSkeleton />;
 
 	return (
-		<Flex flexGrow="1" justify="center" p={{ md: '9', initial: '3' }}>
+		<Flex flexGrow="1" justify="center">
 			<Box
 				as="div"
 				className={classNames({
@@ -282,7 +282,7 @@ const Contact: React.FC = () => {
 									gap={{ sm: '9', initial: '1' }}
 									direction={{ sm: 'row', initial: 'column' }}
 								>
-									<Box className="w-32 max-sm:w-full" my="6">
+									<Box className="min-w-32 max-sm:w-full" my="6">
 										<Button
 											className="w-full bg-slate-800 dark:bg-[#222] text-sm"
 											form="contact-form"
@@ -290,7 +290,7 @@ const Contact: React.FC = () => {
 											size="3"
 											disabled={formState.isSubmitting}
 										>
-											Submit
+											Send message
 											{formState.isSubmitting && <Spinner />}
 										</Button>
 									</Box>

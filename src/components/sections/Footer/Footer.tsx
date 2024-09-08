@@ -64,11 +64,17 @@ const Footer = () => {
                     <Box>
                         <Heading size='5'>Contact</Heading>
 
+                        <Box className="my-3">
+                            <Link className='underline' href='/contact'>
+                                Send us a message
+                            </Link>
+                        </Box>
+
                         <Flex align='center' className="my-3" gap="2">
                             <EnvelopeClosedIcon width='18' height='18' />
 
-                            <Link href='mailto:press@remitly.com'>
-                                press@remitly.com
+                            <Link href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`}>
+                                {process.env.NEXT_PUBLIC_EMAIL}
                             </Link>
                         </Flex>
                         

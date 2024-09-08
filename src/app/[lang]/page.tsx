@@ -40,7 +40,9 @@ export default function Home() {
 
 			<Coverage />
 
-			<Contact />
+			<section className='p-9'>
+				<Contact />
+			</section>
 
 			<Footer />
 		</>

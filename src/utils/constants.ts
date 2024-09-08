@@ -45,18 +45,8 @@ export const currencies: Record<Currency, CurrencyOption> = {
 
 export const navigationItems: NavItem[] = [
 	{
-		route: 'about',
-		label: 'About us',
-		options: [],
-	},
-	{
-		route: 'blog',
-		label: 'Blog',
-		options: [],
-	},
-	{
 		route: 'services',
-		label: 'Services',
+		label: 'Our Services',
 		options: [
 			{
 				color: 'bg-orange-50',
@@ -83,6 +73,21 @@ export const navigationItems: NavItem[] = [
 				Icon: FcBriefcase,
 			},
 		],
+	},
+	{
+		route: 'about',
+		label: 'About us',
+		options: [],
+	},
+	{
+		route: 'blog',
+		label: 'Blog',
+		options: [],
+	},
+	{
+		route: 'contact',
+		label: 'Contact us',
+		options: [],
 	},
 ];
 

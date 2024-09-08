@@ -30,7 +30,7 @@ const NavItem: React.FC<NavItemModel> = ({ label, options, route }) => {
 				onClick={handleClick}
 				className={classNames({
 					"text-slate-800 cursor-pointer dark:text-white active:bg-stone-50 active:outline-0 hover:bg-stone-50 dark:hover:text-black font-medium": true,
-					"bg-stone-50 dark:text-black dark:border dark:border-stone-100": `/${params.lang}/${route}` === pathname
+					"bg-stone-50 dark:text-slate-800 dark:border dark:border-stone-100": `/${params.lang}/${route}` === pathname
 				})}
 			>
 				{label}
