@@ -38,7 +38,7 @@ const NewsItem: React.FC<Props> = ({ newsItem }) => {
                     </Heading>
 
                     <Text as='p' className='tracking-wide min-h-24 text-gray-500 dark:text-white' size='3'>
-                        {summarize(newsItem.description, 150)}
+                        {summarize(newsItem.description, 130)}
                     </Text>
 
                     <Box className='mt-9'>
