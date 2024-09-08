@@ -1,9 +1,8 @@
 import React from 'react';
 
 import { Box, Container, Flex, Grid, Heading, Text } from '@radix-ui/themes';
-import { FcCustomerSupport } from 'react-icons/fc';
+import { FcCustomerSupport, FcFlashOn, FcPrivacy } from 'react-icons/fc';
 import { BsLightningChargeFill } from 'react-icons/bs';
-import { BiLock } from 'react-icons/bi';
 
 import AppButton from '@/components/ui/Button';
 import UspSkeleton from './UspSkeleton';
@@ -17,26 +16,26 @@ const Usp = () => {
 	const getMatchingIcon = (icon: string) => {
 		switch (icon) {
 			case 'safe':
-				return <BiLock size={50} className="text-slate-800" />;
+				return <FcPrivacy size={50} />;
 			case 'fast':
-				return <BsLightningChargeFill size={50} className="text-slate-800" />;
+				return <FcFlashOn size={50} />;
 			case 'support':
-				return <FcCustomerSupport size={50} className="text-slate-800" />;
+				return <FcCustomerSupport size={50} />;
 		}
 	};
 
 	return (
 		<section className="p-16">
-			<Heading className="text-center mb-10" size="8">
+			<Heading className="text-center mb-20" size="8">
 				{dictionary.page.usp.heading}
 			</Heading>
 
 			<Container>
-				<Grid columns="3" justify="center" align="center" gap="2">
+				<Grid columns="3" justify="center" align="center" gap="8">
 					{Object.values(dictionary.page.usp.cards).map((card) => (
-						<Box className="p-10 rounded-3xl" key={card.description}>
+						<Box className="p-10 rounded-3xl bg-stone-50 dark:bg-transparent dark:border-stone-50 dark:border" key={card.description}>
 							<Flex align="center" justify="center">
-								<Box className="w-28 h-28 flex items-center justify-center mb-8 rounded-3xl bg-sky-100 dark:bg-[#222]">
+								<Box className="w-20 h-20 flex items-center justify-center mb-8 rounded-3xl bg-stone-100 dark:bg-[#222]">
 									{getMatchingIcon(card.image)}
 								</Box>
 							</Flex>
@@ -48,7 +47,7 @@ const Usp = () => {
 								{card.title}
 							</Heading>
 
-							<Box className="min-h-36">
+							<Box className="min-h-28">
 								<Text as="p" className="leading-6 text-center" size="2">
 									{card.description}
 								</Text>

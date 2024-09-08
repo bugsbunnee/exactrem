@@ -1,20 +1,37 @@
-import React, { useState } from 'react';
+"use client";
+
+import React, { useCallback, useState } from 'react';
 import classNames from 'classnames';
 
 import { ChevronRightIcon } from '@radix-ui/react-icons';
 import { Box, Button, DropdownMenu, Flex, Text } from '@radix-ui/themes';
+import { useParams, usePathname, useRouter } from 'next/navigation';
+
 import { NavItem as NavItemModel } from '@/utils/models';
+import { Locale } from '../../../i18n.config';
 
 import Conditional from '@/components/common/Conditional';
 
-const NavItem: React.FC<NavItemModel> = ({ label, options }) => {
+const NavItem: React.FC<NavItemModel> = ({ label, options, route }) => {
 	const [isOpen, setOpen] = useState(false);
+
+	const pathname = usePathname();
+	const router = useRouter();
+	const params = useParams<{ lang: Locale; }>();
+
+	const handleClick = useCallback(() => {
+		router.push(`/${params.lang}/${route}`);
+	}, [route, router, params.lang]);
 
 	if (options.length === 0) {
 		return (
 			<Button
 				variant="ghost"
-				className="text-slate-800 dark:text-white active:bg-orange-100 active:outline-0 hover:bg-orange-100 font-medium "
+				onClick={handleClick}
+				className={classNames({
+					"text-slate-800 cursor-pointer dark:text-white active:bg-stone-50 active:outline-0 hover:bg-stone-50 dark:hover:text-black font-medium": true,
+					"bg-stone-50 dark:text-black dark:border dark:border-stone-100": `/${params.lang}/${route}` === pathname
+				})}
 			>
 				{label}
 			</Button>
@@ -26,7 +43,10 @@ const NavItem: React.FC<NavItemModel> = ({ label, options }) => {
 			<DropdownMenu.Trigger onMouseOver={() => setOpen(true)}>
 				<Button
 					variant="ghost"
-					className="text-slate-800 dark:text-white active:outline-0 hover:bg-orange-100 font-medium"
+					className={classNames({
+						"text-slate-800 cursor-pointer dark:text-white active:bg-stone-50 active:outline-0 hover:bg-stone-50 dark:hover:text-black font-medium": true,
+						"bg-stone-50 dark:bg-[#222]": `/${params.lang}/${route}` === pathname
+					})}
 				>
 					{label}
 					<DropdownMenu.TriggerIcon className="ml-2" />

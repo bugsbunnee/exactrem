@@ -28,8 +28,8 @@ const FAQs: React.FC = () => {
 				{dictionary.page.faqs.heading}
 			</Heading>
 
-			<Flex justify="center" align="center" className="p-5">
-				<Box className="flex-1 z-50 -mr-20 pl-32">
+			<Flex justify="center" align="center" className="py-5 px-32">
+				<Box className="flex-1 z-50 -mr-20">
 					{Object.values(dictionary.page.faqs.questions).map((faq) => {
 						const isSelected = faq.title === selectedFAQ!.title;
 
@@ -71,7 +71,7 @@ const FAQs: React.FC = () => {
 					})}
 				</Box>
 
-				<Box className="flex-1 bg-gray-100 dark:bg-[#222] p-20 pl-40 rounded-2xl h-[43rem]">
+				<Box className="flex-1 bg-stone-50 dark:bg-[#222] p-20 pl-40 rounded-2xl h-[43rem]">
 					<Text as="p" size="4" className="leading-9">
 						{selectedFAQ!.description}
 					</Text>

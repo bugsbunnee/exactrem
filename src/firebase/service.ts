@@ -3,7 +3,7 @@
 import dayjs from 'dayjs';
 import _ from 'lodash';
 
-import { addDoc, collection, doc, getDoc, getDocs, updateDoc } from "firebase/firestore";
+import { addDoc, collection, doc,  getDoc, getDocs, updateDoc } from "firebase/firestore";
 import { db } from "./config";
 
 import { RegistrationFormData } from "@/app/[lang]/register/_components/RegistrationFormOne/schema";
@@ -48,3 +48,5 @@ export const updateUser = async (userId: string, userData: UserFormData) => {
 
     return updatedUser;
 };
+
+

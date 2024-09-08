@@ -13,7 +13,7 @@ interface Props {
 const AppButton: React.FC<Props> = ({ label, onClick }) => {
 	return (
 		<Button
-			className="cursor-pointer h-14 w-72 p-0 relative flex justify-start items-center overflow-hidden rounded-full bg-orange-600 dark:bg-[#222]"
+			className="cursor-pointer h-14 w-72 p-0 relative flex justify-start items-center overflow-hidden bg-orange-600 dark:bg-[#222]"
 			onClick={onClick}
 			size="4"
 		>

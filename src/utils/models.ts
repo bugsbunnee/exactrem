@@ -20,6 +20,7 @@ export interface CurrencyOption {
 }
 
 export interface NavItem {
+	route: string;
 	label: string;
 	options: {
 		color: string;
@@ -40,4 +41,11 @@ export interface RegisteredUser {
 	promotions: boolean;
 	createdAt: string;
 	updatedAt: string;
+}
+
+export interface SearchParams {
+	query: string;
+	page: string;
+	category: string;
+	orderBy: string;
 }

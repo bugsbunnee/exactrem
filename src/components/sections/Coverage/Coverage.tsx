@@ -32,7 +32,7 @@ const Coverage = () => {
 							className="flex items-center justify-center"
 							key={currency.value}
 						>
-							<Box className="bg-gray-100 dark:bg-[#222] w-52 h-52 rounded-2xl flex items-center justify-center">
+							<Box className="bg-stone-50 dark:bg-[#222] w-52 h-52 rounded-2xl flex items-center justify-center">
 								<Box className="text-center">
 									<Image
 										src={currency.src}

@@ -1,3 +1,5 @@
+"use client";
+
 import { Currency, CurrencyOption, NavItem } from '@/utils/models';
 import {
 	FcBriefcase,
@@ -43,10 +45,17 @@ export const currencies: Record<Currency, CurrencyOption> = {
 
 export const navigationItems: NavItem[] = [
 	{
+		route: 'about',
 		label: 'About us',
 		options: [],
 	},
 	{
+		route: 'blog',
+		label: 'Blog',
+		options: [],
+	},
+	{
+		route: 'services',
 		label: 'Services',
 		options: [
 			{
@@ -91,3 +100,5 @@ export const accountTypes: NavItem['options'] = [
 		Icon: FcBusiness,
 	},
 ];
+
+export const ALL_KEYWORD = 'all';

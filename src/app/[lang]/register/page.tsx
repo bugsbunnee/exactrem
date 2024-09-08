@@ -21,7 +21,7 @@ const Register = () => {
 			<Flex align="center" className="p-10" gap="8">
 				<Logo />
 
-				<Flex className="h-14 flex-1" align="center" justify='center' gap="3" flexGrow="1">
+				<Flex className="flex-1" align="center" justify='center' gap="3" flexGrow="1">
 					<Box 
 						className={classNames({
 							"w-10 h-10 rounded-full flex items-center justify-center border": true,

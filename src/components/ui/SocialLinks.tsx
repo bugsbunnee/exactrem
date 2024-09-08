@@ -30,7 +30,7 @@ const SocialLinks: React.FC = () => {
 	];
 
 	return (
-		<Flex my="6" gap="6" justify="end">
+		<Flex gap="6" justify="start">
 			<Flex gap="4" align="center">
 				{socialLinks.map((link) => (
 					<IconButton type="button" key={link.url} color="gray" variant="ghost">

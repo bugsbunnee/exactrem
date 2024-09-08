@@ -284,9 +284,10 @@ const Contact: React.FC = () => {
 								>
 									<Box className="w-32 max-sm:w-full" my="6">
 										<Button
-											className="w-full bg-slate-800 dark:bg-[#222]"
+											className="w-full bg-slate-800 dark:bg-[#222] text-sm"
 											form="contact-form"
 											variant="solid"
+											size="3"
 											disabled={formState.isSubmitting}
 										>
 											Submit

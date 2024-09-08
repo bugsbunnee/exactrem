@@ -1,0 +1,42 @@
+import React from 'react';
+import Image from 'next/image';
+
+import { Box, Container, Grid, Text } from '@radix-ui/themes';
+import useDictionary from '@/hooks/useDictionary';
+
+const Customer = () => {
+    const dictionary = useDictionary();
+
+    return (
+        <section className="my-20 py-24">
+            <Container>
+                <Grid gap="9" justify="center" columns="58% 42%">
+                    <Box className="w-full">
+                        <figure className="block overflow-hidden relative w-full">
+                            <Image src="/hero_left.png" alt="Customer" width={0} height={0} className="w-full h-[45rem] object-cover" />
+                        
+                            <figcaption className="absolute bottom-6 right-6 leading-9 text-lg text-white font-semibold">
+                                {dictionary.page.customer.left_caption}
+                            </figcaption>
+                        </figure>
+                    </Box>
+                    <Box className="-mt-28 w-full relative">
+                        <figure className="block overflow-hidden relative w-full">
+                            <Image src="/hero_right.png" alt="Customer" width={0} height={0} className="w-full h-[35rem] object-cover" />
+                       
+                            <figcaption className="absolute bottom-6 left-6 leading-9 text-lg text-white font-semibold">
+                                {dictionary.page.customer.right_caption}
+                            </figcaption>
+                        </figure>
+
+                        <Text as="p" className="mt-24 leading-8 text-justify max-w-md" size="4">
+                            {dictionary.page.customer.description}
+                        </Text>
+                    </Box>
+                </Grid>
+            </Container>
+        </section>
+    )
+};
+
+export default Customer;

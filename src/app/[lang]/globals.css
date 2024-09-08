@@ -22,10 +22,6 @@ body {
 	box-sizing: border-box;
 }
 
-.slick-list {
-	overflow: visible !important;
-}
-
 @layer utilities {
 	.sample-transfer-card {
 		height: 23.3vw;

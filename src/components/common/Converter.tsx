@@ -74,7 +74,7 @@ const Converter = () => {
 
 	return (
 		<Box className="w-96">
-			<Box className="w-full bg-gray-100 dark:bg-[#eee] rounded-2xl relative">
+			<Box className="w-full bg-stone-50 dark:bg-[#eee] rounded-2xl relative">
 				<Flex gap="2" className={getBoxClass(isSenderActive)}>
 					<Box className="min-w-24">
 						<Text size="1" className="text-gray-700 leading-6">
@@ -200,7 +200,7 @@ const Converter = () => {
 				</Flex>
 			</Flex>
 
-			<Button color="blue" className="w-full" size="3">
+			<Button color="blue" className="w-full text-sm" size="4">
 				{dictionary.page.calculator.cta}
 			</Button>
 		</Box>

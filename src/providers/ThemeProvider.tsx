@@ -7,7 +7,7 @@ import { ThemeProvider as NextThemeProvider } from 'next-themes';
 const ThemeProvider: React.FC<PropsWithChildren> = ({ children }) => {
 	return (
 		<NextThemeProvider attribute="class">
-			<Theme accentColor="gray" radius="large">
+			<Theme accentColor="gray" radius="full">
 				{children}
 			</Theme>
 		</NextThemeProvider>

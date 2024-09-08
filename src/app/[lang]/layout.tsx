@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { GoogleTagManager } from '@next/third-parties/google';
-import { Poppins } from 'next/font/google';
+import { Josefin_Sans } from 'next/font/google';
 import { Toaster } from 'react-hot-toast';
 
 import { i18n, Locale } from '../../../i18n.config';
@@ -16,9 +16,9 @@ import './globals.css';
 
 type Props = Readonly<{ children: React.ReactNode; params: { lang: Locale } }>;
 
-const poppins = Poppins({
+const josefinSans = Josefin_Sans({
 	subsets: ['latin'],
-	weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+	weight: ['100', '200', '300', '400', '500', '600', '700'],
 });
 
 export const metadata: Metadata = {
@@ -37,7 +37,7 @@ async function RootLayout({ children, params }: Props) {
 		<html lang={params.lang}>
 			<GoogleTagManager gtmId={process.env.NEXT_GTM as string} />
 
-			<body className={poppins.className}>
+			<body className={josefinSans.className}>
 				<Toaster position="bottom-center" />
 
 				<QueryClientProvider>

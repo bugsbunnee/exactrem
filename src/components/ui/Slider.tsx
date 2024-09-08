@@ -9,26 +9,34 @@ import 'slick-carousel/slick/slick-theme.css';
 interface SliderProps extends PropsWithChildren {
 	slidesToShow: number;
 	responsive?: ResponsiveObject[];
+	autoplaySpeed?: number;
+	arrows: boolean;
+	speed: number;
+	autoplay: boolean;
+	infinite: boolean;
+	dots: boolean;
 }
 
-function AppSlider(props: SliderProps) {
+const AppSlider = React.forwardRef<Slider, SliderProps>((props, ref) => {
 	return (
 		<Slider
+			ref={ref}
 			adaptiveHeight
-			autoplay
-			autoplaySpeed={5000}
-			cssEase="linear"
-			dots={false}
-			infinite
-			arrows={false}
-			speed={5000}
+			autoplay={props.autoplay}
+			autoplaySpeed={props.autoplaySpeed}
+			dots={props.dots}
+			infinite={props.infinite}
+			arrows={props.arrows}
+			speed={props.speed}
 			slidesToShow={props.slidesToShow}
 			slidesToScroll={1}
 			responsive={props.responsive}
 		>
 			{props.children}
 		</Slider>
-	);
-}
+	)
+});
+
+AppSlider.displayName = 'AppSlider';
 
 export default AppSlider;
