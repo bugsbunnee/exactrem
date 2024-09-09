@@ -4,7 +4,6 @@ import Link from 'next/link';
 
 import { News } from '#site/content';
 import { Box, Flex, Heading, Text } from '@radix-ui/themes';
-
 import { formatDate, getReadingTime, summarize } from '@/utils/lib';
 
 interface Props {
