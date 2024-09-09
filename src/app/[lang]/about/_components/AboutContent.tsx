@@ -28,9 +28,9 @@ const AboutContent = () => {
                         <Heading>Our mission.</Heading>
 
                         <Text as="p" className="mt-8 leading-8 text-justify max-w-md" size="3">
-                            At the same time, Anthony was launching a prop-tech 
-                            company and starting his MBA. Coincidentally both decided to quit their respective 
-                            jobs and continue with their new ventures.
+                            To provide seamless international money transfer services by 
+                            harnessing technology and strategic partnership to 
+                            guarantee accessibility, security and efficiency.  
                         </Text>
                     </Box>
                     
@@ -38,9 +38,9 @@ const AboutContent = () => {
                         <Heading>Our vision.</Heading>
 
                         <Text as="p" className="mt-8 leading-8 text-justify max-w-md" size="3">
-                            In 2017, Ola found an opportunity where he could help individuals within the UK, 
-                            especially residents with families back in Nigeria send money home by setting up 
-                            an online remittance company.
+                            To achieve global recognition as a leading IMTO or MSB, 
+                            renowned for providing reliable, fast, and customer-centric 
+                            money transfer solutions at low cost. 
                         </Text>
                     </Box>
 

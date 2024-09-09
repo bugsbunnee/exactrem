@@ -53,7 +53,7 @@ const RegistrationFormOne: React.FC<Props> = ({ onInitializeUser }) => {
 		async (data: RegistrationFormData, event: BaseSyntheticEvent<any, any, any> | undefined) => {
 			if (event) event.preventDefault();
 
-			try {
+            try {
                 const existingUser = await getMatchingUser('phoneNumber', data.phoneNumber);
                 if (existingUser) return setError('A user with the phone number already exists!');
 

@@ -14,9 +14,18 @@ export const ACCOUNT_TYPES = {
 } as const;
 
 export const currencies: Record<Currency, CurrencyOption> = {
+	CAD: {
+		src: 'https://flagsapi.com/CA/shiny/64.png',
+		label: 'Canadian Dollar',
+		value: 'CAD',
+		rates: {
+			USD: 100,
+			NGN: 1000,
+		},
+	},
 	NGN: {
 		src: 'https://flagsapi.com/NG/shiny/64.png',
-		label: 'Nigeria',
+		label: 'Nigerian Naira',
 		value: 'NGN',
 		rates: {
 			USD: 0.05,
@@ -25,17 +34,17 @@ export const currencies: Record<Currency, CurrencyOption> = {
 	},
 	USD: {
 		src: 'https://flagsapi.com/US/shiny/64.png',
-		label: 'USA',
+		label: 'US Dollar',
 		value: 'USD',
 		rates: {
 			NGN: 1597.5,
 			CAD: 100,
 		},
 	},
-	CAD: {
-		src: 'https://flagsapi.com/CA/shiny/64.png',
-		label: 'Canada',
-		value: 'CAD',
+	EUR: {
+		src: 'https://flagsapi.com/DE/shiny/64.png',
+		label: 'Euro',
+		value: 'EUR',
 		rates: {
 			USD: 100,
 			NGN: 1000,

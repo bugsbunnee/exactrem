@@ -23,7 +23,7 @@ const AboutHero = () => {
 			</Box>
 
 			<Flex justify="center" align="center" gap="4">
-				<Button  size='4' className="bg-stone-950 text-sm font-semibold">
+				<Button size='4' className="bg-black text-sm font-semibold">
                     {dictionary.page.about.cta_one}
                 </Button>
 				

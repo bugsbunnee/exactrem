@@ -14,11 +14,18 @@ export const initializeUser = async (user: RegistrationFormData) => {
     const usersRef = collection(db, 'users');
     
     const newUser = await addDoc(usersRef, {
-        country: user.accountType,
+        country: user.country,
         accountType: user.accountType,
         phoneNumber: user.phoneNumber,
         createdAt: dayjs().format('DD-MM-YYYY HH:mm:ss')
     });
+
+    return newUser.id;
+};
+
+export const addSubscription = async (email: string) => {
+    const newslettersRef = collection(db, 'newsletters');
+    const newUser = await addDoc(newslettersRef, { email });
 
     return newUser.id;
 };

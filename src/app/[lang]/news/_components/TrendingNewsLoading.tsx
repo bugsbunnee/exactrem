@@ -4,11 +4,11 @@ import { Box, Flex, Heading, Skeleton, Text } from '@radix-ui/themes';
 const TrendingNewsLoading = () => {
     return (
         <Flex justify='center' align='center'>
-            <Flex align='center' className='p-10 mt-16 bg-stone-50 dark:bg-[#222] border-stone-200 border rounded-2xl' gap='7'>
+            <Flex align='center' className='p-10 mt-16 bg-stone-50 dark:bg-[#222] border rounded-sm' gap='7'>
                 <figure className='relative w-[30rem] h-[20rem]'>
-                    <Skeleton className='rounded-3xl w-full h-full object-cover' />
+                    <Skeleton className='rounded-sm w-full h-full object-cover' />
 
-                    <figcaption className='uppercase text-sky-500 font-semibold tracking-wide bg-stone-50 p-2 rounded-md text-xs top-4 right-4 absolute'>
+                    <figcaption className='uppercase text-sky-500 font-semibold tracking-wide p-2 rounded-md text-xs top-4 right-4 absolute'>
                         <Skeleton>Money Transfer</Skeleton>
                     </figcaption>
                 </figure>
@@ -27,7 +27,7 @@ const TrendingNewsLoading = () => {
                         </Skeleton>
                     </Text>
 
-                    <Skeleton className='w-24 h-14 rounded-full mt-5' />
+                    <Skeleton className='w-24 h-14 rounded-sm mt-5' />
                 </Box>
             </Flex>
         </Flex>

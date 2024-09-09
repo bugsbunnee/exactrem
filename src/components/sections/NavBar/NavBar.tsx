@@ -36,7 +36,7 @@ const NavBar = () => {
 
 						<Link
 							href="/register"
-							className="bg-slate-800 dark:bg-[#222] py-2 px-5 text-white rounded-full text-sm"
+							className="bg-black dark:bg-primary py-2 px-5 text-white rounded-full text-sm"
 						>
 							Sign up
 						</Link>

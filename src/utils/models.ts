@@ -2,7 +2,7 @@ import { CountryCode } from 'libphonenumber-js';
 import { IconType } from 'react-icons';
 import { ACCOUNT_TYPES } from './constants';
 
-export type Currency = 'NGN' | 'USD' | 'CAD';
+export type Currency = 'NGN' | 'USD' | 'CAD' | 'EUR';
 
 export interface CountryOption {
 	label: string;

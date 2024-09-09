@@ -23,6 +23,14 @@ body {
 }
 
 @layer utilities {
+	.text-primary {
+		color: #dd4f05;
+	}
+
+	.bg-primary {
+		background-color: #dd4f05;
+	}
+
 	.sample-transfer-card {
 		height: 23.3vw;
 		width: 14.09vw;

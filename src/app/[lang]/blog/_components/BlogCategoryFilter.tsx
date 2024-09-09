@@ -48,8 +48,8 @@ const BlogCategoryFilter: React.FC<Props>= ({ categories, redirectPath }) => {
                     variant='ghost'
                     onClick={() => handleCategorySelect(category)}
                     className={classNames({
-                        'uppercase font-semibold tracking-wide text-sm hover:text-sky-500': true,
-                        'text-sky-500': getIsCategoryActive(category),
+                        'uppercase font-semibold tracking-wide text-sm text-black dark:text-white hover:text-primary': true,
+                        'text-primary dark:text-primary': getIsCategoryActive(category),
                     })}
                 >
                     {category}

@@ -31,7 +31,7 @@ const NewsItemLoading = () => {
                             </Text>
 
                             <Box className='mt-9'>
-                                <Skeleton className='bg-orange-600 text-white dark:border dark:border-stone-50 dark:bg-transparent text-sm p-5 rounded-full'>
+                                <Skeleton className='bg-primary text-white dark:border dark:border-stone-50 dark:bg-transparent text-sm p-3 rounded-sm'>
                                     Read more
                                 </Skeleton>
                             </Box>

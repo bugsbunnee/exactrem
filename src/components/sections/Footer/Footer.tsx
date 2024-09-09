@@ -2,21 +2,26 @@ import React from "react";
 import Link from "next/link";
 
 import Logo from "@/components/ui/Logo";
+import Newsletter from "../Newsletter/Newsletter";
 import SocialLinks from "@/components/ui/SocialLinks";
 
-import { Box, Container, Flex, Grid, Heading, Text } from "@radix-ui/themes";
+import { Box, Container, Flex, Grid, Heading, Separator, Text } from "@radix-ui/themes";
 import { EnvelopeClosedIcon } from "@radix-ui/react-icons";
 
 
 const Footer = () => {
     return ( 
-        <footer className="p-20 bg-stone-50 dark:bg-[#222]">
+        <footer className="p-20 bg-primary text-white dark:bg-[#222]">
             <Container>
+                <Newsletter />
+
+                <Separator className='my-10 bg-white' size='4' />
+
                 <Grid columns='4'>
                     <Box>
                         <Logo />
 
-                        <Box className="my-3">
+                        <Box className="my-3 max-w-24">
                             <Text>
                                 © {new Date().getFullYear()} Exactrem. All Rights Reserved.
                             </Text>

@@ -25,7 +25,7 @@ const BlogPost: React.FC<Props> = ({ blogPost }) => {
 
 
                 <Box className='p-3 rounded-lg mt-3'>
-                    <Text className='uppercase text-sky-500 font-semibold tracking-wide' size='2'>
+                    <Text className='uppercase text-primary font-semibold tracking-wide' size='2'>
                         {blogPost.category}
                     </Text>
 

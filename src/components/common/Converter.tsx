@@ -3,11 +3,7 @@
 import classNames from 'classnames';
 
 import { useCallback, useState } from 'react';
-import {
-	BoxModelIcon,
-	CaretSortIcon,
-	LightningBoltIcon,
-} from '@radix-ui/react-icons';
+import { BoxModelIcon, CaretSortIcon, LightningBoltIcon } from '@radix-ui/react-icons';
 import { Box, Flex, Text, IconButton, Button } from '@radix-ui/themes';
 
 import { Currency, CurrencyOption } from '@/utils/models';

@@ -76,32 +76,31 @@ const Blog: React.FC<Props> = ({ searchParams }) => {
                             >
                                 {trendingNews.map((news) => (
                                     <Flex key={news.slug} className='mt-16 mb-3' justify='center' align='center'>
-                                        <Flex align='center' className='p-10 bg-stone-50 dark:bg-[#222] border-stone-200 border rounded-2xl' gap='7'>
+                                        <Flex align='center' className='p-10 bg-black dark:bg-[#222] border rounded-sm' gap='7'>
                                             <figure className='relative w-[30rem] h-[20rem]'>
                                                 <Image
                                                     src={news.src}
                                                     alt={news.title}
-                                                    width={0} 
-                                                    height={0} 
-                                                    className='rounded-3xl w-full h-full object-cover' 
+                                                    fill
+                                                    className='rounded-sm object-cover' 
                                                 />
 
-                                                <figcaption className='uppercase text-sky-500 font-semibold tracking-wide bg-stone-50 p-2 rounded-md text-xs top-4 right-4 absolute'>
+                                                <figcaption className='uppercase text-white font-semibold tracking-wide bg-primary p-2 rounded-md text-xs top-4 right-4 absolute'>
                                                     {news.category}
                                                 </figcaption>
                                             </figure>
 
-                                            <Box className='max-w-[30rem]'>
+                                            <Box className='max-w-[30rem] text-white dark:text-white'>
                                                 <Heading size='8' className='mt-3 mb-5'>
                                                     <Link href={`/news/${news.slug}`} className='hover:underline'>{news.title}</Link>
                                                 </Heading>
 
                                                 <Text as='p' size='5' >
-                                                    {summarize(news.description, 150)}
+                                                    {summarize(news.description, 90)}
                                                 </Text>
 
                                                 <Box className='mt-9'>
-                                                    <Link className='bg-orange-600 text-white dark:border dark:border-stone-50 dark:bg-transparent text-sm p-5 rounded-full ' href={`/news/${news.slug}`}>
+                                                    <Link className='bg-primary dark:bg-black text-white dark:border dark:border-white text-sm p-3 rounded-sm ' href={`/news/${news.slug}`}>
                                                         Read more
                                                     </Link>
                                                 </Box>
@@ -111,13 +110,13 @@ const Blog: React.FC<Props> = ({ searchParams }) => {
                                 ))}
                             </AppSlider>
 
-                            <Flex justify='end' gap='2' align='center' my='8'>
-                                <IconButton variant='ghost' size='3' onClick={() => sliderRef.current?.slickPrev()}>
-                                    <ChevronLeftIcon width='30' height='30' />
+                            <Flex justify='end' gap='6' align='center' my='8'>
+                                <IconButton className='bg-black dark:bg-primary' variant='ghost' size='3' onClick={() => sliderRef.current?.slickPrev()}>
+                                    <ChevronLeftIcon width='25' height='25' className='text-white' />
                                 </IconButton>
                                 
-                                <IconButton variant='ghost' size='3' onClick={() => sliderRef.current?.slickNext()}>
-                                    <ChevronRightIcon width='30' height='30' />
+                                <IconButton className='bg-black dark:bg-primary' variant='ghost' size='3' onClick={() => sliderRef.current?.slickNext()}>
+                                    <ChevronRightIcon width='25' height='25' className='text-white' />
                                 </IconButton>
                             </Flex>
                         </Conditional>

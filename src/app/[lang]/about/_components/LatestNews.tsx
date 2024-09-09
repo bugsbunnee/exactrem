@@ -22,9 +22,12 @@ const LatestNews : React.FC= () => {
             <Container>
                 <Heading className='text-center' size='8'>Latest News</Heading>
 
-                <Text as='p' className='mb-14 mt-5 text-center' size='3'>
-                    Here is some of the latest information on what is going on at Exactrem. Finance news, current exchange rates and much more
-                </Text>
+                <Flex justify='center' align='center' className='mb-14 mt-5'>
+                    <Text as='p' className='text-center max-w-[40rem]' size='3'>
+                        Here is some of the latest information on what is going 
+                        on at Exactrem. Finance news, current exchange rates and much more
+                    </Text>
+                </Flex>
 
                 <AppSlider 
                     ref={sliderRef}

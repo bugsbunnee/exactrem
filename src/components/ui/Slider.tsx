@@ -15,12 +15,14 @@ interface SliderProps extends PropsWithChildren {
 	autoplay: boolean;
 	infinite: boolean;
 	dots: boolean;
+	cssEase?: string;
 }
 
 const AppSlider = React.forwardRef<Slider, SliderProps>((props, ref) => {
 	return (
 		<Slider
 			ref={ref}
+			cssEase={props.cssEase}
 			adaptiveHeight
 			autoplay={props.autoplay}
 			autoplaySpeed={props.autoplaySpeed}

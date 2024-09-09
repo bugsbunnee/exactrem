@@ -2,7 +2,6 @@ import React from 'react';
 
 import { Box, Container, Flex, Grid, Heading, Text } from '@radix-ui/themes';
 import { FcCustomerSupport, FcFlashOn, FcPrivacy } from 'react-icons/fc';
-import { BsLightningChargeFill } from 'react-icons/bs';
 
 import AppButton from '@/components/ui/Button';
 import UspSkeleton from './UspSkeleton';
@@ -33,7 +32,7 @@ const Usp = () => {
 			<Container>
 				<Grid columns="3" justify="center" align="center" gap="8">
 					{Object.values(dictionary.page.usp.cards).map((card) => (
-						<Box className="p-10 rounded-3xl bg-stone-50 dark:bg-transparent dark:border-stone-50 dark:border" key={card.description}>
+						<Box className="transition-all duration-300 hover:shadow-xl hover:scale-105 p-10 rounded-sm bg-stone-50 dark:bg-transparent dark:border-stone-50 dark:border" key={card.description}>
 							<Flex align="center" justify="center">
 								<Box className="w-20 h-20 flex items-center justify-center mb-8 rounded-3xl bg-stone-100 dark:bg-[#222]">
 									{getMatchingIcon(card.image)}

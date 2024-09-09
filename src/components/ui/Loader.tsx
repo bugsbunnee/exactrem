@@ -11,7 +11,7 @@ const Loader = () => {
             <Flex className="border-b-2 bg-white dark:bg-[#222] sticky top-0 z-50">
                 <Container>
                     <Flex align="center" justify="between" className="h-16">
-                        <Skeleton className='w-10 h-4' />
+                        <Skeleton className='w-10 h-10 rounded-sm' />
 
                         <Flex flexGrow="1" gap="7" align="center" justify="center">
                             {navigationItems.map((navigationItem) => (

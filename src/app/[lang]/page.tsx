@@ -16,10 +16,12 @@ import Hero from '@/components/sections/Hero/Hero';
 import NavBar from '@/components/sections/NavBar/NavBar';
 import Calculator from '@/components/sections/Calculator/Calculator';
 import Contact from '@/components/sections/Contact/Contact';
+import CoreUSP from '@/components/sections/CoreUSP/CoreUSP';
 import Partners from '@/components/sections/Partners/Partners';
 import Coverage from '@/components/sections/Coverage/Coverage';
 import Customer from '@/components/sections/Customer/Customer';
 import Footer from '@/components/sections/Footer/Footer';
+import SectionDivider from '@/components/common/SectionDivider';
 
 export default function Home() {
 	return (
@@ -37,6 +39,12 @@ export default function Home() {
 			<FAQs />
 
 			<Coverage />
+
+			<SectionDivider />
+
+			<CoreUSP />
+
+			<SectionDivider />
 
 			<Partners displayHeading={false} />
 

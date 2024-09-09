@@ -1,7 +1,10 @@
-import { currencies } from '@/utils/constants';
-import { Box, Container, Grid, Heading, Text, Card } from '@radix-ui/themes';
-import Image from 'next/image';
 import React from 'react';
+import Image from 'next/image';
+
+import { currencies } from '@/utils/constants';
+import { Box, Container, Flex, Grid, Heading, Text } from '@radix-ui/themes';
+
+import AppButton from '@/components/ui/Button';
 
 const Coverage = () => {
 	return (
@@ -11,17 +14,16 @@ const Coverage = () => {
 					Regulated Excellence
 				</Heading>
 
-				<Box className="text-center">
-					<Text className="text-center">
-						Verto upholds the highest regulatory standards globally, ensuring
-						each transaction meets strict compliance requirements. Trust in
-						Verto is anchored in our unwavering commitment to regulatory
-						excellence.
+				<Flex justify='center'>
+					<Text className="text-center max-w-[40rem]">
+						Exactrem adheres to the highest global regulatory standards, 
+						ensuring that every transaction meets rigorous compliance requirements. 
+						Our commitment to regulatory excellence is the foundation of your trust in Exactrem. 
 					</Text>
-				</Box>
+				</Flex>
 
 				<Grid
-					columns="3"
+					columns="4"
 					className="my-20"
 					gap="1"
 					align="center"
@@ -32,18 +34,20 @@ const Coverage = () => {
 							className="flex items-center justify-center"
 							key={currency.value}
 						>
-							<Box className="bg-stone-50 dark:bg-[#222] w-52 h-52 rounded-2xl flex items-center justify-center">
+							<Box className="bg-stone-50 dark:bg-[#222] w-52 h-52 rounded-sm flex items-center justify-center">
 								<Box className="text-center">
-									<Image
-										src={currency.src}
-										alt="EUR"
-										width={70}
-										height={70}
-										className="object-cover"
-									/>
+									<Flex justify='center' align='center'>
+										<Image
+											src={currency.src}
+											alt={currency.label}
+											width={70}
+											height={70}
+											className="object-cover"
+										/>
+									</Flex>
 
 									<Box className="mt-3 mb-2">
-										<Text size="4" className="font-bold uppercase">
+										<Text size="4" className="font-bold capitalize">
 											{currency.label}
 										</Text>
 									</Box>
@@ -56,6 +60,10 @@ const Coverage = () => {
 						</Box>
 					))}
 				</Grid>
+
+				<Flex justify='center' align='center' className='mt-10'>
+					<AppButton label='Join waitlist' onClick={() => {}} />
+				</Flex>
 			</Container>
 		</section>
 	);

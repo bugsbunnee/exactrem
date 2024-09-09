@@ -62,17 +62,18 @@ const Blog: React.FC<Props> = ({ searchParams }) => {
 
                         <Conditional isVisible={!isLoading}>
                             {hero ? (
-                                <Flex align='center' className='p-10 mt-16 bg-stone-50 dark:bg-[#222] border-stone-200 border rounded-2xl' gap='7'>
-                                    <Image
-                                        src={hero.src}
-                                        alt={hero.title}
-                                        width={0} 
-                                        height={0} 
-                                        className='rounded-xl w-96 h-72 object-cover' 
-                                    />
+                                <Flex align='center' className='p-10 mt-16 bg-stone-50 dark:bg-[#222] border-stone-200 border rounded-sm' gap='7'>
+                                    <figure className='relative w-[30rem] h-[20rem]'>
+                                        <Image
+                                            src={hero.src}
+                                            alt={hero.title}
+                                            fill
+                                            className='rounded-sm object-cover' 
+                                        />
+                                    </figure>
 
                                     <Box>
-                                        <Text className='uppercase text-sky-500 font-semibold tracking-wide' size='2'>
+                                        <Text className='uppercase text-primary font-semibold tracking-wide' size='2'>
                                             {hero.category}
                                         </Text>
 
@@ -91,7 +92,7 @@ const Blog: React.FC<Props> = ({ searchParams }) => {
                                         </Box>
 
                                         <Box className='mt-9'>
-                                            <Link className='bg-slate-900 text-white dark:border dark:border-stone-50 dark:bg-transparent text-sm p-5 rounded-full ' href={`/blog/${hero.slug}`}>
+                                            <Link className='bg-slate-900 text-white dark:border dark:border-stone-50 dark:bg-transparent text-sm p-3 rounded-sm ' href={`/blog/${hero.slug}`}>
                                                 Read more
                                             </Link>
                                         </Box>

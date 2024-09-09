@@ -23,45 +23,47 @@ const Partners: React.FC<Props> = ({ displayHeading }) => {
 	];
 
 	return (
-		<section className="px-20">
-			<Conditional isVisible={displayHeading}>
-				<Heading className="text-center mb-10" size="8">
-					Cash pickup and bank deposit in Nigeria
-				</Heading>
-			</Conditional>
-
-			<Container>
-				<Grid
-					// className="grayscale"
-					columns="4"
-					gap="1"
-					align="center"
-					justify="center"
-				>
-					{partners.map((partner) => (
-						<Flex key={partner.label} justify="center" align="center">
-							<Image
-								src={partner.url}
-								alt={partner.label}
-								width={200}
-								height={200}
-								className="object-contain"
-							/>
-						</Flex>
-					))}
-				</Grid>
-
-				<Conditional isVisible={false}>
-					<Box className="mt-10">
-						<Text size="2">
-							Trademarks, trade names and logos displayed are registered
-							trademarks of their respective owners. No affiliation or endorsement
-							of Remitly should be implied.
-						</Text>
-					</Box>
+		<Conditional isVisible={false}>
+			<section className="px-20">
+				<Conditional isVisible={displayHeading}>
+					<Heading className="text-center mb-10" size="8">
+						Cash pickup and bank deposit in Nigeria
+					</Heading>
 				</Conditional>
-			</Container>
-		</section>
+
+				<Container>
+					<Grid
+						// className="grayscale"
+						columns="4"
+						gap="1"
+						align="center"
+						justify="center"
+					>
+						{partners.map((partner) => (
+							<Flex key={partner.label} justify="center" align="center">
+								<Image
+									src={partner.url}
+									alt={partner.label}
+									width={200}
+									height={200}
+									className="object-contain"
+								/>
+							</Flex>
+						))}
+					</Grid>
+
+					<Conditional isVisible={false}>
+						<Box className="mt-10">
+							<Text size="2">
+								Trademarks, trade names and logos displayed are registered
+								trademarks of their respective owners. No affiliation or endorsement
+								of Remitly should be implied.
+							</Text>
+						</Box>
+					</Conditional>
+				</Container>
+			</section>
+		</Conditional>
 	);
 };
 

@@ -28,10 +28,10 @@ const NavItem: React.FC<NavItemModel> = ({ label, options, route }) => {
 
 		return classNames({
 			"cursor-pointer active:bg-stone-50 active:outline-0 hover:bg-stone-50 dark:hover:text-black font-medium": true,
-			"bg-stone-50 text-slate-800 dark:border dark:border-stone-100": isRouteMatch,
+			"bg-stone-50 text-black border border-slate-800 dark:border-stone-100": isRouteMatch,
 			"dark:text-white ": !isRouteMatch
 		});
-	}, [params, pathname, route]);
+	}, [params.lang, pathname, route]);
 
 	if (options.length === 0) {
 		return (
@@ -55,7 +55,7 @@ const NavItem: React.FC<NavItemModel> = ({ label, options, route }) => {
 			>
 				{options.map((option, index) => (
 					<React.Fragment key={option.title}>
-						<DropdownMenu.Item className="p-5 min-h-24 mb-3 hover:bg-transparent cursor-pointer">
+						<DropdownMenu.Item onSelect={handleClick} className="p-5 min-h-24 mb-3 hover:bg-transparent cursor-pointer">
 							<Flex gap="4" align="start" justify="start">
 								<Flex
 									align="center"
@@ -72,7 +72,7 @@ const NavItem: React.FC<NavItemModel> = ({ label, options, route }) => {
 									<Box>
 										<Text
 											color="gray"
-											className="mb-5 font-semibold text-slate-800 hover:text-green-700"
+											className="mb-5 font-semibold text-black hover:text-green-700"
 											size="2"
 										>
 											{option.title}

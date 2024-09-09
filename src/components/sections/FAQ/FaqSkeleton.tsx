@@ -13,7 +13,7 @@ const FaqSkeleton = () => {
 			</Heading>
 
 			<Flex justify="center" align="center" className="p-5">
-				<Box className="flex-1 z-50 -mr-20 pl-28">
+				<Box className="flex-1 z-40 -mr-20 pl-28">
 					{fillers.map((filler) => (
 						<Card
 							key={filler}

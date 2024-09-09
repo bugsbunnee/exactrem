@@ -13,11 +13,11 @@ interface Props {
 const AppButton: React.FC<Props> = ({ label, onClick }) => {
 	return (
 		<Button
-			className="cursor-pointer h-14 w-72 p-0 relative flex justify-start items-center overflow-hidden bg-orange-600 dark:bg-[#222]"
+			className="cursor-pointer h-14 w-72 p-0 relative flex justify-start items-center overflow-hidden bg-primary dark:bg-[#222]"
 			onClick={onClick}
 			size="4"
 		>
-			<Box className="w-10/12 hover:w-full transition-all duration-300 ease-in-out h-full absolute bg-slate-800 dark:bg-orange-600 rounded-r-full" />
+			<Box className="w-10/12 hover:w-full transition-all duration-300 ease-in-out h-full absolute bg-black dark:bg-primary rounded-r-sm" />
 			<Box className="w-10/12 p-0 flex items-center justify-center h-full">
 				<Text size="2" className="z-50 font-bold capitalize">
 					{label}

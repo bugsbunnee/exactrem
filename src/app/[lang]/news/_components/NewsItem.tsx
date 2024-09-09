@@ -24,7 +24,7 @@ const NewsItem: React.FC<Props> = ({ newsItem }) => {
 
 
                 <Box className='rounded-lg mt-7'>
-                    <Box className='p-1 bg-sky-500 text-white dark:bg-white dark:text-sky-500 inline-block rounded-sm'>
+                    <Box className='p-1 bg-primary text-white dark:bg-white dark:text-primary inline-block rounded-sm'>
                         <Text className='uppercase font-semibold tracking-wide' size='1'>
                             {newsItem.category}
                         </Text>
@@ -41,7 +41,7 @@ const NewsItem: React.FC<Props> = ({ newsItem }) => {
                     </Text>
 
                     <Box className='mt-9'>
-                        <Link className='bg-orange-600 text-white dark:border dark:border-stone-50 dark:bg-transparent text-sm p-5 rounded-full ' href={`/news/${newsItem.slug}`}>
+                        <Link className='bg-primary text-white dark:border dark:border-stone-50 dark:bg-transparent text-sm p-3 rounded-sm ' href={`/news/${newsItem.slug}`}>
                             Read more
                         </Link>
                     </Box>

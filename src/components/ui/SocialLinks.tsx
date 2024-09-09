@@ -33,7 +33,7 @@ const SocialLinks: React.FC = () => {
 		<Flex gap="6" justify="start">
 			<Flex gap="4" align="center">
 				{socialLinks.map((link) => (
-					<IconButton type="button" key={link.url} color="gray" variant="ghost">
+					<IconButton type="button" key={link.url} variant="ghost">
 						<Link href={link.url} target="_blank" rel="noopenner noreferrer">
 							<link.Icon width="25" height="25" />
 						</Link>

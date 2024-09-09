@@ -52,7 +52,7 @@ const BlogPostPage: React.FC<Props> = ({ params }) => {
                 />
 
                 <Box className='text-center mt-10'>
-                    <Text className='uppercase text-sky-500 font-semibold tracking-wide text-center' size='2'>
+                    <Text className='uppercase text-primary font-semibold tracking-wide text-center' size='2'>
                         {post.category}
                     </Text>
 

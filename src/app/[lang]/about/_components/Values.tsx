@@ -23,12 +23,12 @@ const Values = () => {
     ];
 
     return (
-        <section className='p-20 bg-stone-50 dark:bg-[#222]'>
+        <section className='p-20 bg-black dark:bg-[#222] text-white'>
             <Container>
                 <Heading className='text-center' size='8'>What we offer</Heading>
 
                <Flex justify='center' align='center'>
-                <Text as="p" className="my-12 text-center max-w-[45rem] leading-7" size="3">
+                    <Text as="p" className="my-12 text-center max-w-[45rem] leading-7" size="3">
                         Exactrem Canada is a MSB licenced Company has been approved 
                         by FINTRAC for Money transferring services, Dealing in virtual 
                         currencies and Payment service provider services.
@@ -38,7 +38,7 @@ const Values = () => {
                 <Grid columns='3' align='center' gap='8'>
                     {values.map((value) => (
                         <Flex key={value.title} className='w-full' align='center' justify='center'>
-                            <Box className="w-full bg-white dark:bg-[#222] dark:border dark:border-stone-50 rounded-md p-8 min-h-64 hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out">
+                            <Box className="w-full bg-white text-black dark:text-white dark:bg-[#222] dark:border dark:border-stone-50 rounded-md p-8 min-h-64 hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out">
                                 <value.Icon size={60} />
 
                                 <Text as='div' size='4' className='font-bold my-6'>

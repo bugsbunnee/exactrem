@@ -1,14 +1,11 @@
 'use client';
 
 import React, { BaseSyntheticEvent, useState } from 'react';
-
-import classNames from 'classnames';
 import _ from 'lodash';
 
 import { z } from 'zod';
 import { Controller, useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
-import { useTheme } from 'next-themes';
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import {
@@ -43,7 +40,6 @@ const Contact: React.FC = () => {
 	const [error, setError] = useState('');
 	const [selectedCountry, setSelectedCountry] = useState<CountryOption>();
 
-	const { theme } = useTheme();
 	const { countries, isFetching } = useCountries();
 	const {
 		control,
@@ -99,15 +95,7 @@ const Contact: React.FC = () => {
 
 	return (
 		<Flex flexGrow="1" justify="center">
-			<Box
-				as="div"
-				className={classNames({
-					'rounded-tl-3xl rounded-br-3xl md:max-w-2xl w-full border-white border-2 p-4':
-						true,
-					'border-white': theme === 'dark',
-					'border-zinc-500': theme === 'light',
-				})}
-			>
+			<Box as="div" className='rounded-tl-3xl rounded-br-3xl md:max-w-2xl w-full border-white border-2 p-4'>
 				<Card className="shadow-lg p-8">
 					<Conditional isVisible={!!error}>
 						<Callout.Root color="red" className="mb-5">
