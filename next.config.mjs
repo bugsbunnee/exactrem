@@ -9,6 +9,18 @@ if (!process.env.VELITE_STARTED && (isDev || isBuild)) {
 }
 
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+	pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+	reactStrictMode: true,
+	images: {
+		unoptimized: true,
+		domains: [
+			'cdn.dummyjson.com',
+			'flagsapi.com',
+			'flagcdn.com',
+			'upload.wikimedia.org',
+		],
+	},
+};
 
 export default nextConfig;
