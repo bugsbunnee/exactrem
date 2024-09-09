@@ -21,7 +21,7 @@ const SectionDivider: React.FC= () => {
                 slidesToShow={3}
              >
                 {usps.map((usp) => (
-                    <Box key={usp} className='uppercase border-r border-stone-300 font-semibold tracking-wide text-sm text-black hover:text-primary min-w-96 text-center'>
+                    <Box key={usp} className='uppercase border-r border-orange-600 dark:border-white font-semibold tracking-wide text-sm text-black dark:text-primary min-w-96 text-center'>
                         {usp}
                     </Box>
                 ))}

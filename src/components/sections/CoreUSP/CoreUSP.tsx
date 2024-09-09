@@ -50,7 +50,7 @@ const CoreUSP = () => {
                         <Text as="p" className="my-8 leading-8 text-justify max-w-md" size="3">
                             Say goodbye to delays and hello to speed. At Exactrem, 
                             we prioritize quick transactions so your money arrives
-                            at its destination in seconds. Whether it's a personal or 
+                            at its destination in seconds. Whether it&apos;s a personal or 
                             business transfer, our advanced technology ensures 
                             your funds move swiftly and efficiently. 
                         </Text>
