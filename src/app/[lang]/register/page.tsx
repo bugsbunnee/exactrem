@@ -12,8 +12,12 @@ import Logo from '@/components/ui/Logo';
 import RegistrationFormOne from './_components/RegistrationFormOne/RegistrationFormOne';
 import RegistrationFormTwo from './_components/RegistrationFormTwo/RegistrationFormTwo';
 
+import useDictionary from '@/hooks/useDictionary';
+
 const Register = () => {
 	const [newUserId, setNewUserId] = useState('');
+	
+	const dictionary = useDictionary();
 	const router = useRouter();
 
 	return (
@@ -50,22 +54,22 @@ const Register = () => {
 					</Dialog.Trigger>
 
 					<Dialog.Content className='max-w-96 rounded-md'>
-						<Dialog.Title>Cancel Registration Process</Dialog.Title>
+						<Dialog.Title>{dictionary.page.register.title}</Dialog.Title>
 						
 						<Dialog.Description size="2" mt="4" mb="6">
-							You have not yet completed your registration process. Are you sure you want to cancel it?
+							{dictionary.page.register.description}
 						</Dialog.Description>
 
 						<Flex gap="3" mt="4" justify="end">
 							<Dialog.Close>
 								<Button color="red" variant="soft" radius="small" size="3" className="text-sm" onClick={() => router.push("/")}>
-									Yes, cancel
+									{dictionary.page.register.yes_cta}
 								</Button>
 							</Dialog.Close>
 							
 							<Dialog.Close>
 								<Button color="green" variant="soft" radius="small" size="3" className="text-sm">
-									No, continue
+									{dictionary.page.register.no_cta}
 								</Button>
 							</Dialog.Close>
 						</Flex>

@@ -6,19 +6,21 @@ import { Box, Container, Flex, Grid, Heading, Text } from '@radix-ui/themes';
 
 import AppButton from '@/components/ui/Button';
 
+import useDictionary from '@/hooks/useDictionary';
+
 const Coverage = () => {
+	const dictionary = useDictionary();
+
 	return (
 		<section className="p-20 my-10">
 			<Container>
 				<Heading className="text-center mb-10" size="8">
-					Regulated Excellence
+					{dictionary.page.coverage.title} 
 				</Heading>
 
 				<Flex justify='center'>
 					<Text className="text-center max-w-[40rem]">
-						Exactrem adheres to the highest global regulatory standards, 
-						ensuring that every transaction meets rigorous compliance requirements. 
-						Our commitment to regulatory excellence is the foundation of your trust in Exactrem. 
+						{dictionary.page.coverage.description} 
 					</Text>
 				</Flex>
 
@@ -62,7 +64,7 @@ const Coverage = () => {
 				</Grid>
 
 				<Flex justify='center' align='center' className='mt-10'>
-					<AppButton label='Join waitlist' onClick={() => {}} />
+					<AppButton label={dictionary.page.coverage.cta} route='/register' />
 				</Flex>
 			</Container>
 		</section>

@@ -30,7 +30,7 @@ const Hero = () => {
 				align="center"
 				className="mt-10"
 			>
-				<Button label={dictionary.page.hero.cta} onClick={() => router.push('/register')} />
+				<Button label={dictionary.page.hero.cta} route='/register' />
 
 				<Conditional isVisible={false}>
 					<Box className="mt-5">
@@ -42,7 +42,7 @@ const Hero = () => {
 					<Box className="mt-2">
 						<Text color="gray" size="2">
 							{dictionary.page.hero.reviews}{' '}
-							<Link className="underline" href="/pilor">
+							<Link className="underline" href="/pilot">
 								{dictionary.page.hero.review_link}
 							</Link>
 						</Text>

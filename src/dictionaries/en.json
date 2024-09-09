@@ -1,6 +1,7 @@
 {
 	"components": {
-		"currencySwitcher": ""
+		"navbar": { "sign_up": "Sign up" },
+		"section_divider": ["International Payments", "Fast & reliable", "Safe & Secure", "24/7 Customer Support", "Top-Tier Security", "Transparent pricing"]
 	},
 	"page": {
 		"about": {
@@ -10,20 +11,30 @@
 			},
 			"description": "Exactrem Canada is a MSB licenced Company has been approved by FINTRAC for Money transferring services, Dealing in virtual currencies and Payment service provider services.",
 			"cta_one": "Meet the team",
-			"cta_two": "Our investor"
+			"cta_two": "Our investor",
+			"about_content": {
+				"mission": {
+					"src": "/hero_left.png",
+					"title": "Our mission",
+					"description": "To provide seamless international money transfer services by harnessing technology and strategic partnership to guarantee accessibility, security and efficiency. "
+				},
+				"vision": {
+					"src": "/hero_left.png",
+					"title": "Our vision",
+					"description": "To achieve global recognition as a leading IMTO or MSB, renowned for providing reliable, fast, and customer-centric money transfer solutions at low cost. "
+				}
+			}
 		},
-		"hero": {
-			"heading_one": "Make faster, fairer",
-			"heading_two": "money transfers",
-			"cta": "Get started",
-			"rating": "Rated 4.7 - Excellent",
-			"reviews": "From 100 reviews on",
-			"review_link": "Trustpilot"
-		},
-		"customer": {
-			"left_caption": "Sweet POD",
-			"right_caption": "E25 Dresses",
-			"description": " Send money home to loved ones, sell online as a small business, process global payments as an enterprise, build financial products as a startup. With Flutterwave, the question isn't what's possible—it is: what isn't?"
+		"blog": {
+			"title": "Blog",
+			"description": "If you’re in the mood for some reading, you found the right place. Dive right into our latest stories, or explore the topics you’re most interested in.",
+			"cta": "Contact sales",
+			"read_more": "Read more",
+			"empty_content": {
+				"title": "No blog posts found",
+				"description": "Oops! Looks like no blog posts have been added yet.",
+				"cta": "Go Home"
+			}
 		},
 		"calculator": {
 			"title": "Get started with Exactrem today",
@@ -32,30 +43,106 @@
 			"arrives_in_minutes": "Arrives in minutes",
 			"sending_from": "Sending from",
 			"receiver_gets": "Receiver gets",
-			"free": "Free"
+			"free": "x2 Free"
 		},
-		"usp": {
-			"heading": "Reliable transfers every time you send money back home",
-			"cards": {
-				"one": {
-					"image": "safe",
-					"title": "Safe and Secure",
-					"description": "End-to-end encryption protects our customers’ money and data safeguard transfers.",
-					"cta": "Contact sales"
+		"contact": {
+			"title": "Contact our sales team",
+			"description_one": "With Exactrem you can send international transfers, or use business tools designed to grow your business.",
+			"description_two": "Please complete the form on the right to connect with a member of our team."
+		},
+		"core_services": {
+			"title": {
+				"one": "One platform for all your ",
+				"two": "payments international"
+			},
+			"services": {
+				"p2p": {
+					"src": "/hero_left.png",
+					"title": "Individual to Individual (P2P)",
+					"description": "Experience effortless international transfers with Exactrem. Our user-friendly platform is designed for simplicity, making it easy to send money anywhere in the world with just a few clicks. Enjoy a smooth and intuitive process every time you use our service. ",
+					"cta": "Get started"
 				},
-				"two": {
-					"image": "fast",
-					"title": "Fast and Reliable",
-					"description": "We are closely regulated by FINTRAC and Canada law, working closely with international law enforcement to spot and prevent money laundering.",
-					"cta": "Contact sales"
+				"p2b": {
+					"src": "/hero_left.png",
+					"title": "Individual to Business (P2B)",
+					"description": "Say goodbye to delays and hello to speed. At Exactrem, we prioritize quick transactions so your money arrivesat its destination in seconds. Whether it's a personal or business transfer, our advanced technology ensures your funds move swiftly and efficiently. ",
+					"cta": "Get started"
 				},
-				"three": {
-					"image": "support",
-					"title": "24/7 Customer Support",
-					"description": "And if anything ever does go wrong, our Customer Support team is friendly, professional, and always quick to respond",
-					"cta": "Contact sales"
+				"b2b": {
+					"src": "/hero_left.png",
+					"title": "Business to Business (B2B)",
+					"description": "Your security is our top priority. Exactrem uses cutting-edge encryption and robust security measures to protect your personal and financial information. Trust that your transactions are safeguarded with the highest standards of security, ensuring peace of mind with every transfer. ",
+					"cta": "Get started"
+				},
+				"b2p": {
+					"src": "/hero_left.png",
+					"title": "Business to Individual (B2P)",
+					"description": "Enjoy clear and straightforward pricing with no hidden fees. Exactrem provides a transparent fee structure so you know exactly what you’re paying and how much your recipient will receive. Simplify your financial management with our easy-to-understand pricing model. ",
+					"cta": "Get started"
+				}
+			}, 
+			"usps": {
+				"monthly_transfers": {
+					"key": "piggy",
+					"text": "No monthly or subscription fees"
+				},
+				"minimum_balance": {
+					"key": "minimum-fees",
+					"text": "No minimum balance"
+				},
+				"foreign_transfer": {
+					"key": "zero-fees",
+					"text": "Zero foreign transfer fees"
+				}
+			},
+			"usp_overview": {
+				"title": "Say bye-bye to fees",
+				"description_one": "We charge ",
+				"description_two": "Zero transfer fees",
+				"description_three": "for you to spend your own money. Take back control of your financial life with Exactrem"
+			}
+		},
+		"core_usps": {
+			"title": {
+				"one": "One platform for all your ",
+				"two": "payments international"
+			},
+			"usps": {
+				"seamless_transactions": {
+					"src": "/hero_left.png",
+					"title": "Seamless Transactions",
+					"description": "Experience effortless international transfers with Exactrem. Our user-friendly platform is designed for simplicity, making it easy to send money anywhere in the world with just a few clicks. Enjoy a smooth and intuitive process every time you use our service. ",
+					"cta": "Get started"
+				},
+				"lightning_fast_transfers": {
+					"src": "/hero_left.png",
+					"title": "Lightning-Fast Transfers",
+					"description": "Say goodbye to delays and hello to speed. At Exactrem, we prioritize quick transactions so your money arrivesat its destination in seconds. Whether it's a personal or business transfer, our advanced technology ensures your funds move swiftly and efficiently. ",
+					"cta": "Get started"
+				},
+				"top_tier_security": {
+					"src": "/hero_left.png",
+					"title": "Top-Tier Security",
+					"description": "Your security is our top priority. Exactrem uses cutting-edge encryption and robust security measures to protect your personal and financial information. Trust that your transactions are safeguarded with the highest standards of security, ensuring peace of mind with every transfer. ",
+					"cta": "Get started"
+				},
+				"transparent_pricing": {
+					"src": "/hero_left.png",
+					"title": "Transparent Pricing",
+					"description": "Enjoy clear and straightforward pricing with no hidden fees. Exactrem provides a transparent fee structure so you know exactly what you’re paying and how much your recipient will receive. Simplify your financial management with our easy-to-understand pricing model. ",
+					"cta": "Get started"
 				}
 			}
+		},
+		"coverage": {
+			"title": "Regulated Excellence",
+			"description": "Exactrem adheres to the highest global regulatory standards, ensuring that every transaction meets rigorous compliance requirements. Our commitment to regulatory excellence is the foundation of your trust in Exactrem. ",
+			"cta": "Join waitlist"
+		},
+		"customer": {
+			"left_caption": "Sweet POD",
+			"right_caption": "E25 Dresses",
+			"description": " Send money home to loved ones, sell online as a small business, process global payments as an enterprise, build financial products as a startup. With Exactrem, the question isn't what's possible—it is: what isn't?"
 		},
 		"faqs": {
 			"heading": "Frequently asked questions",
@@ -83,6 +170,166 @@
 				"six": {
 					"title": "How to send money withTransferGo",
 					"description": "The first step is your TransferGo verification: proving your identity so we can keep you and your money safe. After that, you simply choose the currency and amount that you’re sending, and the details of the person you’re sending it to. Finally, you choose how you want to pay for the transfer—and that’s how to transfer money with TransferGo!"
+				}
+			}
+		},
+		"footer": {
+			"copyright": "Exactrem. All Rights Reserved.",
+			"company": "Company",
+			"contact": "Contact",
+			"connect": "Connect",
+			"product": "Product",
+			"links": {
+				"about": {
+					"title": "About us",
+					"url": "/about"
+				},
+				"blog": {
+					"title": "Blog",
+					"url": "/blog"
+				},
+				"contact": {
+					"title": "Send us a message",
+					"url": "/contact"
+				},
+				"news": {
+					"title": "Newsroom",
+					"url": "/news"
+				},
+				"register": {
+					"title": "Get started",
+					"url": "/register"
+				},
+				"services": {
+					"title": "Services",
+					"url": "/services"
+				}
+			}
+		},
+		"hero": {
+			"heading_one": "Make faster, fairer",
+			"heading_two": "money transfers",
+			"cta": "Get started",
+			"rating": "Rated 4.7 - Excellent",
+			"reviews": "From 100 reviews on",
+			"review_link": "Trustpilot"
+		},
+		"latest_news": {
+			"title": "Latest News",
+			"description": "Here is some of the latest information on what is going on at Exactrem. Finance news, current exchange rates and much more"
+		},
+		"news": {
+			"title": "Newsroom",
+			"description": "If you’re in the mood for some reading, you found the right place. Dive right into our latest stories, or explore the topics you’re most interested in.",
+			"cta": "Join waitlist",
+			"read_more": "Read more",
+			"empty_content": {
+				"title": "No news found",
+				"description": "Oops! Looks like no news has been added yet.",
+				"cta": "Go Home"
+			}
+		},
+		"newsletter": {
+			"title": "Want updates straight to your inbox?",
+			"description": "Enter your email to get the latest news from the Exactrem team, and knowledge you need to build a profitable business.",
+			"cta": "Subscribe",
+			"placeholder": "Enter email address"
+		},
+		"offering": {
+			"title": "What we offer",
+			"description": "Exactrem Canada is a MSB licenced Company has been approved by FINTRAC for Money transferring services, Dealing in virtual currencies and Payment service provider services.",
+			"values": {
+				"money_transfer": {
+					"title": "Money transfer",
+					"description": "We are approved by FINTRAC to provide money transfer services in USD, EUR, NGN, and CAD",
+					"icon": "money-transfer"
+				},
+				"virtual_currencies": {
+					"title": "Virtual currencies",
+					"description": "We are open, take appropriate risks, adopt a results-driven approach, and are the best at what we do.",
+					"icon": "currency-exchange"
+				},
+				"payment_service": {
+					"title": "Payment service provider",
+					"description": "We are determined, seek challenges, take ownership of tasks, act fast and deliver results.",
+					"icon": "business-contact"
+				}
+			}
+		},
+		"overview": {
+			"global_clients": "Clients globally",
+			"payout_countries": "Payout countries",
+			"supported_currencies": "Supported currencies",
+			"processed_payments": "Processed payments"
+		},
+		"partners": {
+			"title": "Cash pickup and bank deposit in Nigeria",
+			"description": "Trademarks, trade names and logos displayed are registered trademarks of their respective owners. No affiliation or endorsement of Remitly should be implied."
+		},
+		"register": {
+			"title": "Cancel Registration Process",
+			"description": "You have not yet completed your registration process. Are you sure you want to cancel it?",
+			"yes_cta": "Yes, cancel",
+			"no_cta": "No, continue"
+		},
+		"register_one": {
+			"unique_error_message": "A user with the phone number already exists!",
+			"generic_error_message": "Ooops! Looks like something went wrong. Please try again.",
+			"country": "Country:",
+			"title": "What type of account would you like to create?",
+			"description": "Select the account type that best meets your needs.",
+			"select_account_type": "Select an account type:",
+			"cta": "Save and Continue",
+			"phone_number": "Phone number:",
+			"success": "Data saved!"
+		},
+		"register_two": {
+			"unique_error_message": "A user with the email already exists!",
+			"generic_error_message": "Ooops! Looks like something went wrong. Please try again.",
+			"country": "Country:",
+			"title": "Complete your registration.",
+			"description": "Fill the form below to complete your registration.",
+			"first_name": "First Name:",
+            "last_name": "Last Name:",
+            "business_name": "Business Name:",
+            "business_name_placeholder": "Enter business name",
+			"cta": "Create my account",
+            "email": "Email:",
+			"phone_number": "Phone number:",
+            "promotions_message": "I agree to receive news, offers, and promotional materials from Exactrem.",
+			"success": "Account created successfully!"
+		},
+		"services": {
+			"hero": {
+				"title": "International payments for ",
+				"title_span": "everyone",
+				"description": "Open multi-currency accounts. Send and receive money globally.",
+				"cta": "Start sending money"
+			},
+			"coverage": {
+				"title": "Create an account to start sending in"
+			}
+		},
+		"usp": {
+			"heading": "Reliable transfers every time you send money back home",
+			"cards": {
+				"one": {
+					"image": "safe",
+					"title": "Safe and Secure",
+					"description": "End-to-end encryption protects our customers’ money and data safeguard transfers.",
+					"cta": "Contact sales"
+				},
+				"two": {
+					"image": "fast",
+					"title": "Fast and Reliable",
+					"description": "We are closely regulated by FINTRAC and Canada law, working closely with international law enforcement to spot and prevent money laundering.",
+					"cta": "Contact sales"
+				},
+				"three": {
+					"image": "support",
+					"title": "24/7 Customer Support",
+					"description": "And if anything ever does go wrong, our Customer Support team is friendly, professional, and always quick to respond",
+					"cta": "Contact sales"
 				}
 			}
 		}

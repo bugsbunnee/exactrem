@@ -2,6 +2,7 @@
 
 import React, { useRef } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import Slider from 'react-slick';
 
 import { news } from '#site/content';
@@ -12,20 +13,21 @@ import { summarize } from '@/utils/lib';
 
 import AppSlider from '@/components/ui/Slider';
 import NewsItem from '@/app/[lang]/news/_components/NewsItem';
-import Link from 'next/link';
+
+import useDictionary from '@/hooks/useDictionary';
 
 const LatestNews : React.FC= () => {
+    const dictionary = useDictionary();
     const sliderRef = useRef<Slider>(null);
 
     return ( 
         <section className='p-20'>
             <Container>
-                <Heading className='text-center' size='8'>Latest News</Heading>
+                <Heading className='text-center' size='8'>{dictionary.page.latest_news.title}</Heading>
 
                 <Flex justify='center' align='center' className='mb-14 mt-5'>
                     <Text as='p' className='text-center max-w-[40rem]' size='3'>
-                        Here is some of the latest information on what is going 
-                        on at Exactrem. Finance news, current exchange rates and much more
+                        {dictionary.page.latest_news.description}
                     </Text>
                 </Flex>
 

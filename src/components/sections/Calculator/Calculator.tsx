@@ -2,6 +2,7 @@ import React from 'react';
 import Converter from '@/components/common/Converter';
 
 import { Box, Container, Flex, Heading, Text } from '@radix-ui/themes';
+
 import useDictionary from '@/hooks/useDictionary';
 
 const Calculator: React.FC = () => {

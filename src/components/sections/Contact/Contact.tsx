@@ -167,6 +167,33 @@ const Contact: React.FC = () => {
 
 								<Separator my="5" orientation="horizontal" size="4" />
 
+								<Box className="w-full">
+									<Text size="2" className="font-bold">
+										Company Name:
+									</Text>
+
+									<TextField.Root
+										mt="3"
+										radius="small"
+										variant="surface"
+										color="gray"
+										size="3"
+										{...register('companyName')}
+									>
+										<TextField.Slot>
+											<PersonIcon height="16" width="16" />
+										</TextField.Slot>
+									</TextField.Root>
+
+									{formState.errors.companyName && (
+										<ErrorMessage>
+											{formState.errors.companyName.message}
+										</ErrorMessage>
+									)}
+								</Box>
+
+								<Separator my="5" orientation="horizontal" size="4" />
+
 								<Flex
 									flexGrow="1"
 									gap="9"

@@ -1,3 +1,5 @@
+'use client';
+
 import React from "react";
 import Link from "next/link";
 
@@ -8,8 +10,11 @@ import SocialLinks from "@/components/ui/SocialLinks";
 import { Box, Container, Flex, Grid, Heading, Separator, Text } from "@radix-ui/themes";
 import { EnvelopeClosedIcon } from "@radix-ui/react-icons";
 
+import useDictionary from "@/hooks/useDictionary";
 
 const Footer = () => {
+    const dictionary = useDictionary();
+
     return ( 
         <footer className="p-20 bg-primary text-white dark:bg-[#222]">
             <Container>
@@ -23,61 +28,55 @@ const Footer = () => {
 
                         <Box className="my-3 max-w-24">
                             <Text>
-                                © {new Date().getFullYear()} Exactrem. All Rights Reserved.
+                                © {new Date().getFullYear()} {dictionary.page.footer.copyright}
                             </Text>
                         </Box>
                     </Box>
                     
                     <Box>
-                        <Heading size='5'>Company</Heading>
+                        <Heading size='5'>{dictionary.page.footer.company}</Heading>
 
                         <Box className="my-3">
-                            <Link className='underline' href='/about'>
-                                About us
+                            <Link className='underline' href={dictionary.page.footer.links.about.url}>
+                                {dictionary.page.footer.links.about.title}
                             </Link>
                         </Box>
                         
                         <Box className="my-3">
-                            <Link className='underline' href='/blog'>
-                                Blog
+                            <Link className='underline' href={dictionary.page.footer.links.blog.url}>
+                                {dictionary.page.footer.links.blog.title}
                             </Link>
                         </Box>
                         
                         <Box className="my-3">
-                            <Link className='underline' href='/news'>
-                                Newsroom
+                            <Link className='underline' href={dictionary.page.footer.links.news.url}>
+                                {dictionary.page.footer.links.news.url}
                             </Link>
                         </Box>
                     </Box>
                     
                     <Box>
-                        <Heading size='5'>Product</Heading>
+                        <Heading size='5'>{dictionary.page.footer.product}</Heading>
 
                         <Box className="my-3">
-                            <Link className='underline' href='/register'>
-                               Get started
+                            <Link className='underline' href={dictionary.page.footer.links.register.url}>
+                                {dictionary.page.footer.links.register.title}
                             </Link>
                         </Box>
 
                         <Box className="my-3">
-                            <Link className='underline' href='/'>
-                                Services
-                            </Link>
-                        </Box>
-                        
-                        <Box className="my-3">
-                            <Link className='underline' href='/'>
-                                Invite a friend
+                            <Link className='underline' href={dictionary.page.footer.links.services.url}>
+                                {dictionary.page.footer.links.services.url}
                             </Link>
                         </Box>
                     </Box>
                     
                     <Box>
-                        <Heading size='5'>Contact</Heading>
+                        <Heading size='5'>{dictionary.page.footer.contact}</Heading>
 
                         <Box className="my-3">
-                            <Link className='underline' href='/contact'>
-                                Send us a message
+                            <Link className='underline' href={dictionary.page.footer.links.contact.url}>
+                                {dictionary.page.footer.links.contact.title}
                             </Link>
                         </Box>
 
@@ -90,7 +89,7 @@ const Footer = () => {
                         </Flex>
                         
                         <Box className="my-3">
-                            <Heading size='5' className='my-6'>Connect</Heading>
+                            <Heading size='5' className='my-6'>{dictionary.page.footer.connect}</Heading>
 
                             <SocialLinks />
                         </Box>
@@ -99,6 +98,6 @@ const Footer = () => {
             </Container>
         </footer>
      );
-}
+};
  
 export default Footer;

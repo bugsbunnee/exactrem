@@ -53,10 +53,7 @@ const Usp = () => {
 							</Box>
 
 							<Box mt="5" className="flex items-center justify-center">
-								<AppButton
-									label={card.cta}
-									onClick={() => console.log(card.cta)}
-								/>
+								<AppButton label={card.cta} route='/register' />
 							</Box>
 						</Box>
 					))}

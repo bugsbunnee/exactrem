@@ -10,17 +10,7 @@ import { toast } from 'react-hot-toast';
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import { InfoCircledIcon } from '@radix-ui/react-icons';
-import {
-	Box,
-	Callout,
-	Flex,
-	Text,
-	Button,
-	Spinner,
-    Heading,
-    Container,
-    Radio,
-} from '@radix-ui/themes';
+import { Box, Callout, Flex, Text, Button, Spinner, Heading, Container, Radio } from '@radix-ui/themes';
 
 import { accountTypes } from '@/utils/constants';
 import { registrationFormOneSchema, RegistrationFormData } from './schema';
@@ -34,6 +24,7 @@ import PhoneInput from '@/components/ui/PhoneInput';
 import RegistrationFormOneSkeleton from './RegistrationFormOneSkeleton';
 
 import useCountries from '@/hooks/useCountries';
+import useDictionary from '@/hooks/useDictionary';
 
 interface Props {
     onInitializeUser: (userId: string) => void;
@@ -42,6 +33,8 @@ interface Props {
 const RegistrationFormOne: React.FC<Props> = ({ onInitializeUser }) => {
 	const [error, setError] = useState('');
 	const [selectedCountry, setSelectedCountry] = useState<CountryOption>();
+
+    const dictionary = useDictionary();
 
 	const { countries, isFetching } = useCountries();
 	const { control, handleSubmit, setError: setFieldError, setValue, watch, formState } = useForm<RegistrationFormData>({
@@ -55,17 +48,17 @@ const RegistrationFormOne: React.FC<Props> = ({ onInitializeUser }) => {
 
             try {
                 const existingUser = await getMatchingUser('phoneNumber', data.phoneNumber);
-                if (existingUser) return setError('A user with the phone number already exists!');
+                if (existingUser) return setError(dictionary.page.register_one.unique_error_message);
 
                 const userId = await initializeUser(data);
-				toast.success("Data saved!");
+				toast.success(dictionary.page.register_one.success);
 
                 onInitializeUser(userId);
 			} catch (error) {
-				setError('Ooops! Looks like something went wrong. Please try again.');
+				setError(dictionary.page.register_one.generic_error_message);
 			}
 		},
-		[onInitializeUser]
+		[onInitializeUser, dictionary.page.register_one]
 	);
 
     React.useEffect(() => {
@@ -81,7 +74,6 @@ const RegistrationFormOne: React.FC<Props> = ({ onInitializeUser }) => {
 
 	if (isFetching) return <RegistrationFormOneSkeleton />;
 
-
 	return (
         <Container>
             <Flex flexGrow="1" justify="center" p={{ md: '9', initial: '3' }}>
@@ -96,12 +88,12 @@ const RegistrationFormOne: React.FC<Props> = ({ onInitializeUser }) => {
                     </Conditional>
 
                     <form id="registration-one-form" onSubmit={handleSubmit(handleSubmitRegistrationFormOne)}>
-                        <Heading size="7">What type of account would you like to create?</Heading>
-                        <Text as='p' className="my-4 text-gray-500" size="2">Select the account type that best meets your needs.</Text>
+                        <Heading size="7">{dictionary.page.register_one.title}</Heading>
+                        <Text as='p' className="my-4 text-gray-500" size="2">{dictionary.page.register_one.description}</Text>
 
                         <Box className="w-full mt-2">
                             <Text size="2">
-                                Country:
+                                {dictionary.page.register_one.country}
                             </Text>
 
                             <Box className="mt-2">
@@ -126,7 +118,7 @@ const RegistrationFormOne: React.FC<Props> = ({ onInitializeUser }) => {
                                 name="phoneNumber"
                                 control={control as any} 
                                 selectedCountry={selectedCountry}
-                                label="Phone number:"
+                                label={dictionary.page.register_one.phone_number}
                                 onSetError={(errorMessage?: string) => setFieldError('phoneNumber', { message: errorMessage })}
                                 onSetValue={(phoneNumber: string) => setValue('phoneNumber', phoneNumber)}
                                 errorMessage={formState.errors.phoneNumber ? formState.errors.phoneNumber.message : undefined}
@@ -135,7 +127,7 @@ const RegistrationFormOne: React.FC<Props> = ({ onInitializeUser }) => {
 
                         <Box className='mt-4'>
                             <Text size="2">
-                                Select an account type:
+                                {dictionary.page.register_one.select_account_type}
                             </Text>
 
                             <Controller
@@ -196,7 +188,7 @@ const RegistrationFormOne: React.FC<Props> = ({ onInitializeUser }) => {
                             radius="small"
                             disabled={formState.isSubmitting}
                         >
-                            Save and Continue
+                            {dictionary.page.register_one.cta}
                             {formState.isSubmitting && <Spinner />}
                         </Button>
                     </form>

@@ -27,15 +27,18 @@ import Pagination from '@/components/common/Pagination';
 import { summarize } from '@/utils/lib';
 import { SearchParams } from '@/utils/models';
 
+import useDictionary from '@/hooks/useDictionary';
 import useNews from '@/hooks/useNews';
 
 interface Props {
     searchParams: SearchParams;
 }
 
-const Blog: React.FC<Props> = ({ searchParams }) => {
+const NewsPage: React.FC<Props> = ({ searchParams }) => {
     const { categories, isLoading, page, pageSize, newsCount, allNews, trendingNews } = useNews(searchParams);
+    
     const sliderRef = useRef<Slider>(null);
+    const dictionary = useDictionary();
    
     return ( 
         <>
@@ -46,19 +49,17 @@ const Blog: React.FC<Props> = ({ searchParams }) => {
                     <Container>
                         <Flex className='w-full' align='center' justify='center'>
                             <Box className="text-center max-w-[35rem]">
-                                <Heading size='8'>Newsroom</Heading>
+                                <Heading size='8'>{dictionary.page.news.title}</Heading>
 
                                 <Box className='mb-7 mt-5'>
                                     <Text>
-                                        If you’re in the mood for some reading, you found the right place. 
-                                        Dive right into our latest stories, or explore the topics 
-                                        you’re most interested in.
+                                        {dictionary.page.news.description}
                                     </Text>
                                 </Box>
 
                                 <Box className='mt-12'>
                                     <Link className='bg-slate-900 text-white dark:border dark:border-stone-50 dark:bg-transparent text-sm p-5 rounded-full ' href='/contact'>
-                                        Contact sales
+                                        {dictionary.page.news.cta}
                                     </Link>
                                 </Box>
                             </Box>
@@ -66,6 +67,7 @@ const Blog: React.FC<Props> = ({ searchParams }) => {
 
                         <Conditional isVisible={!isLoading}>
                             <AppSlider
+                                ref={sliderRef}
                                 autoplay
                                 autoplaySpeed={3000}
                                 arrows={false}
@@ -101,7 +103,7 @@ const Blog: React.FC<Props> = ({ searchParams }) => {
 
                                                 <Box className='mt-9'>
                                                     <Link className='bg-primary dark:bg-black text-white dark:border dark:border-white text-sm p-3 rounded-sm ' href={`/news/${news.slug}`}>
-                                                        Read more
+                                                        {dictionary.page.news.read_more}
                                                     </Link>
                                                 </Box>
                                             </Box>
@@ -149,14 +151,14 @@ const Blog: React.FC<Props> = ({ searchParams }) => {
                                     </Flex>
                                 </Flex>
 
-                                <Heading className='mt-7'>No news found</Heading>
-                                <Text as='p' className='mt-3'>Oops! Looks like no news has been added yet.</Text>
+                                <Heading className='mt-7'>{dictionary.page.news.empty_content.title}</Heading>
+                                <Text as='p' className='mt-3'>{dictionary.page.news.empty_content.description}</Text>
 
                                 <Flex justify='center' className='mt-9'>
                                     <Link href='/' className='flex items-center gap-4 bg-slate-900 text-white dark:bg-stone-100 dark:text-black p-4 rounded-full'>
                                         <FcHome />
                                         
-                                        Go Home
+                                        {dictionary.page.news.empty_content.cta}
                                     </Link>
                                 </Flex>
                             </Box>
@@ -192,4 +194,4 @@ const Blog: React.FC<Props> = ({ searchParams }) => {
     );
 };
  
-export default Blog;
+export default NewsPage;

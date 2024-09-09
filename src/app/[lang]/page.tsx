@@ -1,29 +1,19 @@
 'use client';
 
-import Converter from '@/components/common/Converter';
-import FAQs from '@/components/sections/FAQ/Faq';
-import LocaleSwitcher from '@/components/common/LocaleSwitcher';
-import ThemeSwitcher from '@/components/common/ThemeSwitcher';
-import AppButton from '@/components/ui/Button';
-import AppSlider from '@/components/ui/Slider';
-import TransferCard from '@/components/ui/TransferCard';
-
-import { Box, Skeleton } from '@radix-ui/themes';
-import { useState } from 'react';
-import dynamic from 'next/dynamic';
-import Usp from '@/components/sections/USP/Usp';
 import Hero from '@/components/sections/Hero/Hero';
 import NavBar from '@/components/sections/NavBar/NavBar';
 import Calculator from '@/components/sections/Calculator/Calculator';
 import Contact from '@/components/sections/Contact/Contact';
-import CoreUSP from '@/components/sections/CoreUSP/CoreUSP';
-import Partners from '@/components/sections/Partners/Partners';
 import Coverage from '@/components/sections/Coverage/Coverage';
 import Customer from '@/components/sections/Customer/Customer';
+import CoreUSP from '@/components/sections/CoreUSP/CoreUSP';
+import FAQs from '@/components/sections/FAQ/Faq';
 import Footer from '@/components/sections/Footer/Footer';
+import Partners from '@/components/sections/Partners/Partners';
 import SectionDivider from '@/components/common/SectionDivider';
+import Usp from '@/components/sections/USP/Usp';
 
-export default function Home() {
+function HomePage() {
 	return (
 		<>
 			<NavBar />
@@ -56,3 +46,5 @@ export default function Home() {
 		</>
 	);
 }
+
+export default HomePage;

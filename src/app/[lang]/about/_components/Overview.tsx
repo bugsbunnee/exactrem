@@ -3,33 +3,37 @@
 import React from 'react';
 import CountUp from 'react-countup';
 
-import { Box, Container, Flex, Grid, Heading, Text } from '@radix-ui/themes';
+import { Box, Container, Flex, Grid, Text } from '@radix-ui/themes';
+
+import useDictionary from '@/hooks/useDictionary';
 
 const Overview: React.FC = () => {
+    const dictionary = useDictionary();
+
     const overviewData = [
         {
             start: 0,
             end: 3000,
-            label: 'Clients globally',
+            label: dictionary.page.overview.global_clients,
             duration: 10,
         },
         {
             start: 0,
             end: 4,
-            label: 'Payout countries',
+            label: dictionary.page.overview.payout_countries,
             duration: 20,
         },
         {
             start: 0,
             end: 3,
-            label: 'Supported currencies',
+            label: dictionary.page.overview.supported_currencies,
             duration: 30,
         },
         {
             start: 0,
             end: 1000000,
             prefix: '$',
-            label: 'Processed payments',
+            label: dictionary.page.overview.processed_payments,
             duration: 10,
         },
     ];

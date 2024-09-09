@@ -7,6 +7,8 @@ import { useEffect, useMemo, useState } from "react"
 import { posts, Post } from "#site/content";
 import { paginate } from "@/utils/lib";
 import { SearchParams } from "@/utils/models";
+import { useParams } from "next/navigation";
+import { Locale } from "../../i18n.config";
 
 interface BlogState {
     hero: Post | null;
@@ -22,6 +24,8 @@ const useBlogPosts = (searchParams: SearchParams) => {
     
     const page = parseInt(searchParams.page) || 1;
     const pageSize = 6;
+
+    const params = useParams<{ lang: Locale; }>();
 
     const results = useMemo(() => {
         let allBlogPosts = blogState.list;
@@ -41,14 +45,14 @@ const useBlogPosts = (searchParams: SearchParams) => {
 
     useEffect(() => {
         const timeout = setTimeout(() => {
-            const publishedPosts = posts.filter((post) => post.isPublished);
+            const publishedPosts = posts.filter((post) => post.isPublished && params.lang === post.locale);
 
             setBlogState({ hero: publishedPosts.length > 0 ? publishedPosts[0] : null, list: publishedPosts })
             setLoading(false);
         }, 1500);
         
         return () => clearTimeout(timeout);
-    }, []);
+    }, [params.lang]);
 
     return results;
 };

@@ -1,6 +1,7 @@
 [
   {
     "slug": "blog-post",
+    "locale": "en",
     "src": {
       "src": "/hero_left.png",
       "height": 847,
@@ -20,6 +21,7 @@
   },
   {
     "slug": "new-md",
+    "locale": "en",
     "src": {
       "src": "/hero_left.png",
       "height": 847,

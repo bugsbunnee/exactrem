@@ -1,4 +1,5 @@
 import { defineCollection, defineConfig, s } from 'velite';
+import { i18n } from './i18n.config';
 
 import rehypeSlug from "rehype-slug";
 import rehypePrettyCode from "rehype-pretty-code";
@@ -14,6 +15,7 @@ const posts = defineCollection({
     schema: s
         .object({
             slug: s.slug('blog'),
+            locale: s.enum(i18n.locales as any),
             src: s.image({ absoluteRoot: 'public' }),
             category: s.string(),
             title: s.string().max(99),
@@ -31,6 +33,7 @@ const news = defineCollection({
     schema: s
         .object({
             slug: s.slug('news'),
+            locale: s.enum(i18n.locales as any),
             src: s.image({ absoluteRoot: 'public' }),
             category: s.string(),
             title: s.string().max(99),

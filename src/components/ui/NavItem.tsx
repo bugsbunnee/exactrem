@@ -53,7 +53,7 @@ const NavItem: React.FC<NavItemModel> = ({ label, options, route }) => {
 				className="w-96"
 				onMouseLeave={() => setOpen(false)}
 			>
-				{options.map((option, index) => (
+				{options.map((option) => (
 					<React.Fragment key={option.title}>
 						<DropdownMenu.Item onSelect={handleClick} className="p-5 min-h-24 mb-3 hover:bg-transparent cursor-pointer">
 							<Flex gap="4" align="start" justify="start">
@@ -72,14 +72,14 @@ const NavItem: React.FC<NavItemModel> = ({ label, options, route }) => {
 									<Box>
 										<Text
 											color="gray"
-											className="mb-5 font-semibold text-black hover:text-green-700"
+											className="mb-5 font-semibold text-black dark:text-white hover:text-green-700"
 											size="2"
 										>
 											{option.title}
 										</Text>
 									</Box>
 
-									<Text className="text-gray-600" size="1">
+									<Text className="text-gray-600 dark:text-gray-100" size="1">
 										{option.description}
 									</Text>
 								</Box>

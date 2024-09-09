@@ -1,15 +1,20 @@
 
+'use client';
+
 import React from 'react';
 import _ from 'lodash';
 
 import { Box, Container, Grid, Heading, Text } from '@radix-ui/themes';
 
-import Conditional from '@/components/common/Conditional';
 import ContactForm from '@/components/sections/Contact/Contact';
 import Footer from '@/components/sections/Footer/Footer';
 import NavBar from '@/components/sections/NavBar/NavBar';
 
+import useDictionary from '@/hooks/useDictionary';
+
 const ContactPage: React.FC = () => {
+    const { page } = useDictionary();
+
     return ( 
         <>
             <NavBar />
@@ -19,16 +24,14 @@ const ContactPage: React.FC = () => {
                     <Grid columns='2' gap='4'>
                         <Box>
                             <Box className='max-w-96'>
-                                <Heading size='9' className='leading-12'>Contact our sales team</Heading>
+                                <Heading size='9' className='leading-12'>{page.contact.title}</Heading>
 
                                 <Text as='p' className='mt-10 mb-6'>
-                                    With Flutterwave you can Sell online, process payments, build 
-                                    financial products, or use business tools designed to grow your business.
+                                    {page.contact.description_one}
                                 </Text>
 
                                 <Text as='p'>
-                                    With Flutterwave you can Sell online, process payments, build 
-                                    financial products, or use business tools designed to grow your business.
+                                    {page.contact.description_two}
                                 </Text>
                             </Box>
                         </Box>

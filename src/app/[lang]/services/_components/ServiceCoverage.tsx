@@ -6,12 +6,16 @@ import Image from 'next/image';
 import { Container, Flex, Text } from '@radix-ui/themes';
 import { currencies } from '@/utils/constants';
 
+import useDictionary from '@/hooks/useDictionary';
+
 const ServiceCoverage = () => {
+	const dictionary = useDictionary();
+
     return (
         <section className='bg-black dark:bg-primary h-20 flex items-center justify-center'>
             <Container>
                 <Flex align='center' gap='8' justify='center'>
-                    <Text as='div' size='3' className='text-white'>Create an account to start sending in</Text>
+                    <Text as='div' size='3' className='text-white'>{dictionary.page.services.coverage.title}</Text>
                     <Flex align='center' gap='4' justify='center'>
                         {Object.values(currencies).map((currency) => (
                             <Flex align='center' justify='center' key={currency.value} className='bg-white relative w-10 h-10 overflow-hidden rounded-full'>

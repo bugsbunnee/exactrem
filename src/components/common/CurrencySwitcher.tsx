@@ -12,10 +12,7 @@ interface Props {
 	onSelectCurrency: (currency: Currency) => void;
 }
 
-const CurrencySwitcher: React.FC<Props> = ({
-	defaultValue,
-	onSelectCurrency,
-}) => {
+const CurrencySwitcher: React.FC<Props> = ({ defaultValue, onSelectCurrency }) => {
 	return (
 		<Flex direction="column" maxWidth="10rem">
 			<Select.Root

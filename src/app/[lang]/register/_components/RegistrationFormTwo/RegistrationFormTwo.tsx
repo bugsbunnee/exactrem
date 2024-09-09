@@ -9,18 +9,7 @@ import { useRouter } from 'next/navigation';
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import { EnvelopeClosedIcon, InfoCircledIcon, PersonIcon } from '@radix-ui/react-icons';
-import {
-	Box,
-	Callout,
-	Flex,
-	Text,
-	Button,
-	Spinner,
-    Heading,
-    Container,
-    TextField,
-    Checkbox,
-} from '@radix-ui/themes';
+import { Box, Callout, Flex, Text, Button, Spinner, Heading, Container, TextField, Checkbox } from '@radix-ui/themes';
 
 import { registrationFormTwoSchema, UserFormData } from './schema';
 import { FcBusiness } from 'react-icons/fc';
@@ -29,6 +18,8 @@ import { getMatchingUser, updateUser } from '@/firebase/service';
 import Conditional from '@/components/common/Conditional';
 import ErrorMessage from '@/components/common/ErrorMessage';
 
+import useDictionary from '@/hooks/useDictionary';
+
 interface Props {
     userId: string;
 }
@@ -36,6 +27,7 @@ interface Props {
 const RegistrationFormTwo: React.FC<Props> = ({ userId }) => {
 	const [error, setError] = useState('');
 
+    const { page } = useDictionary();
     const { push } = useRouter();
 	const { control, handleSubmit, register, setValue, formState } = useForm<UserFormData>({
 		resolver: zodResolver(registrationFormTwoSchema),
@@ -49,17 +41,17 @@ const RegistrationFormTwo: React.FC<Props> = ({ userId }) => {
 
 			try {
                 const existingUser = await getMatchingUser('email', data.email);
-                if (existingUser) return setError('A user with the email already exists!');
+                if (existingUser) return setError(page.register_two.unique_error_message);
 
                 await updateUser(userId, data);
-				toast.success("Account created successfully!");
+				toast.success(page.register_two.success);
 
                 push('/');
 			} catch (error) {
-				setError('Ooops! Looks like something went wrong. Please try again.');
+				setError(page.register_two.generic_error_message);
 			}
 		},
-		[userId, push]
+		[userId, push, page.register_two]
 	);
 
 	return (
@@ -76,8 +68,8 @@ const RegistrationFormTwo: React.FC<Props> = ({ userId }) => {
                     </Conditional>
 
                     <form id="registration-two-form" onSubmit={handleSubmit(handleCompleteUserRegistration)}>
-                        <Heading size="7">Complete your registration.</Heading>
-                        <Text as='p' className="my-4 text-gray-500" size="2">Fill the form below to complete your registration.</Text>
+                        <Heading size="7">{page.register_two.title}</Heading>
+                        <Text as='p' className="my-4 text-gray-500" size="2">{page.register_two.description}</Text>
 
                         <Flex justify="center" align="center" gap="6">
 							<Box className="w-full">
@@ -88,7 +80,7 @@ const RegistrationFormTwo: React.FC<Props> = ({ userId }) => {
 								>
 									<Box className="w-full">
 										<Text size="2" >
-											First Name:
+											{page.register_two.first_name}
 										</Text>
 
 										<TextField.Root
@@ -115,7 +107,7 @@ const RegistrationFormTwo: React.FC<Props> = ({ userId }) => {
 
 									<Box className="w-full">
 										<Text size="2">
-											Last Name:
+											{page.register_two.last_name}
 										</Text>
 
 										<TextField.Root
@@ -144,7 +136,7 @@ const RegistrationFormTwo: React.FC<Props> = ({ userId }) => {
                                 <Conditional isVisible>
                                     <Box className="w-full mt-5">
                                         <Text size="2" >
-                                            Business Name:
+                                            {page.register_two.business_name}
                                         </Text>
 
                                         <TextField.Root
@@ -152,7 +144,7 @@ const RegistrationFormTwo: React.FC<Props> = ({ userId }) => {
                                             radius="small"
                                             variant="surface"
                                             color="gray"
-                                            placeholder="Enter business name"
+                                            placeholder={page.register_two.business_name_placeholder}
                                             size="3"
                                             className="text-sm"
                                             {...register('businessName')}
@@ -172,7 +164,7 @@ const RegistrationFormTwo: React.FC<Props> = ({ userId }) => {
 
                                 <Box className="w-full mt-5">
                                     <Text size="2" >
-                                        Email:
+                                        {page.register_two.email}
                                     </Text>
 
                                     <TextField.Root
@@ -213,7 +205,7 @@ const RegistrationFormTwo: React.FC<Props> = ({ userId }) => {
                                     />
         
                                     <label htmlFor="promotions" className="leading-5 text-sm">
-                                        I agree to receive news, offers, and promotional materials from Exactrem.
+                                        {page.register_two.promotions_message}
                                     </label>
                                 </Flex>
                             )}
@@ -229,7 +221,7 @@ const RegistrationFormTwo: React.FC<Props> = ({ userId }) => {
                             radius="small"
                             disabled={formState.isSubmitting}
                         >
-                            Submit
+                            {page.register_two.cta}
                             {formState.isSubmitting && <Spinner />}
                         </Button>
                     </form>

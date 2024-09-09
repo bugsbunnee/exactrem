@@ -16,10 +16,13 @@ import { InfoCircledIcon } from '@radix-ui/react-icons';
 import { newsletterSchema } from '@/components/sections/Newsletter/schema';
 import { addSubscription } from '@/firebase/service';
 
+import useDictionary from '@/hooks/useDictionary';
+
 type NewsletterData = z.infer<typeof newsletterSchema>;
 
 const Newsletter: React.FC = () => {
 	const [error, setError] = useState('');
+	const dictionary = useDictionary();
 
 	const { handleSubmit, register, reset, formState } = useForm<NewsletterData>({
 		resolver: zodResolver(newsletterSchema),
@@ -49,11 +52,11 @@ const Newsletter: React.FC = () => {
 			<Container>
 				<Flex justify='center' align='center'>
 					<form className='max-w-[40rem] rounded-sm bg-black dark:bg-white p-12' id="newsletter-form" onSubmit={handleSubmit(handleSubscribeToNewsletter)}>
-						<Heading size='7' className='text-white dark:text-black text-center'>Want updates straight to your inbox?</Heading>
+						<Heading size='7' className='text-white dark:text-black text-center'>{dictionary.page.newsletter.title}</Heading>
 
 						<Flex align="center" className="mt-4 mb-9" justify="center">
 							<Text as='p' className='text-white dark:text-black text-center'>
-								Enter your email to get the latest news from the Exactrem team, and knowledge you need to build a profitable business.
+								{dictionary.page.newsletter.description}
 							</Text>
 						</Flex>
 
@@ -63,7 +66,7 @@ const Newsletter: React.FC = () => {
 									radius="small"
 									variant="soft"
 									color="gray"
-									placeholder="Enter email address"
+									placeholder={dictionary.page.newsletter.placeholder}
 									className='bg-white dark:bg-[#222]'
 									size="3"
 									{...register('email')}
@@ -77,7 +80,7 @@ const Newsletter: React.FC = () => {
 									size="3"
 									disabled={formState.isSubmitting}
 								>
-									Send message
+									{dictionary.page.newsletter.cta}
 									{formState.isSubmitting && <Spinner />}
 								</Button>
 						</Flex>

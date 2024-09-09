@@ -30,7 +30,7 @@ const getSimilarNews = (referenceNews: News) => {
     return paginate(orderedNews, 1, 3);
 };
 
-const BlogPostPage: React.FC<Props> = ({ params }) => {
+const NewsPostPage: React.FC<Props> = ({ params }) => {
     const newsItem = getNewsBySlug(params.slug);
     if (!newsItem || !newsItem.isPublished) notFound();
 
@@ -117,4 +117,4 @@ export const generateStaticParams = async () => {
     return news.map(({ slug }) => ({ slug }))
 }
 
-export default BlogPostPage;
+export default NewsPostPage;

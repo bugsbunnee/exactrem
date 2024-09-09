@@ -42,8 +42,7 @@ const FAQs: React.FC = () => {
 								className={classNames({
 									'bg-primary text-white': isSelected,
 									'bg-white text-black dark:bg-[#222] dark:text-white': !isSelected,
-									'flex min-h-20 w-full p-6 shadow-2xl cursor-pointer rounded-xl hover:scale-110 transition-all ease-in-out duration-300':
-										true,
+									'flex min-h-20 w-full p-6 shadow-2xl cursor-pointer rounded-xl hover:scale-110 transition-all ease-in-out duration-300': true,
 								})}
 							>
 								<Box

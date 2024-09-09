@@ -15,19 +15,19 @@ const ServiceHero = () => {
 			<Box className="text-center w-full flex justify-center items-center">
 			    <Box className="text-center max-w-[35rem]">
                     <Heading className="leading-12 font-bold dark:text-black" size="9">
-                        International payments for <span className='text-orange-600'>everyone</span>
+                        {dictionary.page.services.hero.title}<span className='text-orange-600'>{dictionary.page.services.hero.title_one}</span>
                     </Heading>
 
                     <Flex justify='center' align='center'>
                         <Text as="p" className="my-12 leading-7 max-w-62 dark:text-black" size="6">
-                            Open multi-currency accounts. Send and receive money globally.
+							{dictionary.page.services.hero.description}
                         </Text>
                     </Flex>
 			    </Box>
 			</Box>
 
 			<Flex justify="center" align="center" gap="4">
-				<AppButton label='Start sending money' onClick={() => {}} />
+				<AppButton label={dictionary.page.services.hero.cta} route='/register'  />
 			</Flex>
 		</section>
 	);

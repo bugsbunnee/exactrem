@@ -25,6 +25,7 @@ import { formatDate, getReadingTime, summarize } from '@/utils/lib';
 import { SearchParams } from '@/utils/models';
 
 import useBlogPosts from '@/hooks/useBlogPosts';
+import useDictionary from '@/hooks/useDictionary';
 
 interface Props {
     searchParams: SearchParams;
@@ -32,6 +33,7 @@ interface Props {
 
 const Blog: React.FC<Props> = ({ searchParams }) => {
     const { allBlogPosts, blogPostCount, categories, hero, isLoading, page, pageSize } = useBlogPosts(searchParams);
+    const { page: dictionaryPage } = useDictionary();
    
     return ( 
         <>
@@ -42,19 +44,17 @@ const Blog: React.FC<Props> = ({ searchParams }) => {
                     <Container>
                         <Flex className='w-full' align='center' justify='center'>
                             <Box className="text-center max-w-[35rem]">
-                                <Heading size='8'>Blog</Heading>
+                                <Heading size='8'>{dictionaryPage.blog.title}</Heading>
 
                                 <Box className='mb-7 mt-5'>
                                     <Text>
-                                        If you’re in the mood for some reading, you found the right place. 
-                                        Dive right into our latest stories, or explore the topics 
-                                        you’re most interested in.
+                                        {dictionaryPage.blog.description}
                                     </Text>
                                 </Box>
 
                                 <Box className='mt-12'>
                                     <Link className='bg-slate-900 text-white dark:border dark:border-stone-50 dark:bg-transparent text-sm p-5 rounded-full ' href='/register'>
-                                        Create account
+                                        {dictionaryPage.blog.cta}
                                     </Link>
                                 </Box>
                             </Box>
@@ -93,7 +93,7 @@ const Blog: React.FC<Props> = ({ searchParams }) => {
 
                                         <Box className='mt-9'>
                                             <Link className='bg-slate-900 text-white dark:border dark:border-stone-50 dark:bg-transparent text-sm p-3 rounded-sm ' href={`/blog/${hero.slug}`}>
-                                                Read more
+                                                {dictionaryPage.blog.read_more}
                                             </Link>
                                         </Box>
                                     </Box>
@@ -127,14 +127,14 @@ const Blog: React.FC<Props> = ({ searchParams }) => {
                                     </Flex>
                                 </Flex>
 
-                                <Heading className='mt-7'>No blog posts found</Heading>
-                                <Text as='p' className='mt-3'>Oops! Looks like no blog posts have been added yet.</Text>
+                                <Heading className='mt-7'>{dictionaryPage.blog.empty_content.title}</Heading>
+                                <Text as='p' className='mt-3'>{dictionaryPage.blog.empty_content.description}</Text>
 
                                 <Flex justify='center' className='mt-9'>
                                     <Link href='/' className='flex items-center gap-4 bg-slate-900 text-white dark:bg-stone-100 dark:text-black p-4 rounded-full'>
                                         <FcHome />
                                         
-                                        Go Home
+                                        {dictionaryPage.blog.empty_content.cta}
                                     </Link>
                                 </Flex>
                             </Box>

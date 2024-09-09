@@ -17,9 +17,7 @@ const { NGN, USD } = currencies;
 const Converter = () => {
 	const [senderInfo, setSenderInfo] = useState<CurrencyOption>(USD);
 	const [receiverInfo, setReceiverInfo] = useState<CurrencyOption>(NGN);
-	const [activeCurrency, setActiveCurrency] = useState<Currency>(
-		senderInfo.value
-	);
+	const [activeCurrency, setActiveCurrency] = useState<Currency>(senderInfo.value);
 	const [isSenderFocused, setSenderFocused] = useState(false);
 	const [isReceiverFocused, setReceiverFocused] = useState(false);
 	const [senderAmount, setSenderAmount] = useState(0);
@@ -156,8 +154,7 @@ const Converter = () => {
 						onBlur={() => setReceiverFocused(false)}
 						onChange={handleReceiverAmountUpdate}
 						className={classNames({
-							'w-full rounded-lg bg-transparent hover:bg-[#eee] dark:hover:bg-[#eee] text-3xl font-bold h-14 px-3 text-right focus:outline-none focus:border-0':
-								true,
+							'w-full rounded-lg bg-transparent hover:bg-[#eee] dark:hover:bg-[#eee] text-3xl font-bold h-14 px-3 text-right focus:outline-none focus:border-0': true,
 							'text-blue-700': isReceiverActive,
 							'text-slate-900': !isReceiverActive,
 						})}
@@ -191,7 +188,7 @@ const Converter = () => {
 					<BoxModelIcon width="16" height="16" />
 
 					<Text size="1" className="font-semibold uppercase">
-						x2 {dictionary.page.calculator.free}
+						{dictionary.page.calculator.free}
 					</Text>
 				</Flex>
 			</Flex>

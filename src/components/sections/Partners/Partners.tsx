@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
 
@@ -10,11 +12,16 @@ import zenith from '../../../../public/zenith.png';
 import access from '../../../../public/access.png';
 import firstbank from '../../../../public/firstbank.png';
 
+import useDictionary from '@/hooks/useDictionary';
+
+
 interface Props {
 	displayHeading: boolean;
 }
 
 const Partners: React.FC<Props> = ({ displayHeading }) => {
+	const dictionary = useDictionary();
+
 	const partners = [
 		{ url: fidelity, label: 'Fidelity' },
 		{ url: zenith, label: 'Zenith' },
@@ -27,7 +34,7 @@ const Partners: React.FC<Props> = ({ displayHeading }) => {
 			<section className="px-20">
 				<Conditional isVisible={displayHeading}>
 					<Heading className="text-center mb-10" size="8">
-						Cash pickup and bank deposit in Nigeria
+						{dictionary.page.partners.title}
 					</Heading>
 				</Conditional>
 
@@ -55,9 +62,7 @@ const Partners: React.FC<Props> = ({ displayHeading }) => {
 					<Conditional isVisible={false}>
 						<Box className="mt-10">
 							<Text size="2">
-								Trademarks, trade names and logos displayed are registered
-								trademarks of their respective owners. No affiliation or endorsement
-								of Remitly should be implied.
+								{dictionary.page.partners.description}
 							</Text>
 						</Box>
 					</Conditional>
