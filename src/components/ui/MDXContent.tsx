@@ -23,6 +23,7 @@ const components: MDXComponents = {
             height={1000}
             className='w-full h-auto'
             {...(props as ImageProps)}
+            alt={props.alt as string}
         />
     ), 
     p: ({ children }) => (

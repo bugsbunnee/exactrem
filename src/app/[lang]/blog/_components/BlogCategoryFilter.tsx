@@ -38,7 +38,7 @@ const BlogCategoryFilter: React.FC<Props>= ({ categories, redirectPath }) => {
 
     const mappedCategories = useMemo(() => {
         return [ALL_KEYWORD, ...categories]
-    }, [])
+    }, [categories]);
 
     return ( 
         <Flex align='center' gap='6' justify='center' className='border-y border-dashed border-stone-600 p-7'>

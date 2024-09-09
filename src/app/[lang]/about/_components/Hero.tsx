@@ -17,7 +17,7 @@ const AboutHero = () => {
 			<Box className="text-center w-full flex justify-center items-center">
 			    <Box className="text-center max-w-[45rem]">
                     <Heading className="leading-10 font-bold" size="9">
-                        About <span className='text-orange-600'>Extractem</span>
+                        About <span className='text-orange-600'>Exactrem</span>
                     </Heading>
 
                     <Text as="p" className="my-12 leading-7" size="3">
