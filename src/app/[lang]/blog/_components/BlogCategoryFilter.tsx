@@ -10,10 +10,10 @@ import { ALL_KEYWORD } from '@/utils/constants';
 
 interface Props {
     categories: string[];
-    redirectPath
+    redirectPath: string;
 }
 
-const BlogCategoryFilter: React.FC<Props>= ({ categories, redirectPath}) => {
+const BlogCategoryFilter: React.FC<Props>= ({ categories, redirectPath }) => {
     const router = useRouter();
     const searchParams = useSearchParams();
 

@@ -2,7 +2,7 @@
   {
     "slug": "blog-post",
     "src": {
-      "src": "/static/images/hero_left.png",
+      "src": "/hero_left.png",
       "height": 847,
       "width": 1200,
       "blurDataURL": "data:image/webp;base64,UklGRiwAAABXRUJQVlA4ICAAAACQAQCdASoIAAYADMDOJYwAAp1jQoAA+4B/gXn3pHQIAA==",
@@ -22,7 +22,7 @@
   {
     "slug": "new-md",
     "src": {
-      "src": "/static/images/hero_left.png",
+      "src": "/hero_left.png",
       "height": 847,
       "width": 1200,
       "blurDataURL": "data:image/webp;base64,UklGRiwAAABXRUJQVlA4ICAAAACQAQCdASoIAAYADMDOJYwAAp1jQoAA+4B/gXn3pHQIAA==",
