@@ -23,7 +23,6 @@
     "classnames": "^2.5.1",
     "dayjs": "^1.11.13",
     "firebase": "^10.13.1",
-    "gray-matter": "^4.0.3",
     "libphonenumber-js": "^1.11.7",
     "lodash": "^4.17.21",
     "mdast-util-from-markdown": "^2.0.1",
