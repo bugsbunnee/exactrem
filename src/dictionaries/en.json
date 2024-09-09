@@ -3,6 +3,15 @@
 		"currencySwitcher": ""
 	},
 	"page": {
+		"about": {
+			"title": {
+				"one": "About",
+				"two": "Exactrem"
+			},
+			"description": "Exactrem Canada is a MSB licenced Company has been approved by FINTRAC for Money transferring services, Dealing in virtual currencies and Payment service provider services.",
+			"cta_one": "Meet the team",
+			"cta_two": "Our investor"
+		},
 		"hero": {
 			"heading_one": "Make faster, fairer",
 			"heading_two": "money transfers",
