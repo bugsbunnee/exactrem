@@ -7,7 +7,6 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 interface SliderProps extends PropsWithChildren {
-	adaptiveHeight?: boolean;
 	slidesToShow: number;
 	responsive?: ResponsiveObject[];
 	autoplaySpeed?: number;
@@ -19,11 +18,11 @@ interface SliderProps extends PropsWithChildren {
 	cssEase?: string;
 }
 
-const AppSlider = React.forwardRef<Slider, SliderProps>(({ adaptiveHeight = true, ...props }, ref) => {
+const AppSlider = React.forwardRef<Slider, SliderProps>((props, ref) => {
 	return (
 		<Slider
 			ref={ref}
-			adaptiveHeight={adaptiveHeight}
+			adaptiveHeight
 			autoplay={props.autoplay}
 			autoplaySpeed={props.autoplaySpeed}
 			dots={props.dots}

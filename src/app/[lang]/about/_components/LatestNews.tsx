@@ -33,7 +33,6 @@ const LatestNews : React.FC= () => {
 
                 <AppSlider 
                     ref={sliderRef}
-                    adaptiveheight
                     autoplay
                     autoplaySpeed={3000}
                     arrows={false}
