@@ -48,7 +48,20 @@
 		"contact": {
 			"title": "Contact our sales team",
 			"description_one": "With Exactrem you can send international transfers, or use business tools designed to grow your business.",
-			"description_two": "Please complete the form on the right to connect with a member of our team."
+			"description_two": "Please complete the form on the right to connect with a member of our team.",
+			"form": {
+				"cta": "Send message",
+				"country": "Country",
+				"company_name": "Company Name",
+				"email": "Email",
+				"first_name": "First Name:",
+				"last_name": "Last Name",
+				"message": "Message",
+				"message_placeholder": "Enter a message",
+				"phone_number": "Phone number",
+				"sucess": "Thank you! We'll be in touch!",
+				"error": "Ooops! Looks like something went wrong. Please try again."
+			}
 		},
 		"core_services": {
 			"title": {

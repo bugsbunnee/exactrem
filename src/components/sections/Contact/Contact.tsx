@@ -8,22 +8,12 @@ import { Controller, useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 
 import { zodResolver } from '@hookform/resolvers/zod';
-import {
-	Box,
-	Callout,
-	Card,
-	Flex,
-	Text,
-	TextField,
-	Button,
-	Spinner,
-	Separator,
-	TextArea,
-} from '@radix-ui/themes';
+import { Box, Callout, Card, Flex, Text, TextField, Button, Spinner, Separator, TextArea } from '@radix-ui/themes';
 import { EnvelopeClosedIcon, InfoCircledIcon, PersonIcon } from '@radix-ui/react-icons';
 
 import { contactSchema } from '@/components/sections/Contact/schema';
 import { CountryOption } from '@/utils/models';
+import { sendEmail } from '@/utils/email';
 
 import Conditional from '@/components/common/Conditional';
 import ContactSkeleton from '@/components/sections/Contact/ContactSkeleton';
@@ -33,6 +23,7 @@ import PhoneInput from '@/components/ui/PhoneInput';
 import SocialLinks from '@/components/ui/SocialLinks';
 
 import useCountries from '@/hooks/useCountries';
+import useDictionary from '@/hooks/useDictionary';
 
 type ContactData = z.infer<typeof contactSchema>;
 
@@ -40,6 +31,7 @@ const Contact: React.FC = () => {
 	const [error, setError] = useState('');
 	const [selectedCountry, setSelectedCountry] = useState<CountryOption>();
 
+	const { page } = useDictionary();
 	const { countries, isFetching } = useCountries();
 	const {
 		control,
@@ -63,21 +55,25 @@ const Contact: React.FC = () => {
 			if (event) event.preventDefault();
 
 			try {
-				// await sendEmail({
-				// 	first_name: data.firstName,
-				// 	last_name: data.lastName,
-				// 	message: data.message,
-				// 	from_email: data.email,
-				// });
 
-				toast.success("Thank you! We'll be in touch!");
+				await sendEmail({
+					first_name: data.firstName,
+					last_name: data.lastName,
+					message: data.message,
+					company_name: data.companyName,
+					country: data.country,
+					phone_number: data.phoneNumber,
+					from_email: data.email
+				});
+
+				toast.success(page.contact.form.sucess);
 
 				reset();
 			} catch (error) {
-				setError('Ooops! Looks like something went wrong. Please try again.');
+				setError(page.contact.form.error);
 			}
 		},
-		[reset]
+		[reset, page.contact.form]
 	);
 
 	React.useEffect(() => {
@@ -116,7 +112,7 @@ const Contact: React.FC = () => {
 								>
 									<Box className="w-full">
 										<Text size="2" className="font-bold">
-											First Name:
+											{page.contact.form.first_name}
 										</Text>
 
 										<TextField.Root
@@ -141,7 +137,7 @@ const Contact: React.FC = () => {
 
 									<Box className="w-full">
 										<Text size="2" className="font-bold">
-											Last Name:
+											{page.contact.form.last_name}
 										</Text>
 
 										<TextField.Root
@@ -169,7 +165,7 @@ const Contact: React.FC = () => {
 
 								<Box className="w-full">
 									<Text size="2" className="font-bold">
-										Company Name:
+										{page.contact.form.company_name}
 									</Text>
 
 									<TextField.Root
@@ -201,7 +197,7 @@ const Contact: React.FC = () => {
 								>
 									<Box className="w-full">
 										<Text size="2" className="font-bold">
-											Email:
+											{page.contact.form.email}
 										</Text>
 
 										<TextField.Root
@@ -227,7 +223,7 @@ const Contact: React.FC = () => {
 
 									<Box className="w-full">
 										<Text size="2" className="font-bold">
-											Country:
+											{page.contact.form.country}
 										</Text>
 
 										<Box className="mt-4">
@@ -259,7 +255,7 @@ const Contact: React.FC = () => {
 										name="phoneNumber"
 										control={control as any} 
 										selectedCountry={selectedCountry}
-										label="Phone number:"
+										label={page.contact.form.phone_number}
 										onSetError={(errorMessage) => setFieldError('phoneNumber', { message: errorMessage })}
 										onSetValue={(phoneNumber) => setValue('phoneNumber', phoneNumber)}
 										errorMessage={formState.errors.phoneNumber ? formState.errors.phoneNumber.message : undefined}
@@ -267,7 +263,7 @@ const Contact: React.FC = () => {
 
 									<Box className="w-full">
 										<Text size="2" className="font-bold">
-											Message:
+											{page.contact.form.message}
 										</Text>
 
 										<Box className="mt-4">
@@ -275,7 +271,7 @@ const Contact: React.FC = () => {
 												radius="small"
 												mt="1"
 												variant="surface"
-												placeholder="Enter a message"
+												placeholder={page.contact.form.message_placeholder}
 												color="gray"
 												size="3"
 												className="focus:outline-0 text-sm"
@@ -305,7 +301,7 @@ const Contact: React.FC = () => {
 											size="3"
 											disabled={formState.isSubmitting}
 										>
-											Send message
+											{page.contact.form.cta}
 											{formState.isSubmitting && <Spinner />}
 										</Button>
 									</Box>

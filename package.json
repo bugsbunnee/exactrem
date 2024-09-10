@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@formatjs/intl-localematcher": "^0.5.4",
     "@hookform/resolvers": "^3.9.0",
     "@mdx-js/loader": "^3.0.1",

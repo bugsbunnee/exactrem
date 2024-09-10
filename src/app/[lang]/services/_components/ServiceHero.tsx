@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import { Box, Button, Flex, Heading, Text } from '@radix-ui/themes';
+import { Box,  Flex, Heading, Text } from '@radix-ui/themes';
 
 import AppButton from '@/components/ui/Button';
 import useDictionary from '@/hooks/useDictionary';
@@ -15,7 +15,7 @@ const ServiceHero = () => {
 			<Box className="text-center w-full flex justify-center items-center">
 			    <Box className="text-center max-w-[35rem]">
                     <Heading className="leading-12 font-bold dark:text-black" size="9">
-                        {dictionary.page.services.hero.title}<span className='text-orange-600'>{dictionary.page.services.hero.title_one}</span>
+                        {dictionary.page.services.hero.title}<span className='text-orange-600'>{dictionary.page.services.hero.title_span}</span>
                     </Heading>
 
                     <Flex justify='center' align='center'>

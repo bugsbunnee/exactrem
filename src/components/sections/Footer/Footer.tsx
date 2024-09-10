@@ -50,7 +50,7 @@ const Footer = () => {
                         
                         <Box className="my-3">
                             <Link className='underline' href={dictionary.page.footer.links.news.url}>
-                                {dictionary.page.footer.links.news.url}
+                                {dictionary.page.footer.links.news.title}
                             </Link>
                         </Box>
                     </Box>
@@ -66,7 +66,7 @@ const Footer = () => {
 
                         <Box className="my-3">
                             <Link className='underline' href={dictionary.page.footer.links.services.url}>
-                                {dictionary.page.footer.links.services.url}
+                                {dictionary.page.footer.links.services.title}
                             </Link>
                         </Box>
                     </Box>
