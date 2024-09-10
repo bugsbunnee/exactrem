@@ -41,9 +41,9 @@ const LatestNews : React.FC= () => {
                     dots={false}
                     slidesToShow={3}
                 >
-                    {news.map((newsItem) => (
+                    {news.map((newsItem, index) => (
                         <Flex key={newsItem.slug} justify='center' align='center'>
-                            <NewsItem newsItem={newsItem} />
+                            <NewsItem newsItem={newsItem} index={index} />
                         </Flex>
                     ))}
                 </AppSlider>
