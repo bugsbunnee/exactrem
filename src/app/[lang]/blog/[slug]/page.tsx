@@ -91,8 +91,8 @@ const BlogPostPage: React.FC<Props> = ({ params }) => {
                         <Heading size='5' className='mb-6 underline'>More like this</Heading>
 
                         <Grid columns='3' align='start' gap='4'>
-                            {similarPosts.map((blogPost) => (
-                                <BlogPost key={blogPost.slug} blogPost={blogPost} />
+                            {similarPosts.map((blogPost, index) => (
+                                <BlogPost key={blogPost.slug} blogPost={blogPost} index={index} />
                             ))}
                         </Grid>
                     </Box>

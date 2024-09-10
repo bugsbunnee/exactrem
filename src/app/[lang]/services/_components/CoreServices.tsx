@@ -20,7 +20,7 @@ const CoreServices = () => {
 
     const renderImage = useCallback((service: CoreService) => {
         return(
-             <Box className="w-full mb-24">
+             <Box data-aos="zoom-out-down" className="w-full mb-24">
                  <figure className="block overflow-hidden relative w-full">
                      <Image src={service.src} alt={service.title} width={0} height={0} className="w-full h-96 object-cover" />
                  
@@ -34,7 +34,7 @@ const CoreServices = () => {
     
     const renderText = useCallback((service: CoreService) => {
         return(
-             <Box className="w-full relative mb-24">
+             <Box data-aos="zoom-out-up" className="w-full relative mb-24">
                  <Heading>
                      {service.title}
                  </Heading>
@@ -52,7 +52,7 @@ const CoreServices = () => {
         <section className='py-20'>
             <Container>
                 <Flex justify='center' align='center'>
-                    <Heading size='7' className='mb-32 text-center max-w-96'>
+                    <Heading data-aos="zoom-in-down" size='7' className='mb-32 text-center max-w-96'>
                         {dictionary.page.core_services.title.one} <br /> <span className='font-bold text-5xl text-primary'>{dictionary.page.core_services.title.two}</span>
                     </Heading>
                 </Flex>

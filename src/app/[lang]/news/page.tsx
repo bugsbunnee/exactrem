@@ -8,6 +8,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Slider from 'react-slick';
 
+import Button from '@/components/ui/Button';
+
 import { Box, Container, Flex, Grid, Heading, IconButton, Text } from '@radix-ui/themes';
 import { ChevronLeftIcon, ChevronRightIcon } from '@radix-ui/react-icons';
 import { FcEmptyFilter, FcHome } from 'react-icons/fc';
@@ -57,11 +59,9 @@ const NewsPage: React.FC<Props> = ({ searchParams }) => {
                                     </Text>
                                 </Box>
 
-                                <Box className='mt-12'>
-                                    <Link className='bg-slate-900 text-white dark:border dark:border-stone-50 dark:bg-transparent text-sm p-5 rounded-full ' href='/contact'>
-                                        {dictionary.page.news.cta}
-                                    </Link>
-                                </Box>
+                                <Flex className='mt-12' justify='center' align='center'>
+                                    <Button label={dictionary.page.news.cta} route="/newletter" />
+                                </Flex>
                             </Box>
                         </Flex>
 
@@ -167,8 +167,8 @@ const NewsPage: React.FC<Props> = ({ searchParams }) => {
 
                     <Grid columns='3' align='center' justify='center' gap='9'>
                         <Conditional isVisible={!isLoading && allNews.length > 0}>
-                            {allNews.map((newsItem) => (
-                                <NewsItem key={newsItem.slug} newsItem={newsItem} />
+                            {allNews.map((newsItem, index) => (
+                                <NewsItem key={newsItem.slug} newsItem={newsItem} index={index} />
                             ))}
                         </Conditional>
 

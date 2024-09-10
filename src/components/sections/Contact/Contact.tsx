@@ -57,18 +57,27 @@ const Contact: React.FC = () => {
 			try {
 
 				await sendEmail({
+					to_name: "Exactrem official",
 					first_name: data.firstName,
 					last_name: data.lastName,
 					message: data.message,
 					company_name: data.companyName,
 					country: data.country,
 					phone_number: data.phoneNumber,
-					from_email: data.email
+					reply_to: data.email
 				});
 
 				toast.success(page.contact.form.sucess);
 
-				reset();
+				reset({ 
+					firstName: '',
+					lastName: '',
+					companyName: '',
+					country: '',
+					message: '',
+					email: '',
+					phoneNumber: '' 
+				});
 			} catch (error) {
 				setError(page.contact.form.error);
 			}
@@ -91,8 +100,8 @@ const Contact: React.FC = () => {
 
 	return (
 		<Flex flexGrow="1" justify="center">
-			<Box as="div" className='rounded-tl-3xl rounded-br-3xl md:max-w-2xl w-full border-white border-2 p-4'>
-				<Card className="shadow-lg p-8">
+			<Box as="div" className='rounded-tl-2xl rounded-br-2xl md:max-w-2xl w-full border-gray-300 dark:border-white border p-2 shadow-lg ' data-aos="zoom-in-up">
+				<Box className="rounded-tl-2xl rounded-br-2xl border-gray-300 dark:border-white border p-8">
 					<Conditional isVisible={!!error}>
 						<Callout.Root color="red" className="mb-5">
 							<Callout.Icon>
@@ -120,6 +129,7 @@ const Contact: React.FC = () => {
 											radius="small"
 											variant="surface"
 											color="gray"
+											className="focus:border-orange-600"
 											size="3"
 											{...register('firstName')}
 										>
@@ -145,6 +155,7 @@ const Contact: React.FC = () => {
 											radius="small"
 											variant="surface"
 											color="gray"
+											className="focus:border-orange-600"
 											size="3"
 											{...register('lastName')}
 										>
@@ -172,7 +183,7 @@ const Contact: React.FC = () => {
 										mt="3"
 										radius="small"
 										variant="surface"
-										color="gray"
+										className="focus:border-orange-600"
 										size="3"
 										{...register('companyName')}
 									>
@@ -204,9 +215,8 @@ const Contact: React.FC = () => {
 											radius="small"
 											mt="3"
 											variant="surface"
-											color="gray"
+											className="focus:border-orange-600 focus:outline-0 text-sm"
 											size="3"
-											className="focus:outline-0 text-sm"
 											{...register('email')}
 										>
 											<TextField.Slot>
@@ -295,7 +305,7 @@ const Contact: React.FC = () => {
 								>
 									<Box className="min-w-32 max-sm:w-full" my="6">
 										<Button
-											className="w-full bg-slate-800 dark:bg-[#222] text-sm"
+											className="w-full bg-slate-800 dark:bg-[#222] disabled:text-white text-sm"
 											form="contact-form"
 											variant="solid"
 											size="3"
@@ -311,7 +321,7 @@ const Contact: React.FC = () => {
 							</Box>
 						</Flex>
 					</form>
-				</Card>
+				</Box>
 			</Box>
 		</Flex>
 	);

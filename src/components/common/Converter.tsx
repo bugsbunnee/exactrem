@@ -2,28 +2,28 @@
 
 import classNames from 'classnames';
 
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { BoxModelIcon, CaretSortIcon, LightningBoltIcon } from '@radix-ui/react-icons';
 import { Box, Flex, Text, IconButton, Button } from '@radix-ui/themes';
 
 import { Currency, CurrencyOption } from '@/utils/models';
-import { currencies } from '@/utils/constants';
 
 import CurrencySwitcher from '@/components/common/CurrencySwitcher';
+
+import useCurrencies from '@/hooks/useCurrencies';
 import useDictionary from '@/hooks/useDictionary';
 
-const { NGN, USD } = currencies;
-
 const Converter = () => {
-	const [senderInfo, setSenderInfo] = useState<CurrencyOption>(USD);
-	const [receiverInfo, setReceiverInfo] = useState<CurrencyOption>(NGN);
+	const currencies = useCurrencies();
+	const dictionary = useDictionary();
+
+	const [senderInfo, setSenderInfo] = useState<CurrencyOption>(currencies.USD);
+	const [receiverInfo, setReceiverInfo] = useState<CurrencyOption>(currencies.NGN);
 	const [activeCurrency, setActiveCurrency] = useState<Currency>(senderInfo.value);
 	const [isSenderFocused, setSenderFocused] = useState(false);
 	const [isReceiverFocused, setReceiverFocused] = useState(false);
 	const [senderAmount, setSenderAmount] = useState(0);
 	const [receiverAmount, setReceiverAmount] = useState(0);
-
-	const dictionary = useDictionary();
 
 	const handleSenderAmountUpdate = (
 		event: React.ChangeEvent<HTMLInputElement>
@@ -63,6 +63,11 @@ const Converter = () => {
 		});
 	}, []);
 
+	useEffect(() => {
+		setSenderInfo(currencies.USD);
+		setReceiverInfo(currencies.NGN);
+	}, [currencies]);
+
 	const isSenderActive = activeCurrency === senderInfo.value;
 	const isReceiverActive = activeCurrency === receiverInfo.value;
 
@@ -77,27 +82,21 @@ const Converter = () => {
 
 						<CurrencySwitcher
 							defaultValue={senderInfo.value}
-							onSelectCurrency={(currency) =>
-								setSenderInfo(currencies[currency])
-							}
+							onSelectCurrency={(currency) => setSenderInfo(currencies[currency])}
 						/>
 					</Box>
 
 					<input
 						inputMode="numeric"
 						onBlur={() => setSenderFocused(false)}
-						value={
-							isSenderFocused
-								? senderAmount
-								: senderAmount.toLocaleString('en-US')
-						}
+						value={isSenderFocused ? senderAmount : senderAmount.toLocaleString('en-US')}
+						onChange={handleSenderAmountUpdate}
 						className={classNames({
 							'w-full rounded-lg bg-transparent hover:bg-[#eee] text-3xl font-bold h-14 px-3 text-right focus:outline-none focus:border-0':
 								true,
 							'text-blue-700': isSenderActive,
 							'text-slate-900': !isSenderActive,
 						})}
-						onChange={handleSenderAmountUpdate}
 						onFocus={() => {
 							setSenderFocused(true);
 							setActiveCurrency(senderInfo.value);
@@ -112,10 +111,9 @@ const Converter = () => {
 						justify="between"
 					>
 						<IconButton
-							color="blue"
 							radius="full"
 							size="1"
-							className="transition-all duration-500 ease-in-out hover:rotate-180"
+							className="transition-all bg-black duration-500 ease-in-out hover:rotate-180"
 							onClick={() => {
 								const currentSender = senderInfo;
 								const currentReceiver = receiverInfo;
@@ -143,9 +141,8 @@ const Converter = () => {
 
 						<CurrencySwitcher
 							defaultValue={receiverInfo.value}
-							onSelectCurrency={(currency) =>
-								setReceiverInfo(currencies[currency])
-							}
+							onSelectCurrency={(currency) => setReceiverInfo(currencies[currency])}
+
 						/>
 					</Box>
 
@@ -153,6 +150,7 @@ const Converter = () => {
 						inputMode="numeric"
 						onBlur={() => setReceiverFocused(false)}
 						onChange={handleReceiverAmountUpdate}
+						value={isReceiverFocused ? receiverAmount : receiverAmount.toLocaleString('en-US')}
 						className={classNames({
 							'w-full rounded-lg bg-transparent hover:bg-[#eee] dark:hover:bg-[#eee] text-3xl font-bold h-14 px-3 text-right focus:outline-none focus:border-0': true,
 							'text-blue-700': isReceiverActive,
@@ -162,11 +160,6 @@ const Converter = () => {
 							setReceiverFocused(true);
 							setActiveCurrency(receiverInfo.value);
 						}}
-						value={
-							isReceiverFocused
-								? receiverAmount
-								: receiverAmount.toLocaleString('en-US')
-						}
 					/>
 				</Flex>
 			</Box>
@@ -174,7 +167,7 @@ const Converter = () => {
 			<Flex justify="between" align="center" className="my-10">
 				<Flex gap="2" align="center">
 					<LightningBoltIcon
-						className="text-yellow-400"
+						className="text-primary"
 						width="18"
 						height="18"
 					/>
@@ -184,7 +177,7 @@ const Converter = () => {
 					</Text>
 				</Flex>
 
-				<Flex className="bg-yellow-400 p-1 rounded-md" gap="1" align="center">
+				<Flex className="bg-primary text-white dark:bg-black dark:text-white p-1 rounded-md" gap="1" align="center">
 					<BoxModelIcon width="16" height="16" />
 
 					<Text size="1" className="font-semibold uppercase">
@@ -193,7 +186,7 @@ const Converter = () => {
 				</Flex>
 			</Flex>
 
-			<Button color="blue" className="w-full text-sm" size="4">
+			<Button className="bg-primary dark:bg-black w-full text-sm" size="4">
 				{dictionary.page.calculator.cta}
 			</Button>
 		</Box>

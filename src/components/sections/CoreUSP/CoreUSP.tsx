@@ -1,40 +1,63 @@
 'use client';
 
 import React, { useCallback } from 'react';
-import Image from 'next/image';
+import classNames from 'classnames';
 
 import AppButton from '@/components/ui/Button';
+import Lottie from '@/components/ui/Lottie';
 
 import { Box, Container, Flex, Grid, Heading, Text } from '@radix-ui/themes';
 
 import useDictionary from '@/hooks/useDictionary';
+
+import fast from '@/animations/fast.json';
+import money from '@/animations/money.json';
+import safe from '@/animations/safe.json';
+import transparent from '@/animations/transparent.json';
+
 
 interface USP {
     src: string;
     title: string;
     description: string;
     cta: string;
+    color: string;
 }
 
 const CoreUSP = () => {
     const dictionary = useDictionary();
+
+    const getLottie = (key: string) => {
+        switch(key) {
+            case "seamless":
+                return money;
+            case "safe":
+                return safe;
+            case "fast":
+                return fast;
+            case "transparent":
+                return transparent;
+            default:
+                return fast;
+        }
+    }
+
     const renderImage = useCallback((usp: USP) => {
         return(
-             <Box className="w-full mb-24">
-                 <figure className="block overflow-hidden relative w-full">
-                     <Image src={usp.src} alt={usp.title} width={0} height={0} className="w-full h-96 object-cover" />
-                 
-                     <figcaption className="absolute bottom-6 right-6 leading-9 text-lg text-white font-semibold">
-                         {usp.title}
-                     </figcaption>
-                 </figure>
-             </Box>
+             <Flex 
+                data-aos="zoom-out-right" 
+                justify='center'
+                align='center'
+                className={`w-full mb-24 h-full ${usp.color + '/10'} rounded-md`}
+            >
+                 <Lottie animationData={getLottie(usp.src)} width={300} height={300} />
+             </Flex>
         );
      }, []);
     
     const renderText = useCallback((usp: USP) => {
         return(
-             <Box className="w-full relative mb-24">
+             <Box className="w-full relative mb-24" data-aos="zoom-out-left">
                  <Heading>
                      {usp.title}
                  </Heading>

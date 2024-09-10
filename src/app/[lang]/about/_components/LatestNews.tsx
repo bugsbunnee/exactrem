@@ -23,9 +23,9 @@ const LatestNews : React.FC= () => {
     return ( 
         <section className='p-20'>
             <Container>
-                <Heading className='text-center' size='8'>{dictionary.page.latest_news.title}</Heading>
+                <Heading data-aos="zoom-out-up" className='text-center' size='8'>{dictionary.page.latest_news.title}</Heading>
 
-                <Flex justify='center' align='center' className='mb-14 mt-5'>
+                <Flex data-aos="zoom-out-down" justify='center' align='center' className='mb-14 mt-5'>
                     <Text as='p' className='text-center max-w-[40rem]' size='3'>
                         {dictionary.page.latest_news.description}
                     </Text>
@@ -33,6 +33,7 @@ const LatestNews : React.FC= () => {
 
                 <AppSlider 
                     ref={sliderRef}
+                    adaptiveheight
                     autoplay
                     autoplaySpeed={3000}
                     arrows={false}

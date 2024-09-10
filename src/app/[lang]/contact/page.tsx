@@ -22,7 +22,7 @@ const ContactPage: React.FC = () => {
             <section className='p-16'>
                 <Container>
                     <Grid columns='2' gap='4'>
-                        <Box>
+                        <Box data-aos="zoom-in-up">
                             <Box className='max-w-96'>
                                 <Heading size='9' className='leading-12'>{page.contact.title}</Heading>
 

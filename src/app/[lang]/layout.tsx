@@ -6,11 +6,14 @@ import { Toaster } from 'react-hot-toast';
 import { i18n, Locale } from '../../../i18n.config';
 import { getDictionary } from '@/utils/dictionaries';
 
+import Aos from '@/components/common/Aos';
+
 import DictionaryProvider from '@/providers/DictionaryProvider';
 import ThemeProvider from '@/providers/ThemeProvider';
 import QueryClientProvider from '@/providers/QueryClientProvider';
 
 import '@radix-ui/themes/styles.css';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
 import './theme-config.css';
 import './globals.css';
 
@@ -39,6 +42,7 @@ async function RootLayout({ children, params }: Props) {
 
 			<body className={josefinSans.className}>
 				<Toaster position="bottom-center" />
+				<Aos />
 
 				<QueryClientProvider>
 					<DictionaryProvider dictionary={dictionary}>

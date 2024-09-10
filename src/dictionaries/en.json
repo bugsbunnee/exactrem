@@ -14,14 +14,14 @@
 			"cta_two": "Our investor",
 			"about_content": {
 				"mission": {
-					"src": "/hero_left.png",
+					"src": "/mission.jpg",
 					"title": "Our mission",
 					"description": "To provide seamless international money transfer services by harnessing technology and strategic partnership to guarantee accessibility, security and efficiency. "
 				},
 				"vision": {
-					"src": "/hero_left.png",
+					"src": "/vision.jpg",
 					"title": "Our vision",
-					"description": "To achieve global recognition as a leading IMTO or MSB, renowned for providing reliable, fast, and customer-centric money transfer solutions at low cost. "
+					"description": "To achieve global recognition as a Leading IMTO and MSB, renowned for providing reliable, fast, and customer-centric money transfer solutions at low cost. "
 				}
 			}
 		},
@@ -38,7 +38,7 @@
 		},
 		"calculator": {
 			"title": "Get started with Exactrem today",
-			"description": "oin the global community of users who trust Exactrem for their international money transfer needs. Sign up now and discover how effortless and secure sending money can be with Exactrem. Your money, delivered exactly right.",
+			"description": "Join the global community of users who trust Exactrem for their international money transfer needs. Sign up now and discover how effortless and secure sending money can be with Exactrem. Your money, delivered exactly right.",
 			"cta": "Get started",
 			"arrives_in_minutes": "Arrives in minutes",
 			"sending_from": "Sending from",
@@ -46,7 +46,7 @@
 			"free": "x2 Free"
 		},
 		"contact": {
-			"title": "Contact our sales team",
+			"title": "Contact our team",
 			"description_one": "With Exactrem you can send international transfers, or use business tools designed to grow your business.",
 			"description_two": "Please complete the form on the right to connect with a member of our team.",
 			"form": {
@@ -59,7 +59,7 @@
 				"message": "Message",
 				"message_placeholder": "Enter a message",
 				"phone_number": "Phone number",
-				"sucess": "Thank you! We'll be in touch!",
+				"sucess": "Thank you! A member of out team will reach out to you shortly!",
 				"error": "Ooops! Looks like something went wrong. Please try again."
 			}
 		},
@@ -70,26 +70,32 @@
 			},
 			"services": {
 				"p2p": {
-					"src": "/hero_left.png",
+					"src": "/p2p.jpg",
 					"title": "Individual to Individual (P2P)",
 					"description": "Experience effortless international transfers with Exactrem. Our user-friendly platform is designed for simplicity, making it easy to send money anywhere in the world with just a few clicks. Enjoy a smooth and intuitive process every time you use our service. ",
 					"cta": "Get started"
 				},
 				"p2b": {
-					"src": "/hero_left.png",
+					"src": "/p2b.jpg",
 					"title": "Individual to Business (P2B)",
 					"description": "Say goodbye to delays and hello to speed. At Exactrem, we prioritize quick transactions so your money arrivesat its destination in seconds. Whether it's a personal or business transfer, our advanced technology ensures your funds move swiftly and efficiently. ",
 					"cta": "Get started"
 				},
 				"b2b": {
-					"src": "/hero_left.png",
+					"src": "/b2b.jpg",
 					"title": "Business to Business (B2B)",
 					"description": "Your security is our top priority. Exactrem uses cutting-edge encryption and robust security measures to protect your personal and financial information. Trust that your transactions are safeguarded with the highest standards of security, ensuring peace of mind with every transfer. ",
 					"cta": "Get started"
 				},
 				"b2p": {
-					"src": "/hero_left.png",
+					"src": "/b2p.jpg",
 					"title": "Business to Individual (B2P)",
+					"description": "Enjoy clear and straightforward pricing with no hidden fees. Exactrem provides a transparent fee structure so you know exactly what you’re paying and how much your recipient will receive. Simplify your financial management with our easy-to-understand pricing model. ",
+					"cta": "Get started"
+				},
+				"cfo": {
+					"src": "/cfo.jpg",
+					"title": "Chief Financial Officers (CFO)",
 					"description": "Enjoy clear and straightforward pricing with no hidden fees. Exactrem provides a transparent fee structure so you know exactly what you’re paying and how much your recipient will receive. Simplify your financial management with our easy-to-understand pricing model. ",
 					"cta": "Get started"
 				}
@@ -122,25 +128,29 @@
 			},
 			"usps": {
 				"seamless_transactions": {
-					"src": "/hero_left.png",
+					"color": "bg-pink-500",
+					"src": "seamless",
 					"title": "Seamless Transactions",
 					"description": "Experience effortless international transfers with Exactrem. Our user-friendly platform is designed for simplicity, making it easy to send money anywhere in the world with just a few clicks. Enjoy a smooth and intuitive process every time you use our service. ",
 					"cta": "Get started"
 				},
 				"lightning_fast_transfers": {
-					"src": "/hero_left.png",
+					"color": "bg-orange-500",
+					"src": "fast",
 					"title": "Lightning-Fast Transfers",
 					"description": "Say goodbye to delays and hello to speed. At Exactrem, we prioritize quick transactions so your money arrivesat its destination in seconds. Whether it's a personal or business transfer, our advanced technology ensures your funds move swiftly and efficiently. ",
 					"cta": "Get started"
 				},
 				"top_tier_security": {
-					"src": "/hero_left.png",
+					"color": "bg-stone-500",
+					"src": "safe",
 					"title": "Top-Tier Security",
 					"description": "Your security is our top priority. Exactrem uses cutting-edge encryption and robust security measures to protect your personal and financial information. Trust that your transactions are safeguarded with the highest standards of security, ensuring peace of mind with every transfer. ",
 					"cta": "Get started"
 				},
 				"transparent_pricing": {
-					"src": "/hero_left.png",
+					"color": "bg-green-500",
+					"src": "transparent",
 					"title": "Transparent Pricing",
 					"description": "Enjoy clear and straightforward pricing with no hidden fees. Exactrem provides a transparent fee structure so you know exactly what you’re paying and how much your recipient will receive. Simplify your financial management with our easy-to-understand pricing model. ",
 					"cta": "Get started"
@@ -153,8 +163,10 @@
 			"cta": "Join waitlist"
 		},
 		"customer": {
-			"left_caption": "Sweet POD",
-			"right_caption": "E25 Dresses",
+			"left_url": "/hero_left.jpg",
+			"left_caption": "Fast & Easy Transfers",
+			"right_url": "/hero_right.jpg",
+			"right_caption": "Safe & Reliable",
 			"description": " Send money home to loved ones, sell online as a small business, process global payments as an enterprise, build financial products as a startup. With Exactrem, the question isn't what's possible—it is: what isn't?"
 		},
 		"faqs": {
@@ -234,7 +246,7 @@
 		"news": {
 			"title": "Newsroom",
 			"description": "If you’re in the mood for some reading, you found the right place. Dive right into our latest stories, or explore the topics you’re most interested in.",
-			"cta": "Join waitlist",
+			"cta": "Join our newsletter list",
 			"read_more": "Read more",
 			"empty_content": {
 				"title": "No news found",
@@ -310,7 +322,7 @@
             "email": "Email:",
 			"phone_number": "Phone number:",
             "promotions_message": "I agree to receive news, offers, and promotional materials from Exactrem.",
-			"success": "Account created successfully!"
+			"success": "Success! A member of out team will reach out to you shortly"
 		},
 		"services": {
 			"hero": {
@@ -327,22 +339,25 @@
 			"heading": "Reliable transfers every time you send money back home",
 			"cards": {
 				"one": {
+					"url": "/services",
 					"image": "safe",
 					"title": "Safe and Secure",
 					"description": "End-to-end encryption protects our customers’ money and data safeguard transfers.",
-					"cta": "Contact sales"
+					"cta": "Learn more"
 				},
 				"two": {
+					"url": "/services",
 					"image": "fast",
 					"title": "Fast and Reliable",
 					"description": "We are closely regulated by FINTRAC and Canada law, working closely with international law enforcement to spot and prevent money laundering.",
-					"cta": "Contact sales"
+					"cta": "Learn more"
 				},
 				"three": {
+					"url": "/contact",
 					"image": "support",
 					"title": "24/7 Customer Support",
 					"description": "And if anything ever does go wrong, our Customer Support team is friendly, professional, and always quick to respond",
-					"cta": "Contact sales"
+					"cta": "Contact our support"
 				}
 			}
 		}

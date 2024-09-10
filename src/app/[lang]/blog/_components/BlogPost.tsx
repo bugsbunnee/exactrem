@@ -8,12 +8,13 @@ import { Box, Flex, Heading, Text } from '@radix-ui/themes';
 import { formatDate, getReadingTime } from '@/utils/lib';
 
 interface Props {
-    blogPost: Post
+    blogPost: Post;
+    index: number;
 }
 
-const BlogPost: React.FC<Props> = ({ blogPost }) => {
+const BlogPost: React.FC<Props> = ({ blogPost, index }) => {
     return (
-        <Flex className="max-w-80" align='center' justify='center'>
+        <Flex data-aos="flip-right" data-aos-delay={(index * 500).toString()} className="max-w-80" align='center' justify='center'>
             <Box className="max-w-80">
                 <Image
                     src={blogPost.src}

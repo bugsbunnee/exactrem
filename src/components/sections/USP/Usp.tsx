@@ -25,14 +25,14 @@ const Usp = () => {
 
 	return (
 		<section className="p-16">
-			<Heading className="text-center mb-20" size="8">
+			<Heading className="text-center mb-20" size="8" data-aos="zoom-in">
 				{dictionary.page.usp.heading}
 			</Heading>
 
 			<Container>
 				<Grid columns="3" justify="center" align="center" gap="8">
-					{Object.values(dictionary.page.usp.cards).map((card) => (
-						<Box className="transition-all duration-300 hover:shadow-xl hover:scale-105 p-10 rounded-sm bg-stone-50 dark:bg-transparent dark:border-stone-50 dark:border" key={card.description}>
+					{Object.values(dictionary.page.usp.cards).map((card, index) => (
+						<Box data-aos="flip-right" data-aos-delay={(index * 500).toString()} className="transition-all duration-300 hover:shadow-xl hover:scale-105 p-10 rounded-sm bg-stone-50 dark:bg-transparent dark:border-stone-50 dark:border" key={card.description}>
 							<Flex align="center" justify="center">
 								<Box className="w-20 h-20 flex items-center justify-center mb-8 rounded-3xl bg-stone-100 dark:bg-[#222]">
 									{getMatchingIcon(card.image)}
@@ -53,7 +53,7 @@ const Usp = () => {
 							</Box>
 
 							<Box mt="5" className="flex items-center justify-center">
-								<AppButton label={card.cta} route='/register' />
+								<AppButton label={card.cta} route={card.url} />
 							</Box>
 						</Box>
 					))}

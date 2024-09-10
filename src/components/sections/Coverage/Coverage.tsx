@@ -1,25 +1,24 @@
 import React from 'react';
 import Image from 'next/image';
 
-import { currencies } from '@/utils/constants';
 import { Box, Container, Flex, Grid, Heading, Text } from '@radix-ui/themes';
 
-import AppButton from '@/components/ui/Button';
-
 import useDictionary from '@/hooks/useDictionary';
+import useCurrencies from '@/hooks/useCurrencies';
 
 const Coverage = () => {
+	const currencies = useCurrencies();
 	const dictionary = useDictionary();
 
 	return (
 		<section className="p-20 my-10">
 			<Container>
-				<Heading className="text-center mb-10" size="8">
+				<Heading className="text-center mb-10" size="8" data-aos="fade-left" >
 					{dictionary.page.coverage.title} 
 				</Heading>
 
 				<Flex justify='center'>
-					<Text className="text-center max-w-[40rem]">
+					<Text className="text-center max-w-[40rem]" data-aos="fade-right" >
 						{dictionary.page.coverage.description} 
 					</Text>
 				</Flex>
@@ -31,10 +30,12 @@ const Coverage = () => {
 					align="center"
 					justify="center"
 				>
-					{Object.values(currencies).map((currency) => (
+					{Object.values(currencies).map((currency, index) => (
 						<Box
 							className="flex items-center justify-center"
 							key={currency.value}
+							data-aos="flip-up" 
+							data-aos-delay={index * 300} 
 						>
 							<Box className="bg-stone-50 dark:bg-[#222] w-52 h-52 rounded-sm flex items-center justify-center">
 								<Box className="text-center">
@@ -62,10 +63,6 @@ const Coverage = () => {
 						</Box>
 					))}
 				</Grid>
-
-				<Flex justify='center' align='center' className='mt-10'>
-					<AppButton label={dictionary.page.coverage.cta} route='/register' />
-				</Flex>
 			</Container>
 		</section>
 	);

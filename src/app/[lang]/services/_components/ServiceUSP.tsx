@@ -33,17 +33,17 @@ const ServiceUSP = () => {
             <Container>
                 <Flex align='center' gap='8' justify='center'>
                     <Box>
-                        <Heading size='9' className='text-primary'>{dictionary.page.core_services.usp_overview.title}</Heading>
+                        <Heading data-aos="fade-up" size='9' className='text-primary'>{dictionary.page.core_services.usp_overview.title}</Heading>
 
-                        <Flex align='center' className='mt-10 mb-20' gap='8' justify='center' >
+                        <Flex data-aos="fade-down" align='center' className='mt-10 mb-20' gap='8' justify='center' >
                             <Text as='div' size='5' className='text-white text-center max-w-96 dark:text-black '>
                                 {dictionary.page.core_services.usp_overview.description_one}<Text as='div' className='bg-primary dark:text-white rounded-full inline-block px-2 py-1' size='3'>{dictionary.page.core_services.usp_overview.description_two}</Text> {dictionary.page.core_services.usp_overview.description_three}
                             </Text>
                         </Flex>
 
                         <Flex align='center' gap='8' justify='center' >
-                            {Object.values(dictionary.page.core_services.usps).map((usp) => (
-                                <Box key={usp.key}>
+                            {Object.values(dictionary.page.core_services.usps).map((usp, index) => (
+                                <Box data-aos="fade-down" data-aos-delay={(index * 500).toString()} key={usp.key}>
                                     <Flex align='center' gap='8' justify='center' >
                                         {getIconFromKey(usp.key)}
                                     </Flex>

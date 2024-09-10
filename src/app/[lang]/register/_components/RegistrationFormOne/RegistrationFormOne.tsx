@@ -91,42 +91,8 @@ const RegistrationFormOne: React.FC<Props> = ({ onInitializeUser }) => {
                         <Heading size="7">{dictionary.page.register_one.title}</Heading>
                         <Text as='p' className="my-4 text-gray-500" size="2">{dictionary.page.register_one.description}</Text>
 
-                        <Box className="w-full mt-2">
-                            <Text size="2">
-                                {dictionary.page.register_one.country}
-                            </Text>
-
-                            <Box className="mt-2">
-                                <Controller
-                                    name="country"
-                                    control={control}
-                                    render={({ field }) => (
-                                        <Picker {...field} options={countries} />
-                                    )}
-                                />
-                            </Box>
-
-                            {formState.errors.country && (
-                                <ErrorMessage>
-                                    {formState.errors.country.message}
-                                </ErrorMessage>
-                            )}
-                        </Box>
-
-                        <Box className="w-full mt-5">
-                            <PhoneInput
-                                name="phoneNumber"
-                                control={control as any} 
-                                selectedCountry={selectedCountry}
-                                label={dictionary.page.register_one.phone_number}
-                                onSetError={(errorMessage?: string) => setFieldError('phoneNumber', { message: errorMessage })}
-                                onSetValue={(phoneNumber: string) => setValue('phoneNumber', phoneNumber)}
-                                errorMessage={formState.errors.phoneNumber ? formState.errors.phoneNumber.message : undefined}
-                            />
-                        </Box>
-
-                        <Box className='mt-4'>
-                            <Text size="2">
+                        <Box className='mt-4' data-aos="fade-left">
+                            <Text size="2" className="font-bold">
                                 {dictionary.page.register_one.select_account_type}
                             </Text>
 
@@ -179,9 +145,44 @@ const RegistrationFormOne: React.FC<Props> = ({ onInitializeUser }) => {
                                 </ErrorMessage>
                             )}
                         </Box>
+
+                        <Box className="w-full mt-5" data-aos="fade-right">
+                            <Text size="2" className="font-bold">
+                                {dictionary.page.register_one.country}
+                            </Text>
+
+                            <Box className="mt-2">
+                                <Controller
+                                    name="country"
+                                    control={control}
+                                    render={({ field }) => (
+                                        <Picker {...field} options={countries} />
+                                    )}
+                                />
+                            </Box>
+
+                            {formState.errors.country && (
+                                <ErrorMessage>
+                                    {formState.errors.country.message}
+                                </ErrorMessage>
+                            )}
+                        </Box>
+
+                        <Box className="w-full mt-5" data-aos="fade-left">
+                            <PhoneInput
+                                name="phoneNumber"
+                                control={control as any} 
+                                selectedCountry={selectedCountry}
+                                label={dictionary.page.register_one.phone_number}
+                                onSetError={(errorMessage?: string) => setFieldError('phoneNumber', { message: errorMessage })}
+                                onSetValue={(phoneNumber: string) => setValue('phoneNumber', phoneNumber)}
+                                errorMessage={formState.errors.phoneNumber ? formState.errors.phoneNumber.message : undefined}
+                            />
+                        </Box>
                  
                         <Button
-                            className="w-full mt-9 text-sm bg-slate-800 disabled:bg-gray-600 disabled:text-white dark:bg-[#222]"
+                            data-aos="zoom-in-up"
+                            className="w-full mt-9 text-sm bg-primary disabled:bg-gray-600 disabled:text-white dark:bg-[#222]"
                             form="registration-one-form"
                             variant="solid"
                             size="4"

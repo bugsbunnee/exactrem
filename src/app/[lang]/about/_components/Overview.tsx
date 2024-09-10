@@ -5,6 +5,7 @@ import CountUp from 'react-countup';
 
 import { Box, Container, Flex, Grid, Text } from '@radix-ui/themes';
 
+import Conditional from '@/components/common/Conditional';
 import useDictionary from '@/hooks/useDictionary';
 
 const Overview: React.FC = () => {
@@ -39,34 +40,36 @@ const Overview: React.FC = () => {
     ];
 
 	return (
-		<section className="p-20">
-			<Container>
-				<Grid
-					columns="4"
-					gap="1"
-					align="center"
-					justify="center"
-				>
-					{overviewData.map((item) => (
-                        <Flex align='center' key={item.label} justify='center'>
-                            <Box className='text-center'>
-                                <CountUp
-                                    className='text-4xl font-bold'
-                                    start={item.start}
-                                    end={item.end}
-                                    prefix={item.prefix}
-                                    duration={item.duration}
-                                    separator=','
-                                    suffix='+'
-                                />
+        <Conditional isVisible={false}>
+            <section className="p-20">
+                <Container>
+                    <Grid
+                        columns="4"
+                        gap="1"
+                        align="center"
+                        justify="center"
+                    >
+                        {overviewData.map((item) => (
+                            <Flex align='center' key={item.label} justify='center'>
+                                <Box className='text-center'>
+                                    <CountUp
+                                        className='text-4xl font-bold'
+                                        start={item.start}
+                                        end={item.end}
+                                        prefix={item.prefix}
+                                        duration={item.duration}
+                                        separator=','
+                                        suffix='+'
+                                    />
 
-                                <Text as='p' className='mt-3' size='4'>{item.label}</Text>
-                            </Box>
-                        </Flex>
-                    ))}
-				</Grid>
-			</Container>
-		</section>
+                                    <Text as='p' className='mt-3' size='4'>{item.label}</Text>
+                                </Box>
+                            </Flex>
+                        ))}
+                    </Grid>
+                </Container>
+            </section>
+        </Conditional>
 	);
 };
 

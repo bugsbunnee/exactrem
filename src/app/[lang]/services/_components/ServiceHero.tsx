@@ -14,11 +14,11 @@ const ServiceHero = () => {
 		<section className="p-20 bg-orange-50 dark:bg-white">
 			<Box className="text-center w-full flex justify-center items-center">
 			    <Box className="text-center max-w-[35rem]">
-                    <Heading className="leading-12 font-bold dark:text-black" size="9">
+                    <Heading data-aos="fade-up" className="leading-12 font-bold dark:text-black" size="9">
                         {dictionary.page.services.hero.title}<span className='text-orange-600'>{dictionary.page.services.hero.title_span}</span>
                     </Heading>
 
-                    <Flex justify='center' align='center'>
+                    <Flex data-aos="fade-down" justify='center' align='center'>
                         <Text as="p" className="my-12 leading-7 max-w-62 dark:text-black" size="6">
 							{dictionary.page.services.hero.description}
                         </Text>
@@ -26,7 +26,7 @@ const ServiceHero = () => {
 			    </Box>
 			</Box>
 
-			<Flex justify="center" align="center" gap="4">
+			<Flex data-aos="zoom-in-up" data-aos-delay="500" justify="center" align="center" gap="4">
 				<AppButton label={dictionary.page.services.hero.cta} route='/register'  />
 			</Flex>
 		</section>

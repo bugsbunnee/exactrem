@@ -89,8 +89,8 @@ const NewsPostPage: React.FC<Props> = ({ params }) => {
                         <Heading size='5' className='mb-6 underline'>More like this</Heading>
 
                         <Grid columns='3' align='start' gap='4'>
-                            {similarNews.map((newsItem) => (
-                                <NewsItem key={newsItem.slug} newsItem={newsItem} />
+                            {similarNews.map((newsItem, index) => (
+                                <NewsItem key={newsItem.slug} newsItem={newsItem} index={index} />
                             ))}
                         </Grid>
                     </Box>

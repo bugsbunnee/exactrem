@@ -1,56 +1,12 @@
 "use client";
 
-import { Currency, CurrencyOption, NavItem } from '@/utils/models';
-import {
-	FcBriefcase,
-	FcBusiness,
-	FcBusinessman,
-	FcPortraitMode,
-} from 'react-icons/fc';
+import { NavItem } from '@/utils/models';
+import { FcBriefcase, FcBusiness, FcBusinessman, FcPortraitMode } from 'react-icons/fc';
 
 export const ACCOUNT_TYPES = {
 	INDIVIDUAL: 'Individual account',
 	CORPORATE: 'Corporate account',
 } as const;
-
-export const currencies: Record<Currency, CurrencyOption> = {
-	CAD: {
-		src: 'https://flagsapi.com/CA/shiny/64.png',
-		label: 'Canadian Dollar',
-		value: 'CAD',
-		rates: {
-			USD: 100,
-			NGN: 1000,
-		},
-	},
-	NGN: {
-		src: 'https://flagsapi.com/NG/shiny/64.png',
-		label: 'Nigerian Naira',
-		value: 'NGN',
-		rates: {
-			USD: 0.05,
-			CAD: 800,
-		},
-	},
-	USD: {
-		src: 'https://flagsapi.com/US/shiny/64.png',
-		label: 'US Dollar',
-		value: 'USD',
-		rates: {
-			NGN: 1597.5,
-			CAD: 100,
-		},
-	},
-	EUR: {
-		src: 'https://flagsapi.com/DE/shiny/64.png',
-		label: 'Euro',
-		value: 'EUR',
-		rates: {
-			USD: 100,
-			NGN: 1000,
-		},
-	},
-};
 
 export const navigationItems: NavItem[] = [
 	{

@@ -62,7 +62,7 @@ const Blog: React.FC<Props> = ({ searchParams }) => {
 
                         <Conditional isVisible={!isLoading}>
                             {hero ? (
-                                <Flex align='center' className='p-10 mt-16 bg-stone-50 dark:bg-[#222] border-stone-200 border rounded-sm' gap='7'>
+                                <Flex data-aos="zoom-in" align='center' className='p-10 mt-16 bg-stone-50 dark:bg-[#222] border-stone-200 border rounded-sm' gap='7'>
                                     <figure className='relative w-[30rem] h-[20rem]'>
                                         <Image
                                             src={hero.src}
@@ -143,8 +143,8 @@ const Blog: React.FC<Props> = ({ searchParams }) => {
 
                     <Grid columns='3' align='center' justify='center' gap='9'>
                         <Conditional isVisible={!isLoading && allBlogPosts.length > 0}>
-                            {allBlogPosts.map((post) => (
-                                <BlogPost key={post.slug} blogPost={post} />
+                            {allBlogPosts.map((post, index) => (
+                                <BlogPost key={post.slug} blogPost={post} index={index} />
                             ))}
                         </Conditional>
 

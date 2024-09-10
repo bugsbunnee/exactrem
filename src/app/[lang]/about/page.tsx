@@ -7,6 +7,7 @@ import LatestNews from './_components/LatestNews';
 import NavBar from '@/components/sections/NavBar/NavBar';
 import Overview from './_components/Overview';
 import Partners from '@/components/sections/Partners/Partners';
+import SectionDivider from '@/components/common/SectionDivider';
 import Values from './_components/Offering';
 
 const About = () => {
@@ -23,6 +24,8 @@ const About = () => {
             <Partners displayHeading={false} />
 
             <Overview />
+
+			<SectionDivider />
 
             <LatestNews />
 

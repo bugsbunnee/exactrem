@@ -5,21 +5,19 @@ import Conditional from '@/components/common/Conditional';
 import Link from 'next/link';
 
 import { Box, Flex, Heading, Text } from '@radix-ui/themes';
-import { useRouter } from 'next/navigation';
 
 import useDictionary from '@/hooks/useDictionary';
 
 const Hero = () => {
 	const dictionary = useDictionary();
-	const router = useRouter();
 
 	return (
 		<section className="p-20">
 			<Box className="text-center">
-				<Heading className="leading-10 text-orange-600 font-bold" size="9">
+				<Heading data-aos="fade-down" className="leading-10 text-orange-600 font-bold" size="9">
 					{dictionary.page.hero.heading_one}
 				</Heading>
-				<Heading className="font-bold mt-5" size="9">
+				<Heading data-aos="fade-up" className="font-bold mt-5" size="9">
 					{dictionary.page.hero.heading_two}
 				</Heading>
 			</Box>
@@ -29,6 +27,8 @@ const Hero = () => {
 				justify="center"
 				align="center"
 				className="mt-10"
+				data-aos-delay="500"
+				data-aos="zoom-in"
 			>
 				<Button label={dictionary.page.hero.cta} route='/register' />
 

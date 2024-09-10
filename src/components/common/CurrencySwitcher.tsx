@@ -5,14 +5,16 @@ import React from 'react';
 
 import { Box, Flex, Select, Text } from '@radix-ui/themes';
 import { Currency } from '@/utils/models';
-import { currencies } from '@/utils/constants';
 
+import useCurrencies from '@/hooks/useCurrencies';
 interface Props {
 	defaultValue: Currency;
 	onSelectCurrency: (currency: Currency) => void;
 }
 
 const CurrencySwitcher: React.FC<Props> = ({ defaultValue, onSelectCurrency }) => {
+	const currencies = useCurrencies();
+
 	return (
 		<Flex direction="column" maxWidth="10rem">
 			<Select.Root

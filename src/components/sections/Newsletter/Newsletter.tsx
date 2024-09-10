@@ -50,7 +50,7 @@ const Newsletter: React.FC = () => {
 	return (
 		<Flex flexGrow="1" justify="center">
 			<Container>
-				<Flex justify='center' align='center'>
+				<Flex data-aos="zoom-in" justify='center' align='center'>
 					<form className='max-w-[40rem] rounded-sm bg-black dark:bg-white p-12' id="newsletter-form" onSubmit={handleSubmit(handleSubscribeToNewsletter)}>
 						<Heading size='7' className='text-white dark:text-black text-center'>{dictionary.page.newsletter.title}</Heading>
 

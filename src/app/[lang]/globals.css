@@ -22,6 +22,10 @@ body {
 	box-sizing: border-box;
 }
 
+.slick-list {
+	height: 100% !important;
+}
+
 @layer utilities {
 	.text-primary {
 		color: #dd4f05;

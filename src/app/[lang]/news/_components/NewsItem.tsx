@@ -8,11 +8,12 @@ import { formatDate, getReadingTime, summarize } from '@/utils/lib';
 
 interface Props {
     newsItem: News;
+    index: number;
 }
 
-const NewsItem: React.FC<Props> = ({ newsItem }) => {
+const NewsItem: React.FC<Props> = ({ newsItem, index }) => {
     return (
-        <Flex className="max-w-80" align='center' justify='center'>
+        <Flex data-aos="flip-left" data-aos-delay={(index * 500).toString()} className="max-w-80 min-h-full" align='center' justify='center'>
             <Box className="max-w-80">
                 <Image
                     src={newsItem.src}
@@ -37,7 +38,7 @@ const NewsItem: React.FC<Props> = ({ newsItem }) => {
                     </Heading>
 
                     <Text as='p' className='tracking-wide min-h-24 text-gray-500 dark:text-white' size='3'>
-                        {summarize(newsItem.description, 130)}
+                        {summarize(newsItem.description, 100)}
                     </Text>
 
                     <Box className='mt-9'>
