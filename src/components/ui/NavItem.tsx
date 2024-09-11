@@ -11,6 +11,7 @@ import { NavItem as NavItemModel } from '@/utils/models';
 import { Locale } from '../../../i18n.config';
 
 import Conditional from '@/components/common/Conditional';
+import Link from 'next/link';
 
 const NavItem: React.FC<NavItemModel> = ({ label, options, route }) => {
 	const [isOpen, setOpen] = useState(false);
@@ -19,25 +20,27 @@ const NavItem: React.FC<NavItemModel> = ({ label, options, route }) => {
 	const router = useRouter();
 	const params = useParams<{ lang: Locale; }>();
 
-	const handleClick = useCallback(() => {
-		router.push(`/${params.lang}/${route}`);
+	const handleClick = useCallback((optionRoute?: string) => {
+		router.push(`/${params.lang}/${optionRoute ?? route}`);
 	}, [route, router, params.lang]);
 
 	const className = useMemo(() => {
-		const isRouteMatch = `/${params.lang}/${route}` === pathname;
+		const isRouteMatch = 
+					(options.length > 0 && options.find((option) => `/${params.lang}/${option.route}` === pathname) )
+					|| `/${params.lang}/${route}` === pathname
 
 		return classNames({
-			"cursor-pointer active:bg-stone-50 active:outline-0 hover:bg-stone-50 dark:hover:text-black font-medium": true,
-			"bg-stone-50 text-black border border-slate-800 dark:border-stone-100": isRouteMatch,
-			"dark:text-white ": !isRouteMatch
+			"cursor-pointer active:bg-stone-50 active:outline-0 hover:bg-primary hover:text-white font-medium px-2 rounded-sm text-sm": true,
+			"text-white bg-primary dark:border-stone-100": isRouteMatch,
+			"dark:text-white text-black": !isRouteMatch
 		});
-	}, [params.lang, pathname, route]);
+	}, [params.lang, pathname, options, route]);
 
 	if (options.length === 0) {
 		return (
-			<Button variant="ghost" onClick={handleClick} className={className}>
+			<Link href={route} className={className}>
 				{label}
-			</Button>
+			</Link>
 		);
 	}
 
@@ -55,7 +58,7 @@ const NavItem: React.FC<NavItemModel> = ({ label, options, route }) => {
 			>
 				{options.map((option) => (
 					<React.Fragment key={option.title}>
-						<DropdownMenu.Item onSelect={handleClick} className="p-5 min-h-24 mb-3 hover:bg-transparent cursor-pointer">
+						<DropdownMenu.Item onSelect={() => handleClick(option.route)} className="p-5 min-h-24 mb-3 hover:bg-transparent cursor-pointer">
 							<Flex gap="4" align="start" justify="start">
 								<Flex
 									align="center"
@@ -69,14 +72,10 @@ const NavItem: React.FC<NavItemModel> = ({ label, options, route }) => {
 								</Flex>
 
 								<Box className="flex-1">
-									<Box>
-										<Text
-											color="gray"
-											className="mb-5 font-semibold text-black dark:text-white hover:text-green-700"
-											size="2"
-										>
+									<Box className="mb-1">
+										<Link href={option.route ?? route} className="font-semibold text-black dark:text-white hover:text-green-700 hover:underline">
 											{option.title}
-										</Text>
+										</Link>
 									</Box>
 
 									<Text className="text-gray-600 dark:text-gray-100" size="1">

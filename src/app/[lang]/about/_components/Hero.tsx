@@ -13,7 +13,7 @@ const AboutHero = () => {
 		<section className="p-20">
 			<Box className="text-center w-full flex justify-center items-center">
 			    <Box className="text-center max-w-[45rem]">
-                    <Heading data-aos="fade-down" className="leading-10 font-bold" size="9">
+                    <Heading data-aos="fade-down" className="leading-12 font-bold" size="9">
                         {dictionary.page.about.title.one} <span className='text-orange-600'>{dictionary.page.about.title.two}</span>
                     </Heading>
 
@@ -25,7 +25,7 @@ const AboutHero = () => {
 
 
 			<Flex data-aos-delay="500" data-aos="zoom-in" justify="center" align="center" gap="4">
-				<Button label="Send us a message" route="/contact" />
+				<Button label={dictionary.page.about.cta} route="/contact" />
 			</Flex>
 		</section>
 	);

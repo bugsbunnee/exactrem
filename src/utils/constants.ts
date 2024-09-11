@@ -1,7 +1,7 @@
 "use client";
 
 import { NavItem } from '@/utils/models';
-import { FcBriefcase, FcBusiness, FcBusinessman, FcPortraitMode } from 'react-icons/fc';
+import { FcBriefcase, FcBusiness, FcBusinessman, FcNews, FcViewDetails, FcPortraitMode } from 'react-icons/fc';
 
 export const ACCOUNT_TYPES = {
 	INDIVIDUAL: 'Individual account',
@@ -45,18 +45,33 @@ export const navigationItems: NavItem[] = [
 		options: [],
 	},
 	{
-		route: 'blog',
-		label: 'Blog',
-		options: [],
-	},
-	{
-		route: 'news',
-		label: 'Newsroom',
-		options: [],
+		route: '',
+		label: 'Resources',
+		options: [
+			{
+				route: 'news',
+				color: 'bg-orange-50',
+				title: 'Newsroom',
+				description: 'Our milestone and achievements, news related to the sector that we operate.',
+				Icon: FcNews,
+			},
+			{
+				route: 'blog',
+				color: 'bg-sky-50',
+				title: 'Blog',
+				description: 'Published articles, and qualilty write-ups related to Foreign Exchange',
+				Icon: FcViewDetails,
+			},
+		],
 	},
 	{
 		route: 'contact',
 		label: 'Contact us',
+		options: [],
+	},
+	{
+		route: 'invite',
+		label: 'Invite a friend',
 		options: [],
 	},
 ];

@@ -28,6 +28,7 @@ export interface NavItem {
 	route: string;
 	label: string;
 	options: {
+		route?: string;
 		color: string;
 		Icon: IconType;
 		title: string;
