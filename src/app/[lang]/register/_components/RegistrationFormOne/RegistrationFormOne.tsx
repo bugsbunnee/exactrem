@@ -156,7 +156,7 @@ const RegistrationFormOne: React.FC<Props> = ({ onInitializeUser }) => {
                                     name="country"
                                     control={control}
                                     render={({ field }) => (
-                                        <Picker {...field} options={countries} />
+                                        <Picker {...field} options={countries} placeholder="Select a country" />
                                     )}
                                 />
                             </Box>
