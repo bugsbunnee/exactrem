@@ -21,7 +21,7 @@ const LatestNews : React.FC= () => {
     const sliderRef = useRef<Slider>(null);
 
     return ( 
-        <section className='p-20'>
+        <section className='p-20 bg-stone-50 dark:bg-[#222]'>
             <Container>
                 <Heading data-aos="zoom-out-up" className='text-center' size='8'>{dictionary.page.latest_news.title}</Heading>
 
@@ -49,11 +49,11 @@ const LatestNews : React.FC= () => {
                 </AppSlider>
 
                 <Flex justify='center' gap='2' align='center' my='8'>
-                    <IconButton variant='soft' size='3' onClick={() => sliderRef.current?.slickPrev()}>
+                    <IconButton className="bg-black dark:bg-primary text-white" variant='soft' size='3' onClick={() => sliderRef.current?.slickPrev()}>
                         <ChevronLeftIcon width='30' height='30' />
                     </IconButton>
                     
-                    <IconButton variant='soft' size='3' onClick={() => sliderRef.current?.slickNext()}>
+                    <IconButton className="bg-black dark:bg-primary text-white" variant='soft' size='3' onClick={() => sliderRef.current?.slickNext()}>
                         <ChevronRightIcon width='30' height='30' />
                     </IconButton>
                 </Flex>

@@ -36,7 +36,7 @@
     "createdAt": "2024-09-11T00:00:00.000Z",
     "author": "Idris Ogungbo",
     "isPublished": true,
-    "content": "const{Fragment:t,jsx:n,jsxs:e}=arguments[0];function _createMdxContent(r){const a={h2:\"h2\",p:\"p\",...r.components};return e(t,{children:[n(a.h2,{id:\"new-partnerships-with-agent-banks\",children:\"New Partnerships with Agent Banks\"}),\"\\n\",n(a.p,{children:\"s part of our dedication to expanding international remittance services in the African market, Exactrem has established strategic partnerships with agent banks throughout Nigeria. Notably, we are collaborating with leading institutions such as Zenith Bank.\"})]})}return{default:function(t={}){const{wrapper:e}=t.components||{};return e?n(e,{...t,children:n(_createMdxContent,{...t})}):_createMdxContent(t)}};",
+    "content": "const{Fragment:t,jsx:n,jsxs:e}=arguments[0];function _createMdxContent(r){const a={h2:\"h2\",p:\"p\",...r.components};return e(t,{children:[n(a.h2,{id:\"new-partnerships-with-agent-banks\",children:\"New Partnerships with Agent Banks\"}),\"\\n\",n(a.p,{children:\"As part of our dedication to expanding international remittance services in the African market, Exactrem has established strategic partnerships with agent banks throughout Nigeria. Notably, we are collaborating with leading institutions such as Zenith Bank.\"})]})}return{default:function(t={}){const{wrapper:e}=t.components||{};return e?n(e,{...t,children:n(_createMdxContent,{...t})}):_createMdxContent(t)}};",
     "slugAsParams": ""
   }
 ]

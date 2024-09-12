@@ -32,7 +32,7 @@ const NavItem: React.FC<NavItemModel> = ({ label, options, route }) => {
 		return classNames({
 			"cursor-pointer active:bg-stone-50 active:outline-0 hover:bg-primary hover:text-white font-medium px-2 rounded-sm text-sm": true,
 			"text-white bg-primary dark:border-stone-100": isRouteMatch,
-			"dark:text-white text-black": !isRouteMatch
+			"dark:text-black text-white": !isRouteMatch
 		});
 	}, [params.lang, pathname, options, route]);
 

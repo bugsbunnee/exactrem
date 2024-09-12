@@ -3,12 +3,12 @@ import React from 'react';
 import AboutContent from './_components/AboutContent';
 import AboutHero from './_components/Hero';
 import Footer from '@/components/sections/Footer/Footer';
-import LatestNews from './_components/LatestNews';
+import LatestNews from '@/app/[lang]/about/_components/LatestNews';
 import NavBar from '@/components/sections/NavBar/NavBar';
 import Overview from './_components/Overview';
 import Partners from '@/components/sections/Partners/Partners';
 import SectionDivider from '@/components/common/SectionDivider';
-import Values from './_components/Offering';
+import Offering from './_components/Offering';
 
 const About = () => {
     return (
@@ -17,7 +17,7 @@ const About = () => {
 
             <AboutHero />
             
-            <Values />
+            <Offering />
 
             <AboutContent />
 

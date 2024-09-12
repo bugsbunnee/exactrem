@@ -3,10 +3,10 @@
 import { NavItem } from '@/utils/models';
 import { FcBriefcase, FcBusiness, FcBusinessman, FcNews, FcViewDetails, FcPortraitMode } from 'react-icons/fc';
 
-export const ACCOUNT_TYPES = {
-	INDIVIDUAL: 'Individual account',
-	CORPORATE: 'Corporate account',
-} as const;
+export enum AccountType {
+	INDIVIDUAL = 'Individual account',
+	CORPORATE = 'Corporate account',
+}
 
 export const navigationItems: NavItem[] = [
 	{
@@ -79,13 +79,13 @@ export const navigationItems: NavItem[] = [
 export const accountTypes: NavItem['options'] = [
 	{
 		color: 'bg-orange-50',
-		title: ACCOUNT_TYPES.INDIVIDUAL,
+		title: AccountType.INDIVIDUAL,
 		description: 'For individuals and personal entities.',
 		Icon: FcPortraitMode,
 	},
 	{
 		color: 'bg-stone-50',
-		title: ACCOUNT_TYPES.CORPORATE,
+		title: AccountType.CORPORATE,
 		description: 'For businesses and corporate entities.',
 		Icon: FcBusiness,
 	},

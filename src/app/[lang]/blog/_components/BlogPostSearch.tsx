@@ -29,7 +29,7 @@ const BlogPostSearch: React.FC<Props> = ({ placeholder, redirectPath }) => {
     };
 
     return (
-        <Flex justify='center' align='center' className='w-full mt-10'>
+        <Flex justify='center' align='center' className='w-full'>
             <TextField.Root 
                 className='w-full max-w-96' 
                 placeholder={placeholder}

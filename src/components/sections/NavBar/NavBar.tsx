@@ -17,7 +17,7 @@ const NavBar = () => {
 	const dictionary = useDictionary();
 
 	return (
-		<Flex className="border-b-2 bg-white dark:bg-[#222] sticky top-0 z-50">
+		<Flex className="border-b-2 border-orange-600 bg-black dark:bg-white sticky top-0 z-50">
 			<Container>
 				<Flex align="center" justify="between" className="h-16">
 					<Logo />
@@ -40,7 +40,7 @@ const NavBar = () => {
 
 						<Link
 							href="/register"
-							className="bg-black dark:bg-primary py-2 px-5 text-white rounded-full text-sm"
+							className="bg-white dark:bg-black py-2 px-5 text-primary rounded-full text-sm"
 						>
 							{dictionary.components.navbar.sign_up}
 						</Link>

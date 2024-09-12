@@ -14,8 +14,8 @@ import useCurrencies from '@/hooks/useCurrencies';
 import useDictionary from '@/hooks/useDictionary';
 
 const Converter = () => {
-	const currencies = useCurrencies();
-	const dictionary = useDictionary();
+	const { page } = useDictionary();
+	const { currencies } = useCurrencies();
 
 	const [senderInfo, setSenderInfo] = useState<CurrencyOption>(currencies.USD);
 	const [receiverInfo, setReceiverInfo] = useState<CurrencyOption>(currencies.NGN);
@@ -77,7 +77,7 @@ const Converter = () => {
 				<Flex gap="2" className={getBoxClass(isSenderActive)}>
 					<Box className="min-w-24">
 						<Text size="1" className="text-gray-700 leading-6">
-							{dictionary.page.calculator.sending_from}
+							{page.calculator.sending_from}
 						</Text>
 
 						<CurrencySwitcher
@@ -136,7 +136,7 @@ const Converter = () => {
 
 					<Box className="min-w-24">
 						<Text size="1" className="text-gray-700 leading-6">
-							{dictionary.page.calculator.receiver_gets}
+							{page.calculator.receiver_gets}
 						</Text>
 
 						<CurrencySwitcher
@@ -173,7 +173,7 @@ const Converter = () => {
 					/>
 
 					<Text size="2" className="font-semibold">
-						{dictionary.page.calculator.arrives_in_minutes}
+						{page.calculator.arrives_in_minutes}
 					</Text>
 				</Flex>
 
@@ -181,13 +181,13 @@ const Converter = () => {
 					<BoxModelIcon width="16" height="16" />
 
 					<Text size="1" className="font-semibold uppercase">
-						{dictionary.page.calculator.free}
+						{page.calculator.free}
 					</Text>
 				</Flex>
 			</Flex>
 
 			<Button className="bg-primary dark:bg-black w-full text-sm" size="4">
-				{dictionary.page.calculator.cta}
+				{page.calculator.cta}
 			</Button>
 		</Box>
 	);

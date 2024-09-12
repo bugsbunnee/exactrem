@@ -13,8 +13,14 @@ const getLocale = (request: NextRequest): string | undefined => {
 	return match(languages, locales, i18n.defaultLocale);
 };
 
+const getIsPathExcluded = (pathname: string) => {
+	return pathname.indexOf('admin') !== -1;
+};
+
 export const middleware = (request: NextRequest) => {
 	const pathname = request.nextUrl.pathname;
+	if (getIsPathExcluded(pathname)) return;
+
 	const pathnameIsMissingLocale = i18n.locales.every((locale) => {
 		return !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`;
 	});
@@ -29,5 +35,5 @@ export const middleware = (request: NextRequest) => {
 
 export const config = {
 	// Matcher ignoring `/_next/` and `/api/`
-	 matcher: ['/((?!api|static|.*\\..*|_next).*)']
+	 matcher: ['/((?!api|static|.*\\..*|_next).*)', '/admin/:path*']
 };

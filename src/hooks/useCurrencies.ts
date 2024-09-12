@@ -2,7 +2,7 @@
 
 import _ from "lodash";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { db } from "@/firebase/config";
 import { collection, onSnapshot } from "firebase/firestore";
 import { Currency, CurrencyOption } from '@/utils/models';
@@ -53,6 +53,7 @@ const initialCurrencies: Record<Currency, CurrencyOption> = {
 };
 
 const useCurrencies = () => {
+	const [isLoading, setLoading] = useState(true);
     const [currencies, setCurrencies] = useState<CurrencyData>(initialCurrencies);
 
     useEffect(() => {
@@ -64,12 +65,14 @@ const useCurrencies = () => {
             snapshot.docs.map((doc) => currencyData[doc.id as Currency] = doc.data() as CurrencyOption);
 
             setCurrencies(currencyData);
+			setLoading(false);
         });
 
         return () => unsubscribe();
     }, []);
 
-    return currencies;
+
+    return { currencies, isLoading };
 };
 
 export default useCurrencies;

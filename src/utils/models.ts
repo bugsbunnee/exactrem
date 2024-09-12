@@ -1,6 +1,6 @@
 import { CountryCode } from 'libphonenumber-js';
 import { IconType } from 'react-icons';
-import { ACCOUNT_TYPES } from './constants';
+import { AccountType } from './constants';
 
 export enum Currency {
 	NGN = 'NGN',
@@ -37,21 +37,29 @@ export interface NavItem {
 }
 
 export interface RegisteredUser {
-	accountType: typeof ACCOUNT_TYPES.INDIVIDUAL | typeof ACCOUNT_TYPES.CORPORATE;
+	id: string;
+	accountType: AccountType;
 	businessName: string;
 	country: string;
+	createdAt: string;
 	email: string;
 	firstName: string;
 	lastName: string;
 	phoneNumber: string;
 	promotions: boolean;
-	createdAt: string;
+	referredBy: string;
+	referralCode: string;
 	updatedAt: string;
 }
-
 export interface SearchParams {
 	query: string;
 	page: string;
 	category: string;
 	orderBy: string;
 }
+
+export interface TableColumn {
+	label: string;
+	value: string;
+	className?: string;
+  }

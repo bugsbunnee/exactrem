@@ -5,7 +5,6 @@ import _ from 'lodash';
 
 import { Controller, useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
-import { useRouter } from 'next/navigation';
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import { EnvelopeClosedIcon, InfoCircledIcon, PersonIcon } from '@radix-ui/react-icons';
@@ -22,20 +21,20 @@ import useDictionary from '@/hooks/useDictionary';
 
 interface Props {
     userId: string;
+    onCreateUser: (referralCode: string) => void;
 }
 
-const RegistrationFormTwo: React.FC<Props> = ({ userId }) => {
+const RegistrationFormTwo: React.FC<Props> = ({ userId, onCreateUser }) => {
 	const [error, setError] = useState('');
 
     const { page } = useDictionary();
-    const { push } = useRouter();
 	const { control, handleSubmit, register, setValue, formState } = useForm<UserFormData>({
 		resolver: zodResolver(registrationFormTwoSchema),
 		mode: 'all',
         defaultValues: { promotions: false }
 	});
 
-	const handleCompleteUserRegistration = React.useCallback(
+	const handleUpdateUserAccount = React.useCallback(
 		async (data: UserFormData, event: BaseSyntheticEvent<any, any, any> | undefined) => {
 			if (event) event.preventDefault();
 
@@ -43,15 +42,15 @@ const RegistrationFormTwo: React.FC<Props> = ({ userId }) => {
                 const existingUser = await getMatchingUser('email', data.email);
                 if (existingUser) return setError(page.register_two.unique_error_message);
 
-                await updateUser(userId, data);
-				toast.success(page.register_two.success);
+                const referralCode = await updateUser(userId, data);
+                onCreateUser(referralCode);
 
-                push('/');
+				toast.success(page.register_two.success);
 			} catch (error) {
 				setError(page.register_two.generic_error_message);
 			}
 		},
-		[userId, push, page.register_two]
+		[userId, page.register_two, onCreateUser]
 	);
 
 	return (
@@ -67,7 +66,7 @@ const RegistrationFormTwo: React.FC<Props> = ({ userId }) => {
                         </Callout.Root>
                     </Conditional>
 
-                    <form id="registration-two-form" onSubmit={handleSubmit(handleCompleteUserRegistration)}>
+                    <form id="registration-two-form" onSubmit={handleSubmit(handleUpdateUserAccount)}>
                         <Heading size="7">{page.register_two.title}</Heading>
                         <Text as='p' className="my-4 text-gray-500" size="2">{page.register_two.description}</Text>
 
@@ -213,7 +212,7 @@ const RegistrationFormTwo: React.FC<Props> = ({ userId }) => {
                         
                  
                         <Button
-                            className="w-full mt-4 text-sm bg-slate-800 disabled:bg-gray-600 disabled:text-white dark:bg-[#222]"
+                            className="animate__animated animate__backInUp w-full mt-4 text-sm bg-slate-800 disabled:bg-gray-600 disabled:text-white dark:bg-[#222]"
                             form="registration-two-form"
                             variant="solid"
                             size="4"

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import classNames from 'classnames';
 
 import { Cross1Icon } from '@radix-ui/react-icons';
@@ -11,14 +11,43 @@ import Conditional from '@/components/common/Conditional';
 import Logo from '@/components/ui/Logo';
 import RegistrationFormOne from './_components/RegistrationFormOne/RegistrationFormOne';
 import RegistrationFormTwo from './_components/RegistrationFormTwo/RegistrationFormTwo';
+import RegistrationFormThree from './_components/RegistrationFormThree/RegistrationFormThree';
 
 import useDictionary from '@/hooks/useDictionary';
 
 const Register = () => {
 	const [newUserId, setNewUserId] = useState('');
+	const [referralCode, setReferralCode] = useState('');
 	
 	const dictionary = useDictionary();
 	const router = useRouter();
+
+	const STEPS = [
+		{
+			id: 'accountType',
+			isCompleted: !!newUserId,
+		},
+		{
+			id: 'userInfo',
+			isCompleted: !!newUserId && !!referralCode,
+		},
+		{
+			id: 'referralCode',
+			isCompleted: false,
+		},
+	];
+
+	const renderRegistrationForm = useCallback(() => {
+		if (referralCode) {
+			return <RegistrationFormThree userId={newUserId} />
+		}
+
+		if (newUserId) {
+			return <RegistrationFormTwo userId={newUserId} onCreateUser={setReferralCode} />;
+		}
+
+		return <RegistrationFormOne onInitializeUser={setNewUserId} />;
+	}, [newUserId, referralCode]);
 
 	return (
 		<>
@@ -26,24 +55,25 @@ const Register = () => {
 				<Logo />
 
 				<Flex className="flex-1" align="center" justify='center' gap="3" flexGrow="1">
-					<Box 
-						className={classNames({
-							"w-10 h-10 rounded-full flex items-center justify-center border": true,
-							"border-gray-400": !newUserId,
-							"border-orange-400": newUserId,
-						})}
-					>
-						<Conditional isVisible={!!newUserId}>
-							<Box className="w-6 h-6 rounded-full bg-orange-400" />
-						</Conditional>
-					</Box>
-
-					<Separator orientation="horizontal" size="2" color={newUserId ? "orange" : "gray"} />
-					
-					<Box className={classNames({
-						"w-10 h-10 rounded-full": true,
-						"border border-gray-400": true,
-					})} />
+					{STEPS.map((step, index) => (
+						<React.Fragment key={step.id}>
+							<Box 
+								className={classNames({
+									"w-10 h-10 rounded-full flex items-center justify-center border": true,
+									"border-gray-400": !step.isCompleted,
+									"border-orange-400": step.isCompleted,
+								})}
+							>
+								<Conditional isVisible={step.isCompleted}>
+									<Box className="w-6 h-6 rounded-full bg-orange-400" />
+								</Conditional>
+							</Box>
+							
+							<Conditional isVisible={(index + 1) !== STEPS.length}>
+								<Separator orientation="horizontal" size="2" color={step.isCompleted ? "orange" : "gray"} />
+							</Conditional>
+						</React.Fragment>
+					))}
 				</Flex>
 
 				<Dialog.Root>
@@ -77,7 +107,7 @@ const Register = () => {
 				</Dialog.Root>
 			</Flex>
 
-			{newUserId ? <RegistrationFormTwo userId={newUserId} /> : <RegistrationFormOne onInitializeUser={setNewUserId} />}
+			{renderRegistrationForm()}
 		</>
 	);
 };

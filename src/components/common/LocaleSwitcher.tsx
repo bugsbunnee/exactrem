@@ -27,7 +27,7 @@ const LocaleSwitcher = () => {
 				defaultValue={params.lang}
 				onValueChange={(locale: Locale) => router.push(getPathName(locale))}
 			>
-				<Select.Trigger variant="soft">
+				<Select.Trigger variant="soft" className="bg-[#222] text-white dark:bg-stone-50 dark:text-black">
 					<Flex as="span" align="center" gap="2">
 						<Flex
 							className="w-5 h-5 rounded-full overflow-hidden"

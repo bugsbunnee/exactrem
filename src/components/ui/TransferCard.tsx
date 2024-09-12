@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
-
 import classNames from 'classnames';
+
 import { Box, Flex, Text } from '@radix-ui/themes';
 import { Currency } from '@/utils/models';
 import { formatMoney } from '@/utils/lib';

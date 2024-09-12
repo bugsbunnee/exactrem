@@ -13,7 +13,7 @@ interface Props {
 }
 
 const CurrencySwitcher: React.FC<Props> = ({ defaultValue, onSelectCurrency }) => {
-	const currencies = useCurrencies();
+	const { currencies } = useCurrencies();
 
 	return (
 		<Flex direction="column" maxWidth="10rem">

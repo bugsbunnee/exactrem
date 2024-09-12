@@ -182,7 +182,7 @@ const RegistrationFormOne: React.FC<Props> = ({ onInitializeUser }) => {
                  
                         <Button
                             data-aos="zoom-in-up"
-                            className="w-full mt-9 text-sm bg-primary disabled:bg-gray-600 disabled:text-white dark:bg-[#222]"
+                            className="animate__animated animate__backInUp w-full mt-9 text-sm bg-primary disabled:bg-gray-600 disabled:text-white dark:bg-[#222]"
                             form="registration-one-form"
                             variant="solid"
                             size="4"

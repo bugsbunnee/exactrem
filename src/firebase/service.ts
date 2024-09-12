@@ -3,7 +3,7 @@
 import dayjs from 'dayjs';
 import _ from 'lodash';
 
-import { addDoc, collection, doc,  getDoc, getDocs, updateDoc } from "firebase/firestore";
+import { addDoc, collection, deleteDoc, doc,  getDoc, getDocs, updateDoc } from "firebase/firestore";
 import { db } from "./config";
 
 import { RegistrationFormData } from "@/app/[lang]/register/_components/RegistrationFormOne/schema";
@@ -51,9 +51,24 @@ export const getMatchingUser = async (key: string, value: string) => {
 
 export const updateUser = async (userId: string, userData: UserFormData) => {
     const userRef = doc(db, 'users', userId);
-    const updatedUser = await updateDoc(userRef, { ...userData, updatedAt: dayjs().format('DD-MM-YYYY HH:mm:ss') });
+    const updatedAt = dayjs().format('DD-MM-YYYY HH:mm:ss');
+
+    const referralCode = (userData.firstName + '-' + userData.lastName + '-' + Date.now().toString()).toLowerCase();
+    await updateDoc(userRef, { ...userData, referralCode, updatedAt, });
+
+    return referralCode;
+};
+
+export const deleteCurrency = async (currencyId: string) => {
+    const currenciesRef = doc(db, 'currencies', currencyId);
+    await deleteDoc(currenciesRef);
+};
+
+export const addReferrer = async (userId: string, referredBy: string) => {
+    const userRef = doc(db, 'users', userId);
+    const updatedUser = await updateDoc(userRef, { referredBy });
 
     return updatedUser;
-};
+}
 
 

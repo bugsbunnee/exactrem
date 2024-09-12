@@ -11,6 +11,7 @@ const ThemeSwitcher = () => {
 		<IconButton
 			onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
 			size="2"
+			className="bg-[#222] text-white dark:bg-stone-50 dark:text-black"
 			variant="soft"
 		>
 			{theme === 'dark' ? <MoonIcon /> : <SunIcon />}

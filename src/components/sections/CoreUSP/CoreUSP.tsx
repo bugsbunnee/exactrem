@@ -75,7 +75,7 @@ const CoreUSP = () => {
         <section className='py-20'>
             <Container>
                 <Flex justify='center' align='center'>
-                    <Heading size='7' className='mb-32 text-center max-w-96'>
+                    <Heading data-aos="fade-down" size='7' className='mb-32 text-center max-w-96'>
                         {dictionary.page.core_usps.title.one} <br /> <span className='font-bold text-5xl text-primary'>{dictionary.page.core_usps.title.two}</span>
                     </Heading>
                 </Flex>

@@ -231,8 +231,9 @@
 			}
 		},
 		"hero": {
-			"heading_one": "Make faster, fairer",
-			"heading_two": "money transfers",
+			"heading_one": "Fast and secure",
+			"heading_two": "transfers with Exactrem",
+			"description": "At Exactrem, we work closely with international law enforcement agencies to detect and prevent money laundering.",
 			"cta": "Get started",
 			"rating": "Rated 4.7 - Excellent",
 			"reviews": "From 100 reviews on",
@@ -349,6 +350,17 @@
             "promotions_message": "I agree to receive news, offers, and promotional materials from Exactrem.",
 			"success": "Success! A member of out team will reach out to you shortly"
 		},
+		"register_three": {
+			"no_referrer_error_message": "The code entered is invalid! Please provide a valid referral code",
+			"generic_error_message": "Ooops! Looks like something went wrong. Please try again.",
+			"title": "Do you have a referral code?",
+			"description": "Enter your referral code below and stand a chance to get a discount on transactions",
+			"referral_code": "Referral Code:",
+			"referral_code_placeholder": "Enter referral code here",
+			"cta_redeem_code": "Redeem code",
+			"cta_skip": "Skip",
+			"success": "Success! A member of out team will reach out to you shortly"
+		},
 		"services": {
 			"hero": {
 				"title": "International payments for ",
@@ -374,7 +386,7 @@
 					"url": "/services",
 					"image": "fast",
 					"title": "Fast and Reliable",
-					"description": "We are closely regulated by FINTRAC and Canada law, working closely with international law enforcement to spot and prevent money laundering.",
+					"description": "We are a licensed MSB, closely regulated by FINTRAC in Canada, and licensed by the CBN as an IMTO in Nigeria. At Exactrem, we work closely with international law enforcement agencies to detect and prevent money laundering.",
 					"cta": "Learn more"
 				},
 				"three": {

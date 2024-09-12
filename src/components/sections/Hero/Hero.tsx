@@ -1,10 +1,8 @@
 import React from 'react';
 
 import Button from '@/components/ui/Button';
-import Conditional from '@/components/common/Conditional';
-import Link from 'next/link';
 
-import { Box, Flex, Heading, Text } from '@radix-ui/themes';
+import { Box, Container, Flex, Heading, Text } from '@radix-ui/themes';
 
 import useDictionary from '@/hooks/useDictionary';
 
@@ -12,43 +10,26 @@ const Hero = () => {
 	const dictionary = useDictionary();
 
 	return (
-		<section className="p-20">
-			<Box className="text-center">
-				<Heading data-aos="fade-down" className="leading-10 text-orange-600 font-bold" size="9">
-					{dictionary.page.hero.heading_one}
-				</Heading>
-				<Heading data-aos="fade-up" className="font-bold mt-5" size="9">
-					{dictionary.page.hero.heading_two}
-				</Heading>
-			</Box>
+		<section className='p-24 bg-gradient-to-r from-orange-100 via-purple-100 to-orange-100 dark:from-transparent'>
+			<Container>
+				<Flex justify='center' align='center'>
+					<Box className='max-w-[42rem] text-center'>
+						<Heading data-aos="fade-down" className="leading-12 text-orange-600 font-bold" size="9">
+							{dictionary.page.hero.heading_one} <span className="text-black dark:text-white">{dictionary.page.hero.heading_two}</span>
+						</Heading>
 
-			<Flex
-				direction="column"
-				justify="center"
-				align="center"
-				className="mt-10"
-				data-aos-delay="500"
-				data-aos="zoom-in"
-			>
-				<Button label={dictionary.page.hero.cta} route='/register' />
-
-				<Conditional isVisible={false}>
-					<Box className="mt-5">
-						<Text className="font-semibold" color="gray" size="2">
-							{dictionary.page.hero.rating}
+						<Text as="p" data-aos="fade-up" className="text-black dark:text-white mt-7 mb-14" size="5">
+							{dictionary.page.hero.description}
 						</Text>
-					</Box>
 
-					<Box className="mt-2">
-						<Text color="gray" size="2">
-							{dictionary.page.hero.reviews}{' '}
-							<Link className="underline" href="/pilot">
-								{dictionary.page.hero.review_link}
-							</Link>
-						</Text>
+						<Flex justify='center' align='center'>
+							<Box data-aos="fade-down" data-aos-delay="500">
+								<Button label={dictionary.page.hero.cta} route="/register" />
+							</Box>
+						</Flex>
 					</Box>
-				</Conditional>
-			</Flex>
+				</Flex>
+			</Container>
 		</section>
 	);
 };

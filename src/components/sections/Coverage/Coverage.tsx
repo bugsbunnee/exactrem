@@ -7,19 +7,19 @@ import useDictionary from '@/hooks/useDictionary';
 import useCurrencies from '@/hooks/useCurrencies';
 
 const Coverage = () => {
-	const currencies = useCurrencies();
-	const dictionary = useDictionary();
+	const { currencies } = useCurrencies();
+	const { page } = useDictionary();
 
 	return (
 		<section className="p-20 my-10">
 			<Container>
 				<Heading className="text-center mb-10" size="8" data-aos="fade-left" >
-					{dictionary.page.coverage.title} 
+					{page.coverage.title} 
 				</Heading>
 
 				<Flex justify='center'>
 					<Text className="text-center max-w-[40rem]" data-aos="fade-right" >
-						{dictionary.page.coverage.description} 
+						{page.coverage.description} 
 					</Text>
 				</Flex>
 
