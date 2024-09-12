@@ -62,7 +62,7 @@ const Blog: React.FC<Props> = ({ searchParams }) => {
 
                         <Conditional isVisible={!isLoading}>
                             {hero ? (
-                                <Flex data-aos="zoom-in" align='center' className='p-10 mt-16 bg-stone-50 dark:bg-[#222] border-stone-200 border rounded-sm' gap='7'>
+                                <Flex data-aos="zoom-in" align='center' className='p-10 mt-16 mb-8 bg-stone-50 dark:bg-[#222] border-stone-200 border rounded-sm' gap='7'>
                                     <figure className='relative w-[30rem] h-[20rem]'>
                                         <Image
                                             src={hero.src}

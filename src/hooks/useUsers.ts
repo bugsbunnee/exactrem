@@ -31,7 +31,7 @@ const useUsers = (searchParams: UserQuery) => {
 
         allUsers = paginate(allUsers, page, pageSize);
 
-        return { allUsers, userCount: users.length, isLoading, page, pageSize }
+        return { allUsers, userCount: users.length, users, isLoading, page, pageSize }
     }, [searchParams, isLoading, page, users]);
 
     useEffect(() => {

@@ -203,6 +203,7 @@
 			"contact": "Contact",
 			"connect": "Connect",
 			"product": "Product",
+			"terms_and_conditions": "Terms & Conditions",
 			"links": {
 				"about": {
 					"title": "About us",
@@ -317,6 +318,222 @@
 			"title": "Cash pickup and bank deposit in Nigeria",
 			"description": "Trademarks, trade names and logos displayed are registered trademarks of their respective owners. No affiliation or endorsement of Remitly should be implied."
 		},
+		"terms_and_conditions": {
+			"terms": {
+				"id": "terms",
+				"last_updated": "09-11-2024",
+				"title": "Website Terms of Service",
+				"description": "Welcome to Exactrem ('we,' 'our,' or 'us'). These Website Terms of Service ('Terms') govern your access to and use of our website www.exactrem.com (the 'Website') and any services offered through it. By using our Website, you agree to these Terms. If you do not agree with these Terms, please do not use our Website. ",
+				"list": [
+					{
+						"title": "Acceptance of Terms",
+						"description": "By accessing or using our Website, you agree to comply with and be bound by these Terms. We may update these Terms from time to time, and your continued use of the Website signifies your acceptance of any changes.",
+						"subSections": []
+					}, 
+					{
+						"title": "Services",
+						"description": "Exactrem operates as a Money Services Business (MSB) registered with the Financial Transactions and Reports Analysis Centre of Canada (FINTRAC). Our services include, but are not limited to, international money transfers, currency exchange, and financial transaction services. ",
+						"subSections": []
+					}, 
+					{
+						"title": "User Responsibilities",
+						"description": "Exactrem operates as a Money Services Business (MSB) registered with the Financial Transactions and Reports Analysis Centre of Canada (FINTRAC). Our services include, but are not limited to, international money transfers, currency exchange, and financial transaction services. ",
+						"subSections": [
+							{
+								"title": "Eligibility: ",
+								"description": "You must be at least 18 years old and have the legal capacity to enter into binding agreements to use our services."
+							},
+							{
+								"title": "Accuracy: ",
+								"description": "You agree to provide accurate, current, and complete information as required for the use of our services"
+							},
+							{
+								"title": "Account Security: ",
+								"description": "You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account. Notify us immediately of any unauthorized use of your account"
+							}
+						]
+					}, 
+					{
+						"title": "Prohibited Activities",
+						"description": "You agree not to engage in any activities that:",
+						"subSections": [
+							{
+								"title": "",
+								"description": "Violate any applicable laws or regulations, including anti-money laundering and anti-terrorist financing laws"
+							},
+							{
+								"title": "",
+								"description": "Involve the transmission of harmful, unlawful, or offensive content"
+							},
+							{
+								"title": "",
+								"description": "Interfere with the operation or security of our Website or services"
+							},
+							{
+								"title": "",
+								"description": "Attempt to gain unauthorized access to any part of the Website or our systems"
+							}
+						]
+					}, 
+					{
+						"title": "Intellectual Property",
+						"description": "All content, trademarks, and other intellectual property on the Website are owned by or licensed to Exactrem. You may not use, reproduce, or distribute any content from the Website without our prior written consent. ",
+						"subSections": []
+					},
+					{
+						"title": "Limitation of Liability",
+						"description": "Our Website and services are provided 'as is' without warranties of any kind. Exactrem is not liable for any indirect, incidental, or consequential damages arising from your use of the Website or services. Our liability is limited to the maximum extent permitted by law. ",
+						"subSections": []
+					},
+					{
+						"title": "Indemnification",
+						"description": "You agree to indemnify, defend, and hold harmless Exactrem, its affiliates, and their respective officers, directors, employees, and agents from and against any claims, liabilities, damages, losses, and expenses arising out of your use of the Website or services, or your violation of these Terms.",
+						"subSections": []
+					},
+					{
+						"title": "Governing Law",
+						"description": "These Terms are governed by and construed in accordance with the laws of the Province of British Columbia and the Federal laws of Canada. Any disputes arising under these Terms shall be resolved in the courts of British Columbia.",
+						"subSections": []
+					},
+					{
+						"title": "Changes to Terms ",
+						"description": "We may update these Terms from time to time. The updated Terms will be posted on this page with an effective date. Your continued use of the Website following any changes signifies your acceptance of the revised Terms. ",
+						"subSections": []
+					},
+					{
+						"title": "Contact Information ",
+						"description": "For any questions or concerns about these Terms, please contact us at:",
+						"subSections": [],
+						"paragraphs": [
+							"Exactrem",
+							"Our Canada office Address:",
+							"Our Nigeria office Address: 1196, Bishop Oluwole Street, Victoria Island, Lagos. ",
+							"Our contact email:  info@exactrem.com ",
+							"Our Phone Number:"
+						]
+					}
+				]
+			},
+			"privacy": {
+				"id": "privacy",
+				"last_updated": "09-11-2024",
+				"title": "Privacy Policy",
+				"description": "At Exactrem, we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your personal information when you use our Website and services.",
+				"list": [
+					{
+						"title": "Information We Collect",
+						"description": "We collect the following types of information: ",
+						"subSections": [
+							{
+								"title": "Personal Information: ",
+								"description": "Such as your name, contact information (email, phone number), financial details, and any other information you provide for the purpose of using our services."
+							},
+							{
+								"title": "Transaction Data: ",
+								"description": "Details about the transactions you conduct through our services, including amounts, dates, and payment methods"
+							},
+							{
+								"title": "Usage Data: ",
+								"description": "Information about your interaction with our Website, such as IP address, browser type, and access times."
+							},
+							{
+								"title": "Cookies and Tracking Technologies: ",
+								"description": "We use cookies and similar technologies to enhance your experience on our Website."
+							}
+						]
+					}, 
+					{
+						"title": "How We Use Your Information",
+						"description": "We use your information for the following purposes: ",
+						"subSections": [
+							{
+								"title": "To Provide and Manage Services: ",
+								"description": "To process transactions, manage accounts, and provide customer support"
+							},
+							{
+								"title": "To Improve Our Services: ",
+								"description": "To analyze usage patterns and improve the functionality and performance of our Website"
+							},
+							{
+								"title": "To Communicate with You: ",
+								"description": "To send you important updates, promotional offers, and respond to your inquiries. " 
+							},
+							{
+								"title": "To Comply with Legal Requirements: ",
+								"description": "To adhere to regulations and legal obligations, including anti-money laundering and anti-terrorist financing laws. " 
+							}
+						]
+					}, 
+					{
+						"title": "How We Share Your Information",
+						"description": "We may share your information with",
+						"subSections": [
+							{
+								"title": "Service Providers: ",
+								"description": "Third-party vendors who assist us in operating our Website and providing our services, subject to confidentiality agreements."
+							},
+							{
+								"title": "Regulatory Authorities: ",
+								"description": "As required by FINTRAC and other regulatory bodies for compliance purposes. "
+							},
+							{
+								"title": "Business Transfers: ",
+								"description": "In the event of a merger, acquisition, or sale of our business, your information may be transferred to the new entity."
+							},
+							{
+								"title": "Legal Requirements: ",
+								"description": "To comply with legal processes, enforce our policies, or protect the rights, property, or safety of Exactrem and our users."
+							}
+						]
+					},
+					{
+						"title": "Data Security",
+						"description": "You may request the deletion of your personal information, subject to legal and regulatory requirements.",
+						"subSections": []
+					},
+					{
+						"title": "Your Rights",
+						"description": "You have the following rights regarding your personal information: ",
+						"subSections": [
+							{
+								"title": "Access and Correction: ",
+								"description": "You may request access to or correction of your personal information. "
+							},
+							{
+								"title": "Opt-Out: ",
+								"description": "You may opt-out of receiving promotional communications by following the instructions provided in our emails. "
+							},
+							{
+								"title": "Deletion: ",
+								"description": "You may request the deletion of your personal information, subject to legal and regulatory requirements."
+							}
+						]
+					},
+					{
+						"title": "Cookies and Tracking Technologies: ",
+						"description": "Our Website uses cookies and similar technologies to enhance your browsing experience and analyze Website usage. You can manage your cookie preferences through your browser settings.",
+						"subSections": []
+					},
+					{
+						"title": "Changes to This Privacy Policy: ",
+						"description": "We may update this Privacy Policy from time to time. The revised Privacy Policy will be posted on this page with an updated effective date. Your continued use of the Website signifies your acceptance of the revised Privacy Policy. ",
+						"subSections": []
+					},
+					{
+						"title": "Contact Information ",
+						"description": "If you have any questions or concerns about this Privacy Policy or our data practices, please contact us at: ",
+						"subSections": [],
+						"paragraphs": [
+							"Exactrem",
+							"Our Canada office Address:",
+							"Our Nigeria office Address: 1196, Bishop Oluwole Street, Victoria Island, Lagos. ",
+							"Our contact email:  info@exactrem.com ",
+							"Our Phone Number:"
+						]
+					}
+				]
+			}
+		},
 		"register": {
 			"title": "Cancel Registration Process",
 			"description": "You have not yet completed your registration process. Are you sure you want to cancel it?",
@@ -370,6 +587,254 @@
 			},
 			"coverage": {
 				"title": "Create an account to start sending in"
+			},
+			"content": {
+				"person-to-person": {
+					"hero": {
+						"title_one": "Get Started with ",
+						"title_two": "Exactrem Today! ",
+						"description": "Discover the future of person-to-person transfers with Exactrem. Sign up now and enjoy the convenience, speed, and security of our top-notch services.",
+						"cta": "Create account"
+					},
+					"overview": {
+						"title": "Get Started with Exactrem Today! ",
+						"description": "Discover the future of person-to-person transfers with Exactrem. Sign up now and enjoy the convenience, speed, and security of our top-notch services. Connect with loved ones effortlessly and manage your financial transactions with confidence. With Exactrem, the world is at your fingertips—transferring money has never been easier. ",
+						"cta": "Create account"
+					},
+					"service_list": [
+						{
+							"titleOne": "Seamless Transfers Anytime, ",
+							"titleTwo": "Anywhere",
+							"bgClass": "",
+							"iconKey": "money-transfer",
+							"serviceList": [
+								{
+									"src": "/p2p.jpg",
+									"title": "Effortless Money Transfers at Your Fingertips ",
+									"description": "At Exactrem, we believe that sending money should be as easy as a text message. Our person-to-person transfer service is designed for simplicity and convenience, allowing you to send funds with just a few clicks. Whether you're supporting family overseas, splitting a bill with friends, or sending a special gift, our platform ensures a smooth and intuitive experience every time"
+								},
+								{
+									"src": "/p2p.jpg",
+									"title": "Instant Delivery",
+									"description": "Time is of the essence when transferring money to someone you care about. With Exactrem, your funds are delivered almost instantly. Say goodbye to waiting days for bank transfers and hello to real-time money movement that keeps you connected with those who matter most. "
+								}
+							]
+						},
+						{
+							"titleOne": "Unmatched Security and ",
+							"titleTwo": "Reliability",
+							"iconKey": "lock",
+							"bgClass": "bg-slate-800 text-white dark:bg-[#222]",
+							"serviceList": [
+								{
+									"src": "/p2p.jpg",
+									"title": "Your Security is Our Priority ",
+									"description": "When it comes to transferring money, trust is essential. Exactrem employs state-of-the-art encryption and security measures to protect your personal and financial information. Our robust security protocols ensure that your transactions are safe from fraud and unauthorized access, giving you peace of mind with every transfer. "
+								},
+								{
+									"src": "/p2p.jpg",
+									"title": "Reliable Transactions ",
+									"description": "Count on Exactrem for reliable and consistent service. Our advanced technology and secure infrastructure ensure that your money reaches its destination quickly and without errors. Enjoy the confidence that comes with knowing your transactions are handled with the utmost precision. "
+								}
+							]
+						},
+						{
+							"titleOne": "Global Reach, Local ",
+							"titleTwo": "Convenience",
+							"bgClass": "",
+							"iconKey": "globe",
+							"serviceList": [
+								{
+									"src": "/p2p.jpg",
+									"title": "Connecting You Worldwide ",
+									"description": "No matter where your loved ones are, Exactrem makes global transfers simple. Our extensive network spans across countries, allowing you to send money to virtually any location around the world. Experience the convenience of managing international transactions with a local touch. "
+								},
+								{
+									"src": "/p2p.jpg",
+									"title": "Localized Support",
+									"description": "We understand that dealing with international transfers can be daunting. That’s why Exactrem provides localized support to help you navigate any challenges. Our customer service team is well-versed in various regions and currencies, offering assistance tailored to your specific needs. "
+								}
+							]
+						},
+						{
+							"titleOne": "Transparent and Fair ",
+							"titleTwo": "Pricing",
+							"iconKey": "currency-exchange",
+							"bgClass": "bg-orange-50 dark:bg-[#222]",
+							"serviceList": [
+								{
+									"src": "/p2p.jpg",
+									"title": "Know What You’re Paying For ",
+									"description": "With Exactrem, there are no hidden fees or unexpected charges. Our pricing is transparent, with clearly outlined fees and exchange rates. You'll know exactly how much you're paying and how much your recipient will receive, ensuring complete transparency in every transaction. "
+								},
+								{
+									"src": "/p2p.jpg",
+									"title": "Competitive Rates ",
+									"description": "We strive to offer competitive rates that provide excellent value for your money. Our goal is to make person-to-person transfers affordable without compromising on quality or service. Get more for less with Exactrem’s fair pricing structure. "
+								}
+							]
+						},
+						{
+							"titleOne": "Effortless Experience with ",
+							"titleTwo": "Cutting-Edge Technology",
+							"bgClass": "",
+							"iconKey": "cutting-edge",
+							"serviceList": [
+								{
+									"src": "/p2p.jpg",
+									"title": "User-Friendly Platform ",
+									"description": "Exactrem’s platform is designed with you in mind. Our intuitive interface makes it easy to set up and manage transfers, track transactions, and handle your account with minimal effort. Whether you're using our mobile app or website, you’ll find our technology enhances your transfer experience. "
+								},
+								{
+									"src": "/p2p.jpg",
+									"title": "Innovative Features ",
+									"description": "Stay ahead with our advanced features designed to simplify your transactions. From real-time tracking and notifications to easy recipient management, Exactrem integrates cutting-edge technology to provide a seamless and enjoyable user experience. "
+								}
+							]
+						},
+						{
+							"titleOne": "Dedicated ",
+							"titleTwo": "Customer Support",
+							"iconKey": "customer-support",
+							"bgClass": "bg-orange-50 dark:bg-[#222]",
+							"serviceList": [
+								{
+									"src": "/p2p.jpg",
+									"title": "24/7 Assistance When You Need It ",
+									"description": "We are here to support you around the clock. Exactrem’s dedicated customer support team is available 24/7 to assist with any questions or concerns. Whether you need help with a transfer, have questions about our services, or require technical support, our knowledgeable team is ready to help. "
+								},
+								{
+									"src": "/p2p.jpg",
+									"title": "Personalized Service ",
+									"description": "Expect personalized and attentive service from our support staff. We take the time to understand your needs and provide solutions that meet your specific requirements. Experience exceptional customer care with Exactrem. "
+								}
+							]
+						}
+					]
+				},
+				"person-to-business": {
+					"hero": {
+						"title_one": "Experience Seamless Payments with ",
+						"title_two": "Exactrem",
+						"description": "Unlock the convenience and efficiency of Exactrem’s person-to-business services today.",
+						"cta": "Create account"
+					},
+					"overview": {
+						"title": "Experience Seamless Person-to-Business Payments with Exactrem! ",
+						"description": "Unlock the convenience and efficiency of Exactrem’s person-to-business services today. Sign up now to take advantage of our fast, secure, and transparent payment solutions. Whether you’re paying for a product, service, or subscription, Exactrem makes managing your transactions easier than ever. Join us and transform the way you handle business payments! ",
+						"cta": "Create account"
+					},
+					"service_list": [
+						{
+							"titleOne": "Effortless Payments for Everyday ",
+							"titleTwo": "Transactions",
+							"bgClass": "",
+							"iconKey": "money-transfer",
+							"serviceList": [
+								{
+									"src": "/p2p.jpg",
+									"title": "Simplify Your Purchases ",
+									"description": "At Exactrem, we make person-to-business transactions seamless and straightforward. Whether you’re paying for a subscription, making an online purchase, or settling a bill, our platform offers a hassle-free payment experience. Enjoy the ease of sending money directly from your account to any business, anywhere in the world, with just a few clicks."
+								},
+								{
+									"src": "/p2p.jpg",
+									"title": "Instant Processing",
+									"description": "Time is money, and we value yours. Exactrem ensures that your payments are processed instantly, allowing businesses to receive funds in real-time. Forget about the delays associated with traditional banking methods—our cutting-edge technology guarantees fast and efficient transactions every time."
+								}
+							]
+						},
+						{
+							"titleOne": "Secure and Reliable ",
+							"titleTwo": "Transactions ",
+							"iconKey": "lock",
+							"bgClass": "bg-slate-800 text-white dark:bg-[#222]",
+							"serviceList": [
+								{
+									"src": "/p2p.jpg",
+									"title": "Top-Notch Security ",
+									"description": "Your financial safety is our top priority. Exactrem employs advanced encryption and security measures to protect your payment details. Each transaction is safeguarded against fraud and unauthorized access, so you can pay with confidence knowing your information is secure. "
+								},
+								{
+									"src": "/p2p.jpg",
+									"title": "Dependable Service ",
+									"description": "Count on Exactrem for consistent and reliable transactions. Our platform is built with robust infrastructure to handle your payments accurately and without interruption. We are dedicated to providing a trustworthy service that you can rely on for all your person-to-business payment needs. "
+								}
+							]
+						},
+						{
+							"titleOne": "Global Reach, Local ",
+							"titleTwo": "Convenience",
+							"bgClass": "",
+							"iconKey": "globe",
+							"serviceList": [
+								{
+									"src": "/p2p.jpg",
+									"title": "Connecting with Business Worldwide ",
+									"description": "Understanding the nuances of different markets is crucial. Exactrem offers localized payment options and support to ensure your transactions align with regional requirements and preferences. Experience smooth cross-border payments with a local touch."
+								},
+								{
+									"src": "/p2p.jpg",
+									"title": "Localized Payment Options",
+									"description": "Understanding the nuances of different markets is crucial. Exactrem offers localized payment options and support to ensure your transactions align with regional requirements and preferences. Experience smooth cross-border payments with a local touch."
+								}
+							]
+						},
+						{
+							"titleOne": "Transparent and Fair ",
+							"titleTwo": "Pricing",
+							"iconKey": "currency-exchange",
+							"bgClass": "bg-orange-50 dark:bg-[#222]",
+							"serviceList": [
+								{
+									"src": "/p2p.jpg",
+									"title": "Clear and Honest Pricing",
+									"description": "At Exactrem, we believe in transparency. Our pricing structure is straightforward, with no hidden fees or unexpected charges. Know exactly what you’re paying for and how much will be deducted from your account. Our clear fee model ensures you always have full visibility into your transactions. "
+								},
+								{
+									"src": "/p2p.jpg",
+									"title": "Competitive Rates ",
+									"description": "Get value for your money with Exactrem’s competitive rates. We strive to offer fair pricing that provides excellent service without breaking the bank. Enjoy cost-effective person-to-business payments that don’t compromise on quality or speed."
+								}
+							]
+						},
+						{
+							"titleOne": "Advanced Features for a ",
+							"titleTwo": "Superior Experience",
+							"bgClass": "",
+							"iconKey": "cutting-edge",
+							"serviceList": [
+								{
+									"src": "/p2p.jpg",
+									"title": "Streamlined Payment Solutions ",
+									"description": "Exactrem offers advanced features designed to enhance your payment experience. From automated recurring payments to one-click processing, our platform is equipped with tools to make transactions more efficient. Manage your payments easily with features tailored to meet your needs."
+								},
+								{
+									"src": "/p2p.jpg",
+									"title": "Streamlined Payment Solutions",
+									"description": "Stay informed with real-time tracking and notifications. Monitor the status of your payments and receive instant updates, so you’re always in the loop. Our advanced tracking ensures you have complete visibility throughout the payment process. "
+								}
+							]
+						},
+						{
+							"titleOne": "Exceptional ",
+							"titleTwo": "Customer Support",
+							"iconKey": "customer-support",
+							"bgClass": "bg-orange-50 dark:bg-[#222]",
+							"serviceList": [
+								{
+									"src": "/p2p.jpg",
+									"title": "24/7 Assistance When You Need It ",
+									"description": "Our commitment to customer satisfaction extends to our support services. Exactrem’s dedicated customer support team is available around the clock to assist with any questions or issues. Whether you need help with a payment or have inquiries about our services, we’re here to provide prompt and professional assistance. "
+								},
+								{
+									"src": "/p2p.jpg",
+									"title": "Personalized Assistance ",
+									"description": "Experience personalized care with Exactrem’s customer support. Our knowledgeable team takes the time to understand your specific needs and offers tailored solutions. Enjoy the confidence that comes with knowing you have expert support whenever you need it."
+								}
+							]
+						}
+					]
+				}
 			}
 		},
 		"usp": {
@@ -386,7 +851,7 @@
 					"url": "/services",
 					"image": "fast",
 					"title": "Fast and Reliable",
-					"description": "We are a licensed MSB, closely regulated by FINTRAC in Canada, and licensed by the CBN as an IMTO in Nigeria. At Exactrem, we work closely with international law enforcement agencies to detect and prevent money laundering.",
+					"description": "We are a licensed MSB, closely regulated by FINTRAC in Canada, and licensed by the CBN as an IMTO in Nigeria.",
 					"cta": "Learn more"
 				},
 				"three": {

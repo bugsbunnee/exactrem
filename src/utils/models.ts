@@ -64,4 +64,22 @@ export interface TableColumn {
 	label: string;
 	value: string;
 	className?: string;
-  }
+}
+
+export interface Section {
+    title: string;
+    description: string;
+}
+
+export interface PrivacySection extends Section {
+    subSections: Section[];
+    paragraphs?: string[];
+}
+
+export interface TermAndCondition {
+	id: string;
+	last_updated: string;
+	title: string;
+	description: string;
+	list: PrivacySection[];
+}

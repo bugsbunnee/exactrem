@@ -26,13 +26,13 @@ const NavItem: React.FC<NavItemModel> = ({ label, options, route }) => {
 
 	const className = useMemo(() => {
 		const isRouteMatch = 
-					(options.length > 0 && options.find((option) => `/${params.lang}/${option.route}` === pathname) )
-					|| `/${params.lang}/${route}` === pathname
+					(options.length > 0 && options.find((option) => `/${params.lang}${option.route}` === pathname) )
+					|| `/${params.lang}${route}` === pathname
 
 		return classNames({
 			"cursor-pointer active:bg-stone-50 active:outline-0 hover:bg-primary hover:text-white font-medium px-2 rounded-sm text-sm": true,
 			"text-white bg-primary dark:border-stone-100": isRouteMatch,
-			"dark:text-black text-white": !isRouteMatch
+			"dark:text-black dark:hover:text-white text-white": !isRouteMatch
 		});
 	}, [params.lang, pathname, options, route]);
 

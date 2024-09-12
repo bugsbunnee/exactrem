@@ -28,7 +28,7 @@ const useNewsletters = (searchParams: { page: SearchParams['page']; }) => {
         const sortedSubscriptions = _.orderBy(allSubscriptions, ['email'], ['desc']);
         const paginatedSubscriptions = paginate(sortedSubscriptions, page, pageSize);
 
-        return { paginatedSubscriptions, subscriptionCount: subscriptions.length, isLoading, page, pageSize }
+        return { paginatedSubscriptions, subscriptions, subscriptionCount: subscriptions.length, isLoading, page, pageSize }
     }, [isLoading, page, subscriptions]);
 
     useEffect(() => {

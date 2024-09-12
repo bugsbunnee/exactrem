@@ -4,7 +4,7 @@ import { Box, Flex, Heading, Skeleton, Text } from '@radix-ui/themes';
 const TrendingNewsLoading = () => {
     return (
         <Flex justify='center' align='center'>
-            <Flex align='center' className='p-10 mt-16 bg-stone-50 dark:bg-[#222] border rounded-sm' gap='7'>
+            <Flex align='center' className='p-10 mt-16 mb-8 bg-stone-50 dark:bg-[#222] border rounded-sm' gap='7'>
                 <figure className='relative w-[30rem] h-[20rem]'>
                     <Skeleton className='rounded-sm w-full h-full object-cover' />
 

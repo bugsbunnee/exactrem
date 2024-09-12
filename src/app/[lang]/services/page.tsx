@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { Container } from '@radix-ui/themes';
-
 import CoreServices from '@/app/[lang]/services/_components/CoreServices';
 import Footer from '@/components/sections/Footer/Footer';
 import NavBar from '@/components/sections/NavBar/NavBar';

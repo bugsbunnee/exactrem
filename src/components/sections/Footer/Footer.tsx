@@ -16,24 +16,14 @@ const Footer = () => {
     const dictionary = useDictionary();
 
     return ( 
-        <footer className="p-20 bg-primary text-white dark:bg-[#222]">
+        <footer id="footer" className="p-20 bg-primary text-white dark:bg-[#222]">
             <Container>
                 <Newsletter />
 
                 <Separator className='my-10 bg-white' size='4' />
 
                 <Grid columns='4'>
-                    <Box>
-                        <Logo />
-
-                        <Box className="my-3 max-w-24">
-                            <Text>
-                                © {new Date().getFullYear()} {dictionary.page.footer.copyright}
-                            </Text>
-                        </Box>
-                    </Box>
-                    
-                    <Box>
+                    <Flex direction="column" justify="start" align="start">
                         <Heading size='5'>{dictionary.page.footer.company}</Heading>
 
                         <Box className="my-3">
@@ -53,9 +43,9 @@ const Footer = () => {
                                 {dictionary.page.footer.links.news.title}
                             </Link>
                         </Box>
-                    </Box>
+                    </Flex>
                     
-                    <Box>
+                    <Flex direction="column" justify="start" align="start">
                         <Heading size='5'>{dictionary.page.footer.product}</Heading>
 
                         <Box className="my-3">
@@ -69,9 +59,9 @@ const Footer = () => {
                                 {dictionary.page.footer.links.services.title}
                             </Link>
                         </Box>
-                    </Box>
+                    </Flex>
                     
-                    <Box>
+                    <Flex direction="column" justify="start" align="start">
                         <Heading size='5'>{dictionary.page.footer.contact}</Heading>
 
                         <Box className="my-3">
@@ -87,14 +77,44 @@ const Footer = () => {
                                 {process.env.NEXT_PUBLIC_EMAIL}
                             </Link>
                         </Flex>
-                        
-                        <Box className="my-3">
-                            <Heading size='5' className='my-6'>{dictionary.page.footer.connect}</Heading>
+                    </Flex>
+                    
+                    <Flex direction="column" justify="start" align="start">
+                        <Heading size='5'>{dictionary.page.footer.terms_and_conditions}</Heading>
 
-                            <SocialLinks />
+                        <Box className="my-3">
+                            {Object.values(dictionary.page.terms_and_conditions).map((notice) => (
+                                <Box key={notice.id} className="mb-3">
+                                    <Link className='underline text-center' href={`/terms-and-conditions/${notice.id}`}>
+                                        {notice.title}
+                                    </Link>
+                                </Box>
+                            ))}
                         </Box>
-                    </Box>
+
+                        <Box className="my-3">
+                            <Flex direction="column" justify="start" align="start">
+                                <Heading size='5' className='mb-6'>{dictionary.page.footer.connect}</Heading>
+
+                                <SocialLinks />
+                            </Flex>
+                        </Box>
+                    </Flex>
+
+                   
                 </Grid>
+
+                <Separator className='my-10 bg-white' size='4' />
+
+                <Flex justify="center" align="center" gap="4" mt="5">
+                    <Logo />
+
+                    <Box className="my-3 ">
+                        <Text>
+                            © {new Date().getFullYear()} {dictionary.page.footer.copyright}
+                        </Text>
+                    </Box>
+                </Flex>
             </Container>
         </footer>
      );

@@ -17,56 +17,61 @@ const Converter = () => {
 	const { page } = useDictionary();
 	const { currencies } = useCurrencies();
 
-	const [senderInfo, setSenderInfo] = useState<CurrencyOption>(currencies.USD);
-	const [receiverInfo, setReceiverInfo] = useState<CurrencyOption>(currencies.NGN);
-	const [activeCurrency, setActiveCurrency] = useState<Currency>(senderInfo.value);
+	const [senderInfo, setSenderInfo] = useState<CurrencyOption>();
+	const [receiverInfo, setReceiverInfo] = useState<CurrencyOption>();
+	const [activeCurrency, setActiveCurrency] = useState<Currency>();
 	const [isSenderFocused, setSenderFocused] = useState(false);
 	const [isReceiverFocused, setReceiverFocused] = useState(false);
 	const [senderAmount, setSenderAmount] = useState(0);
 	const [receiverAmount, setReceiverAmount] = useState(0);
 
-	const handleSenderAmountUpdate = (
-		event: React.ChangeEvent<HTMLInputElement>
-	) => {
+	const handleSenderAmountUpdate = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const parsedSenderAmount = parseInt(event.target.value);
 		const newSenderAmount = parsedSenderAmount ? parsedSenderAmount : 0;
 
 		setSenderAmount(newSenderAmount);
 
+		if (!senderInfo || !receiverInfo) return;
+
 		if (newSenderAmount === 0) setReceiverAmount(0);
-		else {
-			const rate = senderInfo.rates[receiverInfo.value];
-			setReceiverAmount(parsedSenderAmount * rate);
-		}
+		else setReceiverAmount(parsedSenderAmount * senderInfo.rates[receiverInfo.value]);
 	};
 
-	const handleReceiverAmountUpdate = (
-		event: React.ChangeEvent<HTMLInputElement>
-	) => {
+	const handleReceiverAmountUpdate = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const parsedReceiverAmount = parseInt(event.target.value);
 		const newReceiverAmount = parsedReceiverAmount ? parsedReceiverAmount : 0;
 
 		setReceiverAmount(newReceiverAmount);
 
+		if (!senderInfo || !receiverInfo) return;
+
 		if (newReceiverAmount === 0) setSenderAmount(0);
-		else {
-			const rate = senderInfo.rates[receiverInfo.value];
-			setSenderAmount(parsedReceiverAmount / rate);
-		}
+		else setSenderAmount(parsedReceiverAmount / senderInfo.rates[receiverInfo.value]);
 	};
 
 	const getBoxClass = useCallback((includeShadow: boolean) => {
 		return classNames({
 			'shadow-xl bg-white': includeShadow,
-			'p-3 rounded-2xl w-full transition-all duration-500 ease-in-out relative':
-				true,
+			'p-3 rounded-2xl w-full transition-all duration-500 ease-in-out relative': true,
 		});
 	}, []);
 
 	useEffect(() => {
-		setSenderInfo(currencies.USD);
-		setReceiverInfo(currencies.NGN);
+		function getDefaultCurrencies() {
+			const currencyKeys = Object.keys(currencies);
+			if (currencyKeys.length < 2) return;
+
+			const [senderCurrency, receiverCurrency] = currencyKeys; 
+
+			setSenderInfo(currencies[senderCurrency as unknown as Currency]);
+			setReceiverInfo(currencies[receiverCurrency as unknown as Currency]);
+			setActiveCurrency(senderCurrency as unknown as Currency);
+		}
+
+		getDefaultCurrencies();
 	}, [currencies]);
+
+	if (!senderInfo || !receiverInfo) return null;
 
 	const isSenderActive = activeCurrency === senderInfo.value;
 	const isReceiverActive = activeCurrency === receiverInfo.value;

@@ -15,6 +15,7 @@ import NewCurrency from './_components/NewCurrency';
 import Pagination from '@/components/common/Pagination';
 
 import useCurrencies from '@/hooks/useCurrencies';
+import Conditional from '@/components/common/Conditional';
 
 interface Props {
   searchParams: { 
@@ -40,8 +41,6 @@ const CurrenciesPage: React.FC<Props> =  ({ searchParams }) => {
 
     return { paginatedCurrencies: paginated, currencyCount: Object.values(currencies).length, page, pageSize }
 }, [page, currencies, searchParams]);
-
-if (currencies.isLoading) return <LoadingCurrencyTable />;
 
   return (
     <Flex direction="column" gap="3">
@@ -78,19 +77,27 @@ if (currencies.isLoading) return <LoadingCurrencyTable />;
       </Flex>
 
       <Box className="p-5 bg-white dark:bg-[#222] rounded-sm mt-10 border border-stone-200">
-            <CurrencyTable
-                searchParams={searchParams as any} 
-                currencies={results.paginatedCurrencies}
-            />
+          <Conditional isVisible={currencies.isLoading}>
+            <LoadingCurrencyTable />
+          </Conditional>
+
+          <Conditional isVisible={!currencies.isLoading}>
+              <CurrencyTable
+                  searchParams={searchParams as any} 
+                  currencies={results.paginatedCurrencies}
+              />
+          </Conditional>
         </Box>
 
-        <Flex justify="end" gap="3" className="mt-5">
-            <Pagination
-                pageSize={results.pageSize}
-                currentPage={results.page}
-                itemCount={results.currencyCount}
-            />
-        </Flex>
+        <Conditional isVisible={!currencies.isLoading}>
+          <Flex justify="end" gap="3" className="mt-5">
+              <Pagination
+                  pageSize={results.pageSize}
+                  currentPage={results.page}
+                  itemCount={results.currencyCount}
+              />
+          </Flex>
+        </Conditional>
     </Flex>
   );
 };

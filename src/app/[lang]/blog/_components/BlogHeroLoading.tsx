@@ -3,7 +3,7 @@ import { Box, Flex, Heading, Skeleton, Text } from '@radix-ui/themes';
 
 const BlogHeroLoading = () => {
     return (
-        <Flex align='center' className='p-10 mt-16 bg-stone-50 dark:bg-[#222] border-stone-200 border rounded-2xl' gap='7'>
+        <Flex align='center' className='p-10 mt-16 mb-8 bg-stone-50 dark:bg-[#222] border-stone-200 border rounded-2xl' gap='7'>
             <Skeleton className='rounded-xl w-96 h-72 object-cover' />
 
             <Box>

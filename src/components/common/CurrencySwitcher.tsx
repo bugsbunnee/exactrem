@@ -21,27 +21,30 @@ const CurrencySwitcher: React.FC<Props> = ({ defaultValue, onSelectCurrency }) =
 				defaultValue={defaultValue}
 				onValueChange={(currency: Currency) => onSelectCurrency(currency)}
 			>
-				<Select.Trigger variant="ghost" className="focus:outline-none">
-					<Flex as="span" align="center" gap="2">
-						<Flex
-							className="w-5 h-5 rounded-full overflow-hidden"
-							justify="center"
-							align="center"
-						>
-							<Image
-								src={currencies[defaultValue].src}
-								alt={currencies[defaultValue].label}
-								width={500}
-								height={500}
-								className="w-full h-full object-contain"
-							/>
-						</Flex>
+				{currencies[defaultValue] && (
+					<Select.Trigger variant="ghost" className="focus:outline-none">
+						<Flex as="span" align="center" gap="2">
+							<Flex
+								className="w-5 h-5 rounded-full overflow-hidden"
+								justify="center"
+								align="center"
+							>
+								<Image
+									src={currencies[defaultValue].src}
+									alt={currencies[defaultValue].label}
+									width={500}
+									height={500}
+									className="w-full h-full object-contain"
+								/>
+							</Flex>
 
-						<Text className="uppercase text-gray-900 font-bold">
-							{currencies[defaultValue].value}
-						</Text>
-					</Flex>
-				</Select.Trigger>
+							<Text className="uppercase text-gray-900 font-bold">
+								{currencies[defaultValue].value}
+							</Text>
+						</Flex>
+					</Select.Trigger>
+				)}
+				
 
 				<Select.Content className="w-full" position="popper">
 					{Object.values(currencies).map((currency) => (
@@ -63,7 +66,7 @@ const CurrencySwitcher: React.FC<Props> = ({ defaultValue, onSelectCurrency }) =
 
 								<Box className="grow">
 									<Box>
-										<Text className="font-bold text-gray-700" size="2">
+										<Text className="font-bold text-gray-700 dark:text-white" size="2">
 											{currency.label}
 										</Text>
 									</Box>

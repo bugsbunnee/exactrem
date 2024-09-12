@@ -2,7 +2,7 @@ import React from 'react'
 import NextLink from 'next/link';
 
 import { ArrowDownIcon } from '@radix-ui/react-icons'
-import { Table } from '@radix-ui/themes'
+import { Badge, Table } from '@radix-ui/themes'
 import { RegisteredUser, TableColumn } from '@/utils/models'
 import { AccountType } from '@/utils/constants';
 
@@ -45,7 +45,7 @@ const UserTable = ({ searchParams, users }: Props) => {
                     {user.email}
                   </Table.Cell>
                   <Table.Cell>
-                    {user.accountType}
+                    <Badge color={user.accountType === AccountType.INDIVIDUAL ? "orange" : "blue"}>{user.accountType}</Badge>
                   </Table.Cell>
                   <Table.Cell>
                     {user.businessName}

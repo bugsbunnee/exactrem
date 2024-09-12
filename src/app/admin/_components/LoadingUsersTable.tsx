@@ -1,4 +1,4 @@
-import { Box, Table } from '@radix-ui/themes';
+import { Box, Flex, Table } from '@radix-ui/themes';
 
 import Skeleton from '@/components/common/Skeleton';
 import AccountTypeFilter from '@/app/admin/_components/AccountTypeFilter';
@@ -8,9 +8,11 @@ const LoadingUsersTable = () => {
 
   return (
     <Box>
-      <Box className="mt-10">
-        <AccountTypeFilter />
-      </Box>
+      <Flex className="mt-10" justify="between" align="center">
+          <AccountTypeFilter />
+
+          <Skeleton className='w-14 h-10' />
+      </Flex>
 
       <Table.Root variant="surface" className="mt-5">
         <Table.Header>

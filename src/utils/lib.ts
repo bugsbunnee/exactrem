@@ -33,8 +33,8 @@ export const getReadingTime = (text: string) => {
 	return readingTime(content).text;
 };
 
-export const formatDate = (date: string) => {
-	return dayjs(date).format('MMMM DD, YYYY');
+export const formatDate = (date: string, format: string = 'MMMM DD, YYYY') => {
+	return dayjs(date).format(format);
 };
 
 export const paginate = <T>(items: T[], currentPage: number, totalPages: number) => {

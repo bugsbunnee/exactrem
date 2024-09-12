@@ -48,7 +48,7 @@ const Newsletter: React.FC = () => {
     const errorMessage = error || formState.errors.email?.message;
 
 	return (
-		<Flex flexGrow="1" justify="center">
+		<Flex id="newsletter" flexGrow="1" justify="center">
 			<Container>
 				<Flex data-aos="zoom-in" justify='center' align='center'>
 					<form className='max-w-[40rem] rounded-sm bg-black dark:bg-white p-12' id="newsletter-form" onSubmit={handleSubmit(handleSubscribeToNewsletter)}>

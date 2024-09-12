@@ -5,9 +5,9 @@ import Image from 'next/image';
 import NextLink from 'next/link';
 
 import { ArrowDownIcon, Pencil1Icon, TrashIcon } from '@radix-ui/react-icons'
-import { Dialog, IconButton, Table } from '@radix-ui/themes'
+import { AlertDialog, Button, Dialog, Flex, IconButton, Table } from '@radix-ui/themes'
 import { CurrencyOption, TableColumn } from '@/utils/models'
-import { deleteCurrency } from '@/firebase/service';
+import { deleteCurrency, removeDeletedCurrencyFromRates } from '@/firebase/service';
 
 import UpdateCurrencyRate from '../currencies/_components/UpdateCurrencyRate';
 
@@ -23,8 +23,11 @@ interface Props {
 }
 
 const CurrencyTable = ({ searchParams, currencies }: Props) => {
-  const [isModalOpen, setModalOpen] = useState(false);
+  const [isUpdateModalOpen, setUpdateModalOpen] = useState(false);
+  const [isDeleteModalOpen, setDeleteModalOpen] = useState(false);
+  const [isDeleting, setDeleting] = useState(false);
   const [currencyToUpdate, setCurrencyToUpdate] = useState<CurrencyOption>();
+  const [currencyToDelete, setCurrencyToDelete] = useState<CurrencyOption>();
 
   const columns: TableColumn[] = [
     { label: 'Image', value: 'src' },
@@ -35,10 +38,18 @@ const CurrencyTable = ({ searchParams, currencies }: Props) => {
     { label: 'Delete', value: 'delete' },
   ];
 
+  const handleDelete = React.useCallback(async () => {
+      if (!currencyToDelete) return;
+
+      setDeleting(true);
+      await removeDeletedCurrencyFromRates(currencyToDelete.value);
+      setDeleting(false);
+  }, [currencyToDelete]);
+
   return (
     <>
       {currencyToUpdate && (
-        <Dialog.Root open={isModalOpen} onOpenChange={setModalOpen}>
+        <Dialog.Root open={isUpdateModalOpen} onOpenChange={setUpdateModalOpen}>
           <Dialog.Content className='max-w-96 rounded-md'>
             <Dialog.Title>Update Currency</Dialog.Title>
             
@@ -46,9 +57,33 @@ const CurrencyTable = ({ searchParams, currencies }: Props) => {
               Update rates for {currencyToUpdate.value}
             </Dialog.Description>
 
-            <UpdateCurrencyRate currencyToUpdate={currencyToUpdate} onUpdateCurrency={() => setModalOpen(false)} />
+            <UpdateCurrencyRate currencyToUpdate={currencyToUpdate} onUpdateCurrency={() => setUpdateModalOpen(false)} />
           </Dialog.Content>
         </Dialog.Root>
+      )}
+     
+      {currencyToDelete && (
+        <AlertDialog.Root open={isDeleteModalOpen} onOpenChange={setDeleteModalOpen}>
+            <AlertDialog.Content className="max-w-96">
+              <AlertDialog.Title>Delete <span className="text-primary">({currencyToDelete.value})</span></AlertDialog.Title>
+              <AlertDialog.Description size="2">
+                Are you sure? This will delete all <span className="text-primary">({currencyToDelete.value})</span> occurrences throughout your website
+              </AlertDialog.Description>
+          
+              <Flex gap="3" mt="4" justify="end">
+                <AlertDialog.Cancel>
+                  <Button variant="soft" color="green">
+                    Cancel
+                  </Button>
+                </AlertDialog.Cancel>
+                <AlertDialog.Action>
+                  <Button variant="solid" color="red" onClick={handleDelete}>
+                    Delete
+                  </Button>
+                </AlertDialog.Action>
+              </Flex>
+            </AlertDialog.Content>
+        </AlertDialog.Root>
       )}
 
       <Table.Root variant="surface">
@@ -90,14 +125,17 @@ const CurrencyTable = ({ searchParams, currencies }: Props) => {
                       variant="soft" 
                       onClick={() => {
                         setCurrencyToUpdate(currency);
-                        setModalOpen(true);
+                        setUpdateModalOpen(true);
                       }}
                     >
                       <Pencil1Icon width="25" height="25" />
                     </IconButton>
                   </Table.Cell>
                   <Table.Cell>
-                    <IconButton color='red' variant='soft' onClick={() => deleteCurrency(currency.value)}>
+                    <IconButton color='red' variant='soft' loading={isDeleting} onClick={() => {
+                        setCurrencyToDelete(currency);
+                        setDeleteModalOpen(true);
+                    }}>
                       <TrashIcon />
                     </IconButton>
                   </Table.Cell>

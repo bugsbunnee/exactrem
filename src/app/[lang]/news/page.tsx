@@ -25,6 +25,7 @@ import NewsItemLoading from '@/app/[lang]/news/_components/NewsItemLoading';
 import NewsItem from '@/app/[lang]/news/_components/NewsItem';
 import NavBar from '@/components/sections/NavBar/NavBar';
 import Pagination from '@/components/common/Pagination';
+import ScrollLink from '../../../components/ui/ScrollLink';
 
 import { summarize } from '@/utils/lib';
 import { SearchParams } from '@/utils/models';
@@ -60,7 +61,11 @@ const NewsPage: React.FC<Props> = ({ searchParams }) => {
                                 </Box>
 
                                 <Flex className='mt-12' justify='center' align='center'>
-                                    <Button label={dictionary.page.news.cta} route="/newletter" />
+                                    <ScrollLink 
+                                        id="newsletter" 
+                                        title={dictionary.page.news.cta} 
+                                        className="flex items-center gap-4 bg-black dark:bg-primary py-4 px-6 rounded-sm border border-orange-600 text-white"
+                                    />
                                 </Flex>
                             </Box>
                         </Flex>

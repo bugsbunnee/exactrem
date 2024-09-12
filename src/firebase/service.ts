@@ -3,12 +3,12 @@
 import dayjs from 'dayjs';
 import _ from 'lodash';
 
-import { addDoc, collection, deleteDoc, doc,  getDoc, getDocs, setDoc, updateDoc } from "firebase/firestore";
+import { addDoc, collection, deleteDoc, deleteField, doc,  getDoc, getDocs, setDoc, updateDoc, writeBatch , FieldValue } from "firebase/firestore";
 import { db } from "./config";
 
 import { RegistrationFormData } from "@/app/[lang]/register/_components/RegistrationFormOne/schema";
 import { UserFormData } from "@/app/[lang]/register/_components/RegistrationFormTwo/schema";
-import { CurrencyOption, RegisteredUser } from '@/utils/models';
+import { Currency, CurrencyOption, RegisteredUser } from '@/utils/models';
 
 export const initializeUser = async (user: RegistrationFormData) => {
     const usersRef = collection(db, 'users');
@@ -72,6 +72,28 @@ export const deleteCurrency = async (currencyId: string) => {
 export const updateCurrencyRates = async (currencyId: string, rates: { [key: string]: number}) => {
     const currencyRef = doc(db, 'currencies', currencyId);
     await updateDoc(currencyRef, { rates });
+};
+
+export const getAllActiveCurrencies = async (currencyToExclude: Currency) => {
+    const collectionRef = collection(db, 'currencies');
+    const snapshot = await getDocs(collectionRef);
+
+    return snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })).filter((currency) => currency.id !== currencyToExclude);
+};
+
+export const removeDeletedCurrencyFromRates = async (currencyToDelete: Currency) => {
+    const activeCurrencies = await getAllActiveCurrencies(currencyToDelete);
+    const batch = writeBatch(db);
+
+    const currencyToDeleteRef = doc(db, 'currencies', currencyToDelete);
+    batch.delete(currencyToDeleteRef);
+
+    for (const currency of activeCurrencies) {
+        const currencyRef = doc(db, 'currencies', currency.id);
+        batch.update(currencyRef, { [`rates.${currencyToDelete}`]: deleteField() });
+    }
+
+    await batch.commit();
 };
 
 export const addReferrer = async (userId: string, referredBy: string) => {

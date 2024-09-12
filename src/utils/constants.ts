@@ -10,16 +10,18 @@ export enum AccountType {
 
 export const navigationItems: NavItem[] = [
 	{
-		route: 'services',
+		route: '/services',
 		label: 'Our Services',
 		options: [
 			{
+				route: '/services/person-to-person',
 				color: 'bg-orange-50',
 				title: 'Person to Person (P2P)',
 				description: 'Individuals sending money to friends and family.',
 				Icon: FcPortraitMode,
 			},
 			{
+				route: '/services/person-to-business',
 				color: 'bg-sky-50',
 				title: 'Person to Business (P2B)',
 				description: 'Individuals paying businesses (e.g., bills, services)',
@@ -40,7 +42,7 @@ export const navigationItems: NavItem[] = [
 		],
 	},
 	{
-		route: 'about',
+		route: '/about',
 		label: 'About us',
 		options: [],
 	},
@@ -49,14 +51,14 @@ export const navigationItems: NavItem[] = [
 		label: 'Resources',
 		options: [
 			{
-				route: 'news',
+				route: '/news',
 				color: 'bg-orange-50',
 				title: 'Newsroom',
 				description: 'Our milestone and achievements, news related to the sector that we operate.',
 				Icon: FcNews,
 			},
 			{
-				route: 'blog',
+				route: '/blog',
 				color: 'bg-sky-50',
 				title: 'Blog',
 				description: 'Published articles, and qualilty write-ups related to Foreign Exchange',
@@ -65,12 +67,12 @@ export const navigationItems: NavItem[] = [
 		],
 	},
 	{
-		route: 'contact',
+		route: '/contact',
 		label: 'Contact us',
 		options: [],
 	},
 	{
-		route: 'invite',
+		route: '/invite',
 		label: 'Invite a friend',
 		options: [],
 	},
