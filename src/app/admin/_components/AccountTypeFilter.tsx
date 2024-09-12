@@ -18,7 +18,6 @@ const AccountTypeFilter = () => {
 
   return (
     <Select.Root
-      variant='soft'
       defaultValue={searchParams.get('accountType') || ALL_KEYWORD}
       onValueChange={(accountType) => {
           const params = new URLSearchParams();
