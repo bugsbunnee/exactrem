@@ -57,6 +57,8 @@ const useCurrencies = () => {
     const [currencies, setCurrencies] = useState<CurrencyData>(initialCurrencies);
 
     useEffect(() => {
+		setLoading(true);
+		
         const currenciesRef = collection(db, 'currencies');
 
         const unsubscribe = onSnapshot(currenciesRef, (snapshot) => {

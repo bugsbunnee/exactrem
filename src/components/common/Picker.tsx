@@ -9,12 +9,13 @@ import { MagnifyingGlassIcon } from '@radix-ui/react-icons';
 interface Props {
 	disabled?: boolean;
 	value: string;
+	placeholder: string;
 	onChange: (value: string) => void;
 	options: { label: string; value: string; src: string }[];
 }
 
 const Picker: React.FC<Props> = React.forwardRef<HTMLButtonElement, Props>(
-	({ onChange, options, disabled, value }, ref) => {
+	({ onChange, options, disabled, value, placeholder }, ref) => {
 		return (
 			<Flex direction="column" className="w-full">
 				<Select.Root
@@ -26,7 +27,7 @@ const Picker: React.FC<Props> = React.forwardRef<HTMLButtonElement, Props>(
 					<Select.Trigger
 						variant="surface"
 						radius="small"
-						placeholder="Select a country"
+						placeholder={placeholder}
 						ref={ref}
 						className="text-sm"
 					></Select.Trigger>

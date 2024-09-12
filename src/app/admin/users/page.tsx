@@ -15,7 +15,7 @@ const UsersPage: React.FC<Props> =  ({ searchParams }) => {
     <Flex direction="column" gap="3">
       <Box className="mt-10 max-w-96">
           <Heading>Users</Heading>
-          <Text as='p' className="text-gray-500 mt-4" size="2">
+          <Text as='p' className="text-gray-500 dark:text-white mt-4" size="2">
               This is the users page. View and manage your registered users
           </Text>
       </Box>

@@ -39,7 +39,7 @@ const AdminNavBar = () => {
     const pathName = usePathname();
 
     return ( 
-        <aside className='bg-white p-5 h-screen border-r border-stone-200 flex flex-col'>
+        <aside className='bg-white dark:bg-[#222] p-5 h-screen border-r border-stone-200 flex flex-col'>
             <Flex justify='start' align='center'>
                 <Logo />
             </Flex>
@@ -52,8 +52,8 @@ const AdminNavBar = () => {
                     gap='3'
                     className={classNames({
                         'px-3 py-2 mb-5 rounded-sm text-sm w-full': true,
-                        'bg-black text-white': pathName === route.route,
-                        'bg-stone-50 border border-stone-200 text-black': pathName !== route.route
+                        'bg-black text-white dark:border dark:border-white': pathName === route.route,
+                        'bg-stone-50 dark:bg-[#222] dark:text-white border border-stone-200 text-black': pathName !== route.route
                     })}>
                     <route.Icon />
 
@@ -68,7 +68,7 @@ const AdminNavBar = () => {
                ))}
             </Box>
 
-            <Button className='bg-black w-full mt-auto' onClick={() => signOut()}>
+            <Button className='bg-black dark:border dark:border-white w-full mt-auto' onClick={() => signOut()}>
                 Logout
             </Button>
         </aside>

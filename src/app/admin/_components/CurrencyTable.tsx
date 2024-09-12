@@ -1,11 +1,15 @@
-import React from 'react'
+"use client";
+
+import React, { useState } from 'react';
 import Image from 'next/image';
 import NextLink from 'next/link';
 
-import { ArrowDownIcon, TrashIcon } from '@radix-ui/react-icons'
-import { IconButton, Table } from '@radix-ui/themes'
-import { CurrencyOption,TableColumn } from '@/utils/models'
+import { ArrowDownIcon, Pencil1Icon, TrashIcon } from '@radix-ui/react-icons'
+import { Dialog, IconButton, Table } from '@radix-ui/themes'
+import { CurrencyOption, TableColumn } from '@/utils/models'
 import { deleteCurrency } from '@/firebase/service';
+
+import UpdateCurrencyRate from '../currencies/_components/UpdateCurrencyRate';
 
 export interface UserQuery {
     query: string;
@@ -19,16 +23,35 @@ interface Props {
 }
 
 const CurrencyTable = ({ searchParams, currencies }: Props) => {
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [currencyToUpdate, setCurrencyToUpdate] = useState<CurrencyOption>();
+
   const columns: TableColumn[] = [
     { label: 'Image', value: 'src' },
     { label: 'Label', value: 'label' },
     { label: 'Code', value: 'value' },
     ...currencies.slice(1).map((currency) => ({ label: '', value: currency.value })),
-    { label: 'Delete', value: 'rate' },
+    { label: 'Edit', value: 'edit' },
+    { label: 'Delete', value: 'delete' },
   ];
 
   return (
-    <Table.Root variant="surface">
+    <>
+      {currencyToUpdate && (
+        <Dialog.Root open={isModalOpen} onOpenChange={setModalOpen}>
+          <Dialog.Content className='max-w-96 rounded-md'>
+            <Dialog.Title>Update Currency</Dialog.Title>
+            
+            <Dialog.Description size="2" my="4">
+              Update rates for {currencyToUpdate.value}
+            </Dialog.Description>
+
+            <UpdateCurrencyRate currencyToUpdate={currencyToUpdate} onUpdateCurrency={() => setModalOpen(false)} />
+          </Dialog.Content>
+        </Dialog.Root>
+      )}
+
+      <Table.Root variant="surface">
         <Table.Header>
           <Table.Row>
             {columns.map((column) => (
@@ -57,9 +80,22 @@ const CurrencyTable = ({ searchParams, currencies }: Props) => {
                   </Table.Cell>
                   {Object.keys(currency.rates).map((key) => (
                     <Table.Cell key={key}>
-                      ({key.toUpperCase()}) {currency.rates[key]}
+                       ({ key }) {currency.rates[key]}
                     </Table.Cell>
                   ))}
+                  <Table.Cell>
+                    <IconButton 
+                      color="green" 
+                      className="cursor-pointer" 
+                      variant="soft" 
+                      onClick={() => {
+                        setCurrencyToUpdate(currency);
+                        setModalOpen(true);
+                      }}
+                    >
+                      <Pencil1Icon width="25" height="25" />
+                    </IconButton>
+                  </Table.Cell>
                   <Table.Cell>
                     <IconButton color='red' variant='soft' onClick={() => deleteCurrency(currency.value)}>
                       <TrashIcon />
@@ -69,6 +105,7 @@ const CurrencyTable = ({ searchParams, currencies }: Props) => {
           ))}
         </Table.Body>
       </Table.Root>
+    </>
   )
 }
 

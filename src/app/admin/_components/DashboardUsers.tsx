@@ -23,7 +23,7 @@ const DashboardUsers: React.FC<Props> = ({ searchParams }) => {
                 <AccountTypeFilter />
             </Box>
 
-            <Box className="p-5 bg-white rounded-sm mt-10 border border-stone-200">
+            <Box className="p-5 bg-white dark:bg-[#222] rounded-sm mt-10 border border-stone-200">
                 <UserTable 
                     searchParams={searchParams as any} 
                     users={userData.allUsers}

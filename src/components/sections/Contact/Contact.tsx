@@ -241,7 +241,7 @@ const Contact: React.FC = () => {
 												name="country"
 												control={control}
 												render={({ field }) => (
-													<Picker {...field} options={countries} />
+													<Picker {...field} options={countries} placeholder="Select a country" />
 												)}
 											/>
 										</Box>
@@ -305,7 +305,7 @@ const Contact: React.FC = () => {
 								>
 									<Box className="min-w-32 max-sm:w-full" my="6">
 										<Button
-											className="w-full bg-slate-800 dark:bg-[#222] disabled:text-white text-sm"
+											className="w-full bg-black dark:bg-[#222] disabled:text-white text-sm"
 											form="contact-form"
 											variant="solid"
 											size="3"

@@ -9,17 +9,19 @@ export enum Currency {
 	EUR = 'EUR'
 };
 
-export interface CountryOption {
-	label: string;
+export interface PickerOption {
 	src: string;
+	label: string;
 	value: string;
+}
+
+export interface CountryOption extends PickerOption {
 	phoneCode: string;
+	currencies: PickerOption[],
 	cca2: CountryCode;
 };
 
-export interface CurrencyOption {
-	src: string;
-	label: string;
+export interface CurrencyOption extends PickerOption {
 	value: Currency;
 	rates: Record<string, number>;
 }

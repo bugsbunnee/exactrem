@@ -3,12 +3,12 @@
 import dayjs from 'dayjs';
 import _ from 'lodash';
 
-import { addDoc, collection, deleteDoc, doc,  getDoc, getDocs, updateDoc } from "firebase/firestore";
+import { addDoc, collection, deleteDoc, doc,  getDoc, getDocs, setDoc, updateDoc } from "firebase/firestore";
 import { db } from "./config";
 
 import { RegistrationFormData } from "@/app/[lang]/register/_components/RegistrationFormOne/schema";
 import { UserFormData } from "@/app/[lang]/register/_components/RegistrationFormTwo/schema";
-import { RegisteredUser } from '@/utils/models';
+import { CurrencyOption, RegisteredUser } from '@/utils/models';
 
 export const initializeUser = async (user: RegistrationFormData) => {
     const usersRef = collection(db, 'users');
@@ -59,9 +59,19 @@ export const updateUser = async (userId: string, userData: UserFormData) => {
     return referralCode;
 };
 
+export const addCurrency = async (newCurrency: CurrencyOption) => {
+    const currencyRef = doc(db, 'currencies', newCurrency.value);
+    await setDoc(currencyRef, newCurrency);
+};
+
 export const deleteCurrency = async (currencyId: string) => {
     const currenciesRef = doc(db, 'currencies', currencyId);
     await deleteDoc(currenciesRef);
+};
+
+export const updateCurrencyRates = async (currencyId: string, rates: { [key: string]: number}) => {
+    const currencyRef = doc(db, 'currencies', currencyId);
+    await updateDoc(currencyRef, { rates });
 };
 
 export const addReferrer = async (userId: string, referredBy: string) => {

@@ -29,7 +29,7 @@ const AdminSearch: React.FC<Props> = () => {
 
     return (
         <TextField.Root 
-            className='w-full max-w-96 bg-white text-sm border-stone-100' 
+            className='w-full max-w-96 bg-white dark:bg-[#222] text-sm border-stone-200 border' 
             placeholder="Search users"
             size='3' 
             radius='small'
@@ -38,7 +38,7 @@ const AdminSearch: React.FC<Props> = () => {
             onChange={event => handleSearch(event.target.value)}
         >
             <TextField.Slot>
-                <MagnifyingGlassIcon width='18' height='18' className='text-primary' />
+                <MagnifyingGlassIcon width='18' height='18' className='text-primary dark:text-white' />
             </TextField.Slot>
         </TextField.Root>
     )

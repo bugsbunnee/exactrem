@@ -20,7 +20,7 @@ const AdminHomePage: React.FC<Props> = ({ searchParams }) => {
         <Box>
             <Box className="my-10 max-w-96">
                 <Heading>Dashboard</Heading>
-                <Text as='p' className="text-gray-500 mt-4" size="2">
+                <Text as='p' className="text-gray-500 dark:text-white mt-4" size="2">
                     Hi, <span>{session ? session.user!.name : ''}.</span> Welcome to the admin dashboard. Here you 
                     can view all registered users, newsletter subscriptions and user info
                 </Text>

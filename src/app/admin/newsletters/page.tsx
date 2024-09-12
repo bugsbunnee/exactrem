@@ -23,12 +23,12 @@ const NewslettersPage: React.FC<Props> =  ({ searchParams }) => {
     <Flex direction="column" gap="3">
       <Box className="mt-10 max-w-96">
           <Heading>Newsletters</Heading>
-          <Text as='p' className="text-gray-500 mt-4" size="2">
+          <Text as='p' className="text-gray-500 dark:text-white mt-4" size="2">
               This is the newsletters page. View and manage your registered subscribers.
           </Text>
       </Box>
 
-      <Box className="p-5 bg-white rounded-sm mt-10 border border-stone-200">
+      <Box className="p-5 bg-white dark:bg-[#222] rounded-sm mt-10 border border-stone-200">
             <NewslettersTable 
                 searchParams={searchParams as any} 
                 subscriptions={paginatedSubscriptions}

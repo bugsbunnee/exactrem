@@ -18,6 +18,9 @@ interface Country {
 		suffixes: string[];
 	};
 	cca2: CountryCode;
+	currencies: {
+		[key: string]: { name: string; }
+	}
 }
 
 const useCountries = () => {
@@ -42,6 +45,7 @@ const useCountries = () => {
 			src: country.flags.png,
 			value: country.name.common,
 			cca2: country.cca2,
+			currencies: country.currencies ? Object.keys(country.currencies).map((currency) => ({ src: country.flags.png, label: country.currencies[currency].name, value: currency })) : [],
 			phoneCode:
 				country.idd.root +
 				(country.idd.suffixes ? country.idd.suffixes[0] : ''),

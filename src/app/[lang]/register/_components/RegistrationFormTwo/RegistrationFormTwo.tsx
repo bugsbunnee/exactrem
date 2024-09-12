@@ -212,7 +212,7 @@ const RegistrationFormTwo: React.FC<Props> = ({ userId, onCreateUser }) => {
                         
                  
                         <Button
-                            className="animate__animated animate__backInUp w-full mt-4 text-sm bg-slate-800 disabled:bg-gray-600 disabled:text-white dark:bg-[#222]"
+                            className="animate__animated animate__backInUp w-full mt-4 text-sm bg-black disabled:bg-gray-600 disabled:text-white dark:bg-[#222]"
                             form="registration-two-form"
                             variant="solid"
                             size="4"
