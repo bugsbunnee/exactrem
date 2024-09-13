@@ -1,6 +1,9 @@
 import { CountryCode } from 'libphonenumber-js';
 import { IconType } from 'react-icons';
 import { AccountType } from './constants';
+import { DefaultGenerics, StreamChat } from 'stream-chat';
+
+export type ChatClient = StreamChat<DefaultGenerics>;
 
 export enum Currency {
 	NGN = 'NGN',

@@ -40,7 +40,7 @@ const AppButton: React.FC<Props> = ({ label, route, mode = 'light' }) => {
 			<Box className="w-2/12 h-full flex flex items-center justify-center">
 				<ArrowRightIcon width="20" height="20" className={classNames({
 					"z-30 text-black": true,
-					"text-white dark:bg-white dark:text-black": mode === 'light',
+					"text-white dark:text-black": mode === 'light',
 				})} />
 			</Box>
 		</Button>

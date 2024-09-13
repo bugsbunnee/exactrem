@@ -1,5 +1,3 @@
-"use client";
-
 import { NavItem } from '@/utils/models';
 import { FcBriefcase, FcBusiness, FcBusinessman, FcNews, FcViewDetails, FcPortraitMode } from 'react-icons/fc';
 
@@ -92,5 +90,7 @@ export const accountTypes: NavItem['options'] = [
 		Icon: FcBusiness,
 	},
 ];
+
+export const liveChatIds = ['user-one', 'marcelexactrem'];
 
 export const ALL_KEYWORD = 'all';

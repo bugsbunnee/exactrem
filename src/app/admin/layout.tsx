@@ -2,6 +2,7 @@
 
 import AdminSearch from './_components/AdminSearch';
 import AdminNavBar from './_components/AdminNavBar';
+import AdminChat from '@/components/sections/LiveChat/AdminChat';
 import NavUserDetails from './_components/NavUserDetails';
 
 import { Box, Grid, } from '@radix-ui/themes';
@@ -29,6 +30,8 @@ async function AdminLayout({ children }: Readonly<{ children: React.ReactNode; }
 
 					{children}
 				</Box>
+
+				<AdminChat />
 			</Grid>
 		</Box>
 	);

@@ -1,6 +1,9 @@
 import { i18n, Locale } from '../../../i18n.config';
 import { getDictionary } from '@/utils/dictionaries';
 
+import dynamic from "next/dynamic";
+
+import UserChat from '@/components/sections/LiveChat/UserChat';
 import DictionaryProvider from '@/providers/DictionaryProvider';
 
 type Props = Readonly<{ children: React.ReactNode; params: { lang: Locale } }>;
@@ -15,6 +18,8 @@ async function LangLayout({ children, params }: Props) {
 	return (
 		<DictionaryProvider dictionary={dictionary}>
 			{children}
+
+			<UserChat />
 		</DictionaryProvider>
 	);
 }

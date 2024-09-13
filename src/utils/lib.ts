@@ -41,3 +41,11 @@ export const paginate = <T>(items: T[], currentPage: number, totalPages: number)
 	const startIndex: number = (currentPage - 1) * totalPages;
 	return items.slice(startIndex).filter((_, index) => index < totalPages);
 };
+
+export const saveSessionChatId = (token: string) => {
+	sessionStorage.setItem('chat_id', token);
+};
+
+export const getSessionChatId = () => {
+	return sessionStorage.getItem('chat_id');
+};

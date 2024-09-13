@@ -2,12 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 
 import { Flex, IconButton } from '@radix-ui/themes';
-import {
-	EnvelopeClosedIcon,
-	GitHubLogoIcon,
-	InstagramLogoIcon,
-	LinkedInLogoIcon,
-} from '@radix-ui/react-icons';
+import { EnvelopeClosedIcon, GitHubLogoIcon, InstagramLogoIcon, LinkedInLogoIcon } from '@radix-ui/react-icons';
 
 const SocialLinks: React.FC = () => {
 	const socialLinks = [
