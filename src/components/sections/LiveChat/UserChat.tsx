@@ -12,7 +12,7 @@ import ChatProvider from '@/providers/ChatProvider';
 import UserChatChannel from './UserChatChannel';
 
 const UserChat = () => {
-    const { isFetching, chatData } = useChat();
+    const { isFetching, data: chatData } = useChat();
 
     if (isFetching) {
         return (
