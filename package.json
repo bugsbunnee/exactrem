@@ -32,7 +32,6 @@
     "dayjs": "^1.11.13",
     "file-saver": "^2.0.5",
     "firebase": "^10.13.1",
-    "jwt-decode": "^4.0.0",
     "libphonenumber-js": "^1.11.7",
     "lodash": "^4.17.21",
     "lottie-react": "^2.4.0",

@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import AdminChat from '@/components/sections/LiveChat/AdminChat';
 import ThemeSwitcher from '@/components/common/ThemeSwitcher';
 
 import { Avatar, Box, Flex, Separator, Text } from '@radix-ui/themes';
@@ -22,6 +23,10 @@ const NavUserDetails: React.FC<Props> = ({sessionUser }) => {
                 </Text>
             </Box>
             
+            <Separator orientation='vertical' />
+
+            <AdminChat />
+
             <Separator orientation='vertical' />
             
             <Avatar

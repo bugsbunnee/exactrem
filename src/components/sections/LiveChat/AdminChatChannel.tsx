@@ -4,7 +4,7 @@ import { Box, Flex } from '@radix-ui/themes';
 import React, { useEffect, useState } from 'react';
 
 import { ChannelOptions, ChannelSort, Channel as StreamChannel } from 'stream-chat';
-import { Channel, ChannelHeader, ChannelList, MessageInput, MessageList, Thread, Window } from 'stream-chat-react';
+import { Channel, ChannelHeader, ChannelList, MessageInput, MessageList, Thread, Window, useChatContext } from 'stream-chat-react';
 import { EmojiPicker } from 'stream-chat-react/emojis';
 
 
@@ -16,8 +16,10 @@ const options: ChannelOptions = {
     limit: 10,
 };
 
-const AdminChatChannel: React.FC<Props> = ({ client }) => {
+const AdminChatChannel: React.FC= () => {
     const [channel, setChannel] = useState<StreamChannel>();
+
+    const { client } = useChatContext();
 
     useEffect(() => {
         if (!client) return;

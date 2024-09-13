@@ -86,3 +86,9 @@ export interface TermAndCondition {
 	description: string;
 	list: PrivacySection[];
 }
+
+export interface ChatResponse { 
+    id: string;
+    token: string; 
+    unreadCount: number; 
+}

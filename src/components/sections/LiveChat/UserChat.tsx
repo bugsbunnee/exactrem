@@ -2,16 +2,19 @@
 
 import { Dialog, VisuallyHidden, IconButton, Box, Skeleton } from '@radix-ui/themes';
 import { ChatBubbleIcon } from '@radix-ui/react-icons';
+import { useQuery } from '@tanstack/react-query';
+
+import { ChatResponse } from '@/utils/models';
+
+import axios from 'axios';
 
 import ChatProvider from '@/providers/ChatProvider';
 import UserChatChannel from './UserChatChannel';
 
-import useChats from '@/hooks/useChats';
-
 const UserChat = () => {
-    const { isLoading, chatSession } = useChats();
+    const { isFetching, chatData } = useChat();
 
-    if (isLoading) {
+    if (isFetching) {
         return (
             <Box className='animate__animated animate__bounce w-14 h-14 flex items-center justify-center bg-stone-50 border border-stone-200 rounded-full fixed bottom-10 right-10'>
                 <Skeleton className='w-5 h-5' />
@@ -19,7 +22,7 @@ const UserChat = () => {
         );
     }
 
-    if (!chatSession.userId) return null;
+    if (!chatData || !chatData.id) return null;
 
     return (
             <Dialog.Root>
@@ -35,12 +38,20 @@ const UserChat = () => {
                         <Dialog.Description>You are now chatting with Exactrem.</Dialog.Description>
                     </VisuallyHidden>
         
-                    <ChatProvider userId={chatSession.userId} userToken={chatSession.userToken}>
-                        <UserChatChannel userId={chatSession.userId} />
+                    <ChatProvider userId={chatData.id} userToken={chatData.token}>
+                        <UserChatChannel userId={chatData.id} />
                     </ChatProvider>
                 </Dialog.Content>
             </Dialog.Root>
     );
+};
+
+const useChat = () => {
+    return useQuery<ChatResponse>({
+		queryKey: ['chat'],
+		queryFn: () => axios.post<ChatResponse>('/api/live-chat/admin').then((response) => response.data),
+		staleTime: 5000 * 1_000,
+	});
 };
 
 export default UserChat;
