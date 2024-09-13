@@ -15,11 +15,11 @@ const ChatChannel: React.FC<Props> = ({ userId }) => {
     const { client } = useChatContext();
 
     useEffect(() => {
-        if (!client) return;
+        if (!client || !!channel) return;
 
-        const channel = client.channel('messaging', { members: [userId, process.env.NEXT_PUBLIC_ADMIN_CHAT_ID as string] });
-        setChannel(channel);
-    }, [client, userId]);
+        const newChannel = client.channel('messaging', { members: [userId, process.env.NEXT_PUBLIC_ADMIN_CHAT_ID as string] });
+        setChannel(newChannel);
+    }, [client, userId, channel]);
 
     return ( 
         <Channel channel={channel}>

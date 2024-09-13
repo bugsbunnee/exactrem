@@ -22,12 +22,11 @@ const AdminChatChannel: React.FC= () => {
     const { client } = useChatContext();
 
     useEffect(() => {
-        if (!client) return;
+        if (!client || !!channel) return;
 
-        const channel = client.channel('livestream');
-
-        setChannel(channel);
-    }, [client]);
+        const newChannel = client.channel('livestream');
+        setChannel(newChannel);
+    }, [client, channel]);
 
     return ( 
         <Flex align='start' justify='start'>
