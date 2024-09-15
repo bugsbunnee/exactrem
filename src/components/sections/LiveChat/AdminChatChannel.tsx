@@ -1,12 +1,9 @@
-'use client';
-
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Box, Flex } from '@radix-ui/themes';
 
-import { ChannelOptions, ChannelSort, Channel as StreamChannel } from 'stream-chat';
-import { Channel, ChannelHeader, ChannelList, MessageInput, MessageList, Thread, Window, useChatContext } from 'stream-chat-react';
+import { ChannelFilters, ChannelOptions, ChannelSort } from 'stream-chat';
+import { Channel, ChannelHeader, ChannelList, MessageInput, MessageList, Thread, Window } from 'stream-chat-react';
 import { EmojiPicker } from 'stream-chat-react/emojis';
-
 
 const sort: ChannelSort= { 
     last_message_at: -1 
@@ -16,21 +13,14 @@ const options: ChannelOptions = {
     limit: 10,
 };
 
+const filters: ChannelFilters = { 
+    type: 'messaging', members: {$in: [process.env.NEXT_PUBLIC_ADMIN_CHAT_ID as string]} 
+};
+
 const AdminChatChannel: React.FC= () => {
-    const [channel, setChannel] = useState<StreamChannel>();
-
-    const { client } = useChatContext();
-
-    useEffect(() => {
-        if (!client) return;
-
-        const newChannel = client.channel('messaging', 'admin-livechat');
-        setChannel(newChannel);
-    }, [client]);
-
     return ( 
         <Flex align='start' justify='start'>
-            <ChannelList sort={sort} options={options} />
+            <ChannelList filters={filters} sort={sort} options={options} showChannelSearch />
             <Box className='flex-1'>
                 <Channel EmojiPicker={EmojiPicker}>
                     <Window>
