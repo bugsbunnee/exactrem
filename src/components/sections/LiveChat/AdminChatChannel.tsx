@@ -1,7 +1,7 @@
 'use client';
 
-import { Box, Flex } from '@radix-ui/themes';
 import React, { useEffect, useState } from 'react';
+import { Box, Flex } from '@radix-ui/themes';
 
 import { ChannelOptions, ChannelSort, Channel as StreamChannel } from 'stream-chat';
 import { Channel, ChannelHeader, ChannelList, MessageInput, MessageList, Thread, Window, useChatContext } from 'stream-chat-react';
@@ -22,17 +22,17 @@ const AdminChatChannel: React.FC= () => {
     const { client } = useChatContext();
 
     useEffect(() => {
-        if (!client || !!channel) return;
+        if (!client) return;
 
-        const newChannel = client.channel('livestream');
+        const newChannel = client.channel('messaging', 'admin-livechat');
         setChannel(newChannel);
-    }, [client, channel]);
+    }, [client]);
 
     return ( 
         <Flex align='start' justify='start'>
             <ChannelList sort={sort} options={options} />
             <Box className='flex-1'>
-                <Channel channel={channel} EmojiPicker={EmojiPicker}>
+                <Channel EmojiPicker={EmojiPicker}>
                     <Window>
                         <ChannelHeader />
                         <MessageList />

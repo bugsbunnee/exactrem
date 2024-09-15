@@ -15,9 +15,14 @@ const ChatChannel: React.FC<Props> = ({ userId }) => {
     const { client } = useChatContext();
 
     useEffect(() => {
-        if (!client || !!channel) return;
+        if (!client) return;
 
-        const newChannel = client.channel('messaging', { members: [userId, process.env.NEXT_PUBLIC_ADMIN_CHAT_ID as string] });
+        const newChannel = client.channel('messaging', '', { 
+            image: process.env.NEXT_PUBLIC_BASE_URL + '/logo.jpeg',
+            name: 'Chat with Exactrem: ' + userId,
+            members: [userId, process.env.NEXT_PUBLIC_ADMIN_CHAT_ID as string] 
+        });
+
         setChannel(newChannel);
     }, [client, userId, channel]);
 

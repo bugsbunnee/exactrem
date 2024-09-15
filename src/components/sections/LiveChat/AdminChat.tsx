@@ -27,7 +27,9 @@ const AdminChat = () => {
   return (
         <Dialog.Root>
             <Dialog.Trigger>
-                <Badge color='red' size='3'>{chatData.unreadCount} Unread Chats</Badge>
+                <Badge color={chatData.unreadCount > 0 ? 'red' : 'green'} size='3'>
+                    {chatData.unreadCount} Unread Chats
+                </Badge>
             </Dialog.Trigger>
     
             <Dialog.Content data-aos="zoom-in" className="w-11/12 p-4">

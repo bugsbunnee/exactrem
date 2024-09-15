@@ -49,7 +49,7 @@ const UserChat = () => {
 const useChat = () => {
     return useQuery<ChatResponse>({
 		queryKey: ['chat'],
-		queryFn: () => axios.post<ChatResponse>('/api/live-chat/admin').then((response) => response.data),
+		queryFn: () => axios.post<ChatResponse>('/api/live-chat').then((response) => response.data),
 		staleTime: 5000 * 1_000,
 	});
 };

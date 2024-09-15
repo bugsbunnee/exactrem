@@ -7,13 +7,11 @@ export async function POST(request: NextRequest) {
     }
 
     const serverClient = StreamChat.getInstance(process.env.NEXT_PUBLIC_STREAM_API_KEY, process.env.NEXT_PUBLIC_STREAM_API_SECRET);
-
     const userId = 'user-' + Date.now();
-    const response = await serverClient.getUnreadCount(userId);
 
     return NextResponse.json({ 
         token: serverClient.createToken(userId), 
-        unreadCount: response.total_unread_count, 
+        unreadCount: 0, 
         id: userId,
     });
 }
