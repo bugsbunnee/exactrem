@@ -19,9 +19,9 @@ const ContactPage: React.FC = () => {
         <>
             <NavBar />
 
-            <section className='p-16'>
+            <section className='p-16 max-md:p-6'>
                 <Container>
-                    <Grid columns='2' gap='4'>
+                    <Grid columns={{ initial: '1', md: '2' }} gap={{ initial: '9', md: '4' }}>
                         <Box data-aos="zoom-in-up">
                             <Box className='max-w-96'>
                                 <Heading size='9' className='leading-12'>{page.contact.title}</Heading>

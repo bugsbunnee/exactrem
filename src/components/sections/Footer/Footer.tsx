@@ -22,7 +22,7 @@ const Footer = () => {
 
                 <Separator className='my-10 bg-white' size='4' />
 
-                <Grid columns='4'>
+                <Grid columns={{ lg: '4', md: '4',  xs: '1', initial: '2' }} gap={{ initial: '8', md: '0' }}>
                     <Flex direction="column" justify="start" align="start">
                         <Heading size='5'>{dictionary.page.footer.company}</Heading>
 
@@ -106,7 +106,7 @@ const Footer = () => {
 
                 <Separator className='my-10 bg-white' size='4' />
 
-                <Flex justify="center" align="center" gap="4" mt="5">
+                <Flex justify="center" align="center" direction={{ initial: 'column', md: 'row' }} gap="4" mt="5">
                     <Logo />
 
                     <Box className="my-3 ">

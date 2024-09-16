@@ -18,7 +18,7 @@ const SubLinks: React.FC<Props> = ({ sections, title }) => {
     }, []);
 
     return ( 
-        <Box className="sticky top-28">
+        <Box className="sticky top-28 max-lg:relative max-lg:top-auto max-lg:p-10">
             <Heading size="6" mb="4">{title}</Heading>
 
             {sections.map((section) => (

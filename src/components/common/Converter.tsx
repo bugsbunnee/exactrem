@@ -77,7 +77,7 @@ const Converter = () => {
 	const isReceiverActive = activeCurrency === receiverInfo.value;
 
 	return (
-		<Box className="w-96">
+		<Box className="w-96 max-md:w-full">
 			<Box className="w-full bg-stone-50 dark:bg-[#eee] rounded-2xl relative">
 				<Flex gap="2" className={getBoxClass(isSenderActive)}>
 					<Box className="min-w-24">

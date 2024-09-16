@@ -116,7 +116,7 @@ const Contact: React.FC = () => {
 							<Box className="w-full">
 								<Flex
 									flexGrow="1"
-									gap="9"
+									gap={{ lg: '9', initial: '2' }}
 									direction={{ lg: 'row', initial: 'column' }}
 								>
 									<Box className="w-full">
@@ -203,7 +203,7 @@ const Contact: React.FC = () => {
 
 								<Flex
 									flexGrow="1"
-									gap="9"
+									gap={{ lg: '9', initial: '2' }}
 									direction={{ lg: 'row', initial: 'column' }}
 								>
 									<Box className="w-full">
@@ -258,7 +258,7 @@ const Contact: React.FC = () => {
 
 								<Flex
 									flexGrow="1"
-									gap="9"
+									gap={{ lg: '9', initial: '2' }}
 									direction={{ lg: 'row', initial: 'column' }}
 								>
 									<PhoneInput 

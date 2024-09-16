@@ -11,7 +11,7 @@ const Coverage = () => {
 	const { page } = useDictionary();
 
 	return (
-		<section className="p-20 my-10">
+		<section className="p-20 max-md:p-6 my-10">
 			<Container>
 				<Heading className="text-center mb-10" size="8" data-aos="fade-left" >
 					{page.coverage.title} 
@@ -24,9 +24,9 @@ const Coverage = () => {
 				</Flex>
 
 				<Grid
-					columns="4"
+					columns={{ initial: "2", md: "4" }}
 					className="my-20"
-					gap="1"
+					gap="4"
 					align="center"
 					justify="center"
 				>

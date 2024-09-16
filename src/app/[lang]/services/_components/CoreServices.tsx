@@ -34,7 +34,7 @@ const CoreServices = () => {
     
     const renderText = useCallback((service: CoreService) => {
         return(
-             <Box data-aos="zoom-out-up" className="w-full relative mb-24">
+             <Box data-aos="zoom-out-up" className="w-full relative mb-24 max-lg:px-9">
                  <Heading>
                      {service.title}
                  </Heading>
@@ -57,7 +57,7 @@ const CoreServices = () => {
                     </Heading>
                 </Flex>
 
-                <Grid gap="9" align="center" justify="center" columns="2">
+                <Grid gap="9" align="center" justify="center" columns={{ initial: "1", md: "2" }}>
                     {Object.values(dictionary.page.core_services.services).map((service, index) => {
                         const isEven = (index + 1) % 2 === 0;
 

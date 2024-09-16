@@ -13,9 +13,9 @@ const ServiceCoverage = () => {
 	const { page } = useDictionary();
 
     return (
-        <section className='bg-primary h-20 flex items-center justify-center'>
+        <section className='bg-primary max-lg:h-auto max-lg:py-6 h-20 flex items-center justify-center'>
             <Container>
-                <Flex align='center' gap='8' justify='center'>
+                <Flex align='center' justify='center' direction={{ initial: 'column', md: 'row' }} gap={{ initial: '2', md: '8' }}>
                     <Text data-aos-delay="500" data-aos="fade-left" as='div' size='3' className='text-white'>{page.services.coverage.title}</Text>
                     <Flex data-aos-delay="500" data-aos="fade-right" align='center' gap='4' justify='center'>
                         {Object.values(currencies).map((currency) => (

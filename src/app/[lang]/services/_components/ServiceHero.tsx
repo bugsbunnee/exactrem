@@ -14,12 +14,12 @@ const ServiceHero = () => {
 		<section className="p-20 bg-orange-50 dark:bg-black">
 			<Box className="text-center w-full flex justify-center items-center">
 			    <Box className="text-center max-w-[35rem]">
-                    <Heading data-aos="fade-up" className="leading-12 font-bold dark:text-white" size="9">
+                    <Heading data-aos="fade-up" className="leading-12 font-bold dark:text-white" size={{ initial: "8", md: "9" }}>
                         {dictionary.page.services.hero.title}<span className='text-orange-600'>{dictionary.page.services.hero.title_span}</span>
                     </Heading>
 
                     <Flex data-aos="fade-down" justify='center' align='center'>
-                        <Text as="p" className="my-12 leading-7 max-w-62 dark:text-white" size="6">
+                        <Text as="p" className="my-12 leading-7 max-w-62 dark:text-white" size={{ initial: "4", md: "6" }}>
 							{dictionary.page.services.hero.description}
                         </Text>
                     </Flex>

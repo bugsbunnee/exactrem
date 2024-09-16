@@ -48,10 +48,10 @@ const NewsPage: React.FC<Props> = ({ searchParams }) => {
             <NavBar />
 
             <section>
-                <Box className='p-16'>
+                <Box className='p-16 max-lg:p-10'>
                     <Container>
                         <Flex className='w-full' align='center' justify='center'>
-                            <Box className="text-center max-w-[35rem]">
+                            <Box className="text-center max-w-[35rem] max-lg:max-w-screen">
                                 <Heading size='8'>{dictionary.page.news.title}</Heading>
 
                                 <Box className='mb-7 mt-5'>
@@ -83,8 +83,8 @@ const NewsPage: React.FC<Props> = ({ searchParams }) => {
                             >
                                 {trendingNews.map((news) => (
                                     <Flex key={news.slug} className='mt-16 mb-3' justify='center' align='center'>
-                                        <Flex align='center' className='p-10 bg-black dark:bg-[#222] border rounded-sm' gap='7'>
-                                            <figure className='relative w-[30rem] h-[20rem]'>
+                                        <Flex align='center' className='p-10 max-lg:p-6 bg-black dark:bg-[#222] max-sm:flex-col border rounded-sm overflow-hidden' gap='7'>
+                                            <figure className='relative w-[30rem] max-lg:w-full h-[20rem]'>
                                                 <Image
                                                     src={news.src}
                                                     alt={news.title}
@@ -117,7 +117,7 @@ const NewsPage: React.FC<Props> = ({ searchParams }) => {
                                 ))}
                             </AppSlider>
 
-                            <Flex justify='end' gap='6' align='center' my='8'>
+                            <Flex justify={{ initial: 'center', md: 'end' }} gap='6' align='center' my='8'>
                                 <IconButton className='bg-black dark:bg-primary' variant='ghost' size='3' onClick={() => sliderRef.current?.slickPrev()}>
                                     <ChevronLeftIcon width='25' height='25' className='text-white' />
                                 </IconButton>
@@ -144,7 +144,7 @@ const NewsPage: React.FC<Props> = ({ searchParams }) => {
                     <BlogCategoryFilterLoading />
                 </Conditional>
 
-                <Container className='py-16'>
+                <Container className='py-16 max-lg:px-8'>
                     <Heading className='mb-12' size='8'>Latest News</Heading>
 
                     <Conditional isVisible={!isLoading && allNews.length === 0}>
@@ -170,7 +170,7 @@ const NewsPage: React.FC<Props> = ({ searchParams }) => {
                         </Flex>
                     </Conditional>
 
-                    <Grid columns='3' align='center' justify='center' gap='9'>
+                    <Grid columns={{ initial: '1', md: '3' }} className='max-lg:p-8' align='center' justify='center' gap='9'>
                         <Conditional isVisible={!isLoading && allNews.length > 0}>
                             {allNews.map((newsItem, index) => (
                                 <NewsItem key={newsItem.slug} newsItem={newsItem} index={index} />

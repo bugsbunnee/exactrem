@@ -2,25 +2,13 @@ import React from 'react';
 import Link from 'next/link';
 
 import { Flex, IconButton } from '@radix-ui/themes';
-import { EnvelopeClosedIcon, GitHubLogoIcon, InstagramLogoIcon, LinkedInLogoIcon } from '@radix-ui/react-icons';
+import { EnvelopeClosedIcon } from '@radix-ui/react-icons';
 
 const SocialLinks: React.FC = () => {
 	const socialLinks = [
 		{
-			Icon: InstagramLogoIcon,
-			url: 'https://www.instagram.com/marcelchukwuma/',
-		},
-		{
-			Icon: LinkedInLogoIcon,
-			url: 'https://www.linkedin.com/in/marcel-chukwuma-30108b12a/',
-		},
-		{
-			Icon: GitHubLogoIcon,
-			url: 'https://github.com/bugsbunnee',
-		},
-		{
 			Icon: EnvelopeClosedIcon,
-			url: 'marcel.chukwuma00@gmail.com',
+			url: process.env.NEXT_PUBLIC_EMAIL as string,
 		},
 	];
 

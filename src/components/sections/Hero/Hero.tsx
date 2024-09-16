@@ -14,11 +14,11 @@ const Hero = () => {
 			<Container>
 				<Flex justify='center' align='center'>
 					<Box className='max-w-[42rem] text-center'>
-						<Heading data-aos="fade-down" className="leading-12 text-orange-600 font-bold" size="9">
+						<Heading data-aos="fade-down" className="leading-12 text-orange-600 font-bold" size={{ initial: "8", md: "9" }}>
 							{dictionary.page.hero.heading_one} <span className="text-black dark:text-white">{dictionary.page.hero.heading_two}</span>
 						</Heading>
 
-						<Text as="p" data-aos="fade-up" className="text-black dark:text-white mt-7 mb-14" size="5">
+						<Text as="p" data-aos="fade-up" className="text-black dark:text-white mt-7 mb-14" size={{ initial: "4", md: "5" }}>
 							{dictionary.page.hero.description}
 						</Text>
 

@@ -20,7 +20,7 @@ const AppButton: React.FC<Props> = ({ label, route, mode = 'light' }) => {
 	return (
 		<Button
 			className={classNames({
-				"cursor-pointer h-14 w-72 p-0 relative flex justify-start items-center overflow-hidden": true,
+				"cursor-pointer h-14 w-72 max-lg:w-68 p-0 relative flex justify-start items-center overflow-hidden": true,
 				"bg-primary dark:bg-white": mode === 'light',
 				"bg-white": mode === 'dark',
 			})}

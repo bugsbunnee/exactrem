@@ -26,16 +26,25 @@ export const navigationItems: NavItem[] = [
 				Icon: FcBusinessman,
 			},
 			{
+				route: '/services/business-to-business',
 				color: 'bg-stone-50',
 				title: 'Business to Business (B2B)',
 				description: 'Companies transacting with each other.',
 				Icon: FcBusiness,
 			},
 			{
-				color: 'bg-rose-50',
+				route: '/services/business-to-person',
+				color: 'bg-rose-100',
 				title: 'Business to Person (B2P)',
 				description: 'Businesses paying individuals (e.g., salaries, invoices)',
 				Icon: FcBriefcase,
+			},
+			{
+				route: '/services/cfos',
+				color: 'bg-teal-100',
+				title: 'Chief Financial Officers (CFOs)',
+				description: 'Exactrem assists CFOs with any FX-related queries or challenges',
+				Icon: FcBusinessman,
 			},
 		],
 	},
@@ -45,7 +54,7 @@ export const navigationItems: NavItem[] = [
 		options: [],
 	},
 	{
-		route: '',
+		route: '/news',
 		label: 'Resources',
 		options: [
 			{
@@ -78,12 +87,14 @@ export const navigationItems: NavItem[] = [
 
 export const accountTypes: NavItem['options'] = [
 	{
+		route: '',
 		color: 'bg-orange-50',
 		title: AccountType.INDIVIDUAL,
 		description: 'For individuals and personal entities.',
 		Icon: FcPortraitMode,
 	},
 	{
+		route: '',
 		color: 'bg-stone-50',
 		title: AccountType.CORPORATE,
 		description: 'For businesses and corporate entities.',

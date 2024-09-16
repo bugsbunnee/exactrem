@@ -107,7 +107,9 @@ const Register = () => {
 				</Dialog.Root>
 			</Flex>
 
-			{renderRegistrationForm()}
+			<Box className='p-10'>
+				{renderRegistrationForm()}
+			</Box>
 		</>
 	);
 };

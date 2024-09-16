@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Slider from 'react-slick';
 
 import { news } from '#site/content';
+import { ResponsiveObject } from 'react-slick';
 
 import { Box, Card, Container, Flex, Heading, IconButton, Text } from '@radix-ui/themes';
 import { ChevronLeftIcon, ChevronRightIcon } from '@radix-ui/react-icons';
@@ -16,12 +17,40 @@ import NewsItem from '@/app/[lang]/news/_components/NewsItem';
 
 import useDictionary from '@/hooks/useDictionary';
 
+const responsive: ResponsiveObject[] = [
+    {
+      breakpoint: 1500,
+      settings: {
+        slidesToShow: 3,
+      }
+    },
+    {
+      breakpoint: 1200,
+      settings: {
+        slidesToShow: 2,
+      }
+    },
+    {
+      breakpoint: 800,
+      settings: {
+        slidesToShow: 1,
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        arrows: false,
+        slidesToShow: 1,
+      }
+    },
+];
+
 const LatestNews : React.FC= () => {
     const dictionary = useDictionary();
     const sliderRef = useRef<Slider>(null);
 
     return ( 
-        <section className='p-20 bg-stone-50 dark:bg-[#222]'>
+        <section className='p-20 max-md:p-6 bg-stone-50 dark:bg-[#222]'>
             <Container>
                 <Heading data-aos="zoom-out-up" className='text-center' size='8'>{dictionary.page.latest_news.title}</Heading>
 
@@ -40,11 +69,10 @@ const LatestNews : React.FC= () => {
                     infinite
                     dots={false}
                     slidesToShow={3}
+                    responsive={responsive}
                 >
                     {news.map((newsItem, index) => (
-                        <Flex key={newsItem.slug} justify='center' align='center'>
-                            <NewsItem newsItem={newsItem} index={index} />
-                        </Flex>
+                        <NewsItem newsItem={newsItem} index={index} key={newsItem.slug}/>
                     ))}
                 </AppSlider>
 

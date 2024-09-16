@@ -41,7 +41,7 @@ const BlogCategoryFilter: React.FC<Props>= ({ categories, redirectPath }) => {
     }, [categories]);
 
     return ( 
-        <Flex align='center' gap='6' justify='center' className='border-y border-dashed border-stone-600 p-7'>
+        <Flex align='center' gap='6' justify='center' className='border-y border-dashed border-stone-600 w-dvw overflow-x-scroll p-7'>
             {mappedCategories.map((category) => (
                 <Button 
                     key={category}

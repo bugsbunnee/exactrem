@@ -15,11 +15,11 @@ const InviteHero = () => {
 	return (
 		<section className="py-32">
             <Container>
-                <Flex gap="9" justify="center" align="center">
-                    <Box>
+                <Flex gap="9" direction={{ initial: "column", md: "row" }} justify="center" align="center">
+                    <Box className="max-md:px-9">
                         <Box className="text-left w-full flex justify-center items-center">
                             <Box className=" max-w-[35rem]">
-                                <Heading data-aos="fade-down" className="leading-12 font-bold" size="9">
+                                <Heading data-aos="fade-down" className="leading-12 font-bold" size={{ initial: "8", md: "9" }}>
                                     {dictionary.page.invite.title.one} <span className='text-orange-600'>{dictionary.page.invite.title.two}</span>
                                 </Heading>
 

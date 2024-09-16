@@ -40,10 +40,10 @@ const Blog: React.FC<Props> = ({ searchParams }) => {
             <NavBar />
 
             <section>
-                <Box className='p-16'>
+                <Box className='p-16 max-lg:p-8'>
                     <Container>
                         <Flex className='w-full' align='center' justify='center'>
-                            <Box className="text-center max-w-[35rem]">
+                            <Box className="text-center max-w-[35rem] max-lg:max-w-screen">
                                 <Heading size='8'>{dictionaryPage.blog.title}</Heading>
 
                                 <Box className='mb-7 mt-5'>
@@ -62,8 +62,8 @@ const Blog: React.FC<Props> = ({ searchParams }) => {
 
                         <Conditional isVisible={!isLoading}>
                             {hero ? (
-                                <Flex data-aos="zoom-in" align='center' className='p-10 mt-16 mb-8 bg-stone-50 dark:bg-[#222] border-stone-200 border rounded-sm' gap='7'>
-                                    <figure className='relative w-[30rem] h-[20rem]'>
+                                <Flex data-aos="zoom-in" align='center' direction={{ initial: 'column', md: 'row' }} className='p-10 max-lg:p-4 mt-16 mb-8 bg-stone-50 dark:bg-[#222] border-stone-200 border rounded-sm' gap='7'>
+                                    <figure className='relative w-[30rem] max-lg:w-full h-[20rem]'>
                                         <Image
                                             src={hero.src}
                                             alt={hero.title}
@@ -141,7 +141,7 @@ const Blog: React.FC<Props> = ({ searchParams }) => {
                         </Flex>
                     </Conditional>
 
-                    <Grid columns='3' align='center' justify='center' gap='9'>
+                    <Grid columns={{ initial: '1', md: '3' }} className='max-lg:p-8' align='center' justify='center' gap='9'>
                         <Conditional isVisible={!isLoading && allBlogPosts.length > 0}>
                             {allBlogPosts.map((post, index) => (
                                 <BlogPost key={post.slug} blogPost={post} index={index} />

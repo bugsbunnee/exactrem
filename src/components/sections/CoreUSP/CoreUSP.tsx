@@ -57,12 +57,12 @@ const CoreUSP = () => {
     
     const renderText = useCallback((usp: USP) => {
         return(
-             <Box className="w-full relative mb-24" data-aos="zoom-out-left">
+             <Box className="w-full relative mb-24 max-lg:flex max-lg:flex-col max-lg:justify-center max-lg:items-center" data-aos="zoom-out-left">
                  <Heading>
                      {usp.title}
                  </Heading>
  
-                 <Text as="p" className="my-8 leading-8 text-justify max-w-md" size="3">
+                 <Text as="p" className="my-8 leading-8 max-md:px-12 text-justify max-w-md" size="3">
                      {usp.description}
                  </Text>
  
@@ -80,7 +80,7 @@ const CoreUSP = () => {
                     </Heading>
                 </Flex>
 
-                <Grid gap="9" align="center" justify="center" columns="2">
+                <Grid gap="9" align="center" justify="center" columns={{ initial: "1", md: "2" }}>
                     {Object.values(dictionary.page.core_usps.usps).map((usp, index) => {
                         const isEven = (index + 1) % 2 === 0;
 

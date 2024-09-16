@@ -11,8 +11,8 @@ const Calculator: React.FC = () => {
 	return (
 		<section className="mt-32 mb-10 bg-black text-white dark:bg-white dark:text-black">
 			<Container>
-				<Flex className="p-10 py-20" align="center" gap="7" data-aos="zoom-in-left">
-					<Box className="flex-1">
+				<Flex className="p-10 py-20" direction={{ initial: "column-reverse", md: "row"}} align="center" gap="9" data-aos="zoom-in-left">
+					<Box className="flex-1 max-md:max-w-96">
 						<Heading size="8" className="leading-10">
 							{dictionary.page.calculator.title}
 						</Heading>

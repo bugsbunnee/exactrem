@@ -34,10 +34,10 @@ const TermsAndConditionsPage: React.FC<Props> = async ({ params }) => {
             <NavBar />
 
             <Container className='py-16'>
-                <Grid columns='30% 70%' className="relative" align='start' gap='4'>
+                <Grid columns={{ initial: '1', md: '30% 70%' }} className="relative" align='start' gap='4'>
                     <SubLinks sections={notice.list} title={notice.title} />
                 
-                    <article className=''>
+                    <article className='max-lg:p-10'>
                         <Section termAndCondition={notice} />
                     </article>
                 </Grid>

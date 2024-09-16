@@ -27,19 +27,21 @@ const HowToInvite = () => {
     }, []);
 
     return (
-        <section className='bg-black dark:bg-white p-20 flex items-center justify-center'>
+        <section className='bg-black dark:bg-white p-20 max-lg:p-10 flex items-center justify-center'>
             <Container>
                 <Flex align='center' gap='8' justify='center'>
                     <Box>
-                        <Heading data-aos="fade-up" size='9' className='text-primary'>{dictionary.page.invite.how_to.title}</Heading>
+                        <Flex data-aos="fade-up" align='center' justify='center' >
+                            <Heading size={{ initial: '6', md: '9' }} className='text-primary text-center'>{dictionary.page.invite.how_to.title}</Heading>
+                        </Flex>
 
                         <Flex data-aos="fade-down" align='center' className='mt-10 mb-20' gap='8' justify='center' >
-                            <Text as='div' size='5' className='text-white text-center max-w-96 dark:text-black '>
+                            <Text as='div' size={{ initial: '2', md: '5' }} className='text-white text-center max-w-96 max-lg:max-w-screen dark:text-black '>
                                 {dictionary.page.invite.how_to.description}
                             </Text>
                         </Flex>
 
-                        <Flex align='center' gap='8' justify='center' >
+                        <Flex direction={{ initial: 'column', md: 'row' }} align='center' gap='8' justify='center' >
                             {Object.values(dictionary.page.invite.how_to.steps).map((step, index) => (
                                 <Box data-aos="fade-down" data-aos-delay={(index * 500).toString()} key={step.key}>
                                     <Flex align='center' gap='8' justify='center' >

@@ -45,9 +45,9 @@ const Summary: React.FC<Props> = ({ list }) => {
     }, []);
 
     return (
-        <section className='p-20 bg-orange-50 dark:bg-[#222] text-white'>
+        <section className='p-20 max-md:p-6 bg-orange-50 dark:bg-[#222] text-white'>
             <Container>
-                <Grid columns='3' align='center' gap='8'>
+                <Grid columns={{ initial: '1', md: '3' }} align='center' gap='8'>
                     {list.map((value, index) => (
                         <Flex data-aos="zoom-in-up" data-aos-delay={(index * 500).toString()} key={value.title} className='w-full' align='center' justify='center'>
                             <Box className="w-full bg-white text-black dark:text-white dark:bg-[#222] dark:border dark:border-stone-50 rounded-md p-8 min-h-64 hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out">

@@ -13,8 +13,8 @@ interface Props {
 
 const NewsItem: React.FC<Props> = ({ newsItem, index }) => {
     return (
-        <Flex data-aos="flip-left" data-aos-delay={(index * 500).toString()} className="max-w-80 min-h-full" align='center' justify='center'>
-            <Box className="max-w-80">
+        <Flex data-aos="flip-left" data-aos-delay={(index * 500).toString()} className="max-md:max-w-80 min-h-full mr-8" align='center' justify='center'>
+            <Box className="max-lg:max-w-80 w-full">
                 <Image
                     src={newsItem.src}
                     alt={newsItem.title} 
