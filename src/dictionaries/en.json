@@ -9,18 +9,18 @@
 				"one": "About",
 				"two": "Exactrem"
 			},
-			"description": "Exactrem Canada is a MSB licenced Company has been approved by FINTRAC for Money transferring services, Dealing in virtual currencies and Payment service provider services.",
+			"description": "Exactrem is a trusted and reliable International Money Transfer Operator (IMTO) licensed by the Central Bank of Nigeria (CBN) and registered as a Money Services Business (MSB) with FINTRAC in Canada. With dual regulatory oversight, we provide safe, seamless, and efficient cross-border remittance services that connect Nigeria to the world and vice versa.",
 			"cta": "Send us a message",
 			"about_content": {
 				"mission": {
 					"src": "/mission.jpg",
 					"title": "Our mission",
-					"description": "To provide seamless international money transfer services by harnessing technology and strategic partnership to guarantee accessibility, security and efficiency. "
+					"description": " Our mission is to make international money transfers simple, secure, and accessible for everyone. We aim to bridge the gap between economies, empowering individuals and businesses with the financial tools they need to succeed globally. "
 				},
 				"vision": {
 					"src": "/vision.jpg",
 					"title": "Our vision",
-					"description": "To achieve global recognition as a Leading IMTO and MSB, renowned for providing reliable, fast, and customer-centric money transfer solutions at low cost. "
+					"description": " We envision a world where cross-border financial transactions are effortless, transparent, and within reach for all. Through innovation and technology, we aim to lead the industry in providing exceptional remittance services. "
 				}
 			}
 		},
@@ -234,7 +234,7 @@
 		"hero": {
 			"heading_one": "Fast and secure",
 			"heading_two": "transfers with Exactrem",
-			"description": "At Exactrem, we work closely with international law enforcement agencies to detect and prevent money laundering.",
+			"description": "At Exactrem, we recognize the importance of timely and secure money transfers, whether for personal needs or business transactions. We are dedicated to offering top-notch financial solutions to ensure that your money moves swiftly and securely across borders, fully compliant with the regulations of both Nigeria and Canada. ",
 			"cta": "Get started",
 			"rating": "Rated 4.7 - Excellent",
 			"reviews": "From 100 reviews on",
@@ -289,7 +289,7 @@
 		},
 		"offering": {
 			"title": "What we offer",
-			"description": "Exactrem Canada is a MSB licenced Company has been approved by FINTRAC for Money transferring services, Dealing in virtual currencies and Payment service provider services.",
+			"description": "We specialize in facilitating cross-border payments, enabling individuals and businesses to send and receive funds seamlessly. Whether you are sending money to loved ones, paying for services, or managing international business transactions, Exactrem provides a simple, secure, and convenient solution tailored to meet your needs.",
 			"values": {
 				"money_transfer": {
 					"title": "Money transfer",
