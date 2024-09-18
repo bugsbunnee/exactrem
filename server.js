@@ -38,6 +38,8 @@ async function initServer() {
         process.exit(1);
     })
     .listen(port, (error) => {
+        console.log(error);
+        
         if (error) throw error;
 
         console.log(`> Ready on http://${hostname}:${port}`);
