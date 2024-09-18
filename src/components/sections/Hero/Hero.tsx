@@ -13,12 +13,12 @@ const Hero = () => {
 		<section className='p-24 bg-gradient-to-r from-orange-100 via-purple-100 to-orange-100 dark:from-transparent'>
 			<Container>
 				<Flex justify='center' align='center'>
-					<Box className='max-w-[42rem] text-center'>
+					<Box className='max-w-3xl text-center'>
 						<Heading data-aos="fade-down" className="leading-12 text-orange-600 font-bold" size={{ initial: "8", md: "9" }}>
 							{dictionary.page.hero.heading_one} <span className="text-black dark:text-white">{dictionary.page.hero.heading_two}</span>
 						</Heading>
 
-						<Text as="p" data-aos="fade-up" className="text-black dark:text-white mt-7 mb-14" size={{ initial: "4", md: "5" }}>
+						<Text as="p" data-aos="fade-up" className="text-black dark:text-white mt-7 mb-14" size={{ initial: "3", md: "4" }}>
 							{dictionary.page.hero.description}
 						</Text>
 

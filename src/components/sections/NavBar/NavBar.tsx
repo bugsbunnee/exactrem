@@ -39,7 +39,7 @@ const NavBar = () => {
 
 						<ThemeSwitcher />
 
-						<Link href="/register" className="bg-white dark:bg-black py-2 px-5 text-primary rounded-full text-sm">
+						<Link href="/register" className="bg-white dark:bg-black py-2 px-5 text-primary dark:text-white rounded-full text-sm">
 							{dictionary.components.navbar.sign_up}
 						</Link>
 					</Flex>
