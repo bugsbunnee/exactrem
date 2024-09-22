@@ -14,18 +14,10 @@ import ServiceSectionContent from '../_components/ServiceSectionContent';
 import { getDictionary } from '@/utils/dictionaries';
 import { Locale } from '../../../../../i18n.config';
 import { summarize } from '@/utils/lib';
-
+import { ServiceListItem } from '@/utils/models';
 
 interface Props {
     params: { slug: string; lang: Locale };
-}
-
-interface ServiceListItem {
-    titleOne: string;
-    titleTwo: string;
-    bgClass: string;
-    iconKey: string;
-    serviceList: { src: string; title: string; description: string; }[]
 }
 
 interface ServiceDetail {
@@ -68,17 +60,21 @@ const ServicesPage: React.FC<Props> = async ({ params }) => {
             <Summary list={service.service_list.map((service) => ({ 
                 title: service.titleOne + service.titleTwo, 
                 iconKey: service.iconKey, 
-                description: service.serviceList.length > 0 ? summarize(service.serviceList[0].description, 100) : ''
+                description: summarize(service.description, 100),
             }))} />
 
-            {service.service_list.map((service) => (
+            {service.service_list.map((service, index) => (
                 <ServiceSectionContent 
                     key={service.titleOne} 
                     titleOne={service.titleOne} 
                     titleTwo={service.titleTwo}
                     id={service.titleOne + service.titleTwo}
+                    index={index}
+                    description={service.description}
+                    src={service.src}
+                    iconKey={service.iconKey}
                     bgClass={service.bgClass}
-                    serviceList={service.serviceList}
+                    labels={service.labels}
                 />
             ))}
 

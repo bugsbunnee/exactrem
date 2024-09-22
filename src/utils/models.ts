@@ -56,6 +56,7 @@ export interface RegisteredUser {
 	referralCode: string;
 	updatedAt: string;
 }
+
 export interface SearchParams {
 	query: string;
 	page: string;
@@ -91,4 +92,14 @@ export interface ChatResponse {
     id: string;
     token: string; 
     unreadCount: number; 
+}
+
+export interface ServiceListItem {
+    titleOne: string;
+    titleTwo: string;
+    bgClass: string;
+    iconKey: string;
+    description: string;
+    src: string;
+	labels: string[]
 }

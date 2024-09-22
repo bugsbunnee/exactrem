@@ -2,9 +2,10 @@
 
 import React, { useCallback } from 'react';
 import { Box, Container, Flex, Grid, Heading, Text } from '@radix-ui/themes';
+import { ServiceListItem } from '@/utils/models';
 
+import Conditional from '@/components/common/Conditional';
 import Image from 'next/image';
-import AppButton from '@/components/ui/Button';
 
 import classNames from 'classnames';
 
@@ -14,42 +15,43 @@ interface CoreService {
     description: string;
 }
 
-interface Props {
-    titleOne: string;
-    titleTwo: string;
-    serviceList: CoreService[];
-    bgClass: string;
+interface Props extends ServiceListItem {
     id: string;
+    index: number;
 }
 
-const ServiceSectionContent: React.FC<Props> = ({ bgClass, id, serviceList, titleOne, titleTwo }) => {
-    const renderImage = useCallback((service: CoreService) => {
+const ServiceSectionContent: React.FC<Props> = ({ bgClass, id, description, src, titleOne, titleTwo, index, labels }) => {
+    const [firstLabel, secondLabel] = labels;
+
+    const renderImage = useCallback(() => {
         return(
              <Box data-aos="zoom-out-down" className="w-full mb-24">
                  <figure className="block overflow-hidden relative w-full">
-                     <Image src={service.src} alt={service.title} width={0} height={0} className="w-full h-96 object-cover" />
+                     <Image src={src} alt={id} width={0} height={0} className="w-full h-96 object-cover" />
                  
                      <figcaption className="absolute bottom-6 right-6 leading-9 text-lg text-white font-semibold">
-                         {service.title}
+                         {secondLabel}
                      </figcaption>
                  </figure>
              </Box>
         );
-     }, []);
+     }, [id, src]);
     
-    const renderText = useCallback((service: CoreService) => {
+    const renderText = useCallback(() => {
         return(
              <Box data-aos="zoom-out-up" className="w-full relative mb-24 max-lg:px-9">
                  <Heading>
-                     {service.title}
+                    {firstLabel}
                  </Heading>
  
                  <Text as="p" className="my-8 leading-8 text-justify max-w-md" size="3">
-                     {service.description}
+                     {description}
                  </Text>
              </Box>
         );
-     }, []);
+     }, [description, id]);
+
+    const isEven = (index + 1) % 2 === 0;
 
     return (
         <section id={id} className={classNames({
@@ -64,17 +66,15 @@ const ServiceSectionContent: React.FC<Props> = ({ bgClass, id, serviceList, titl
                 </Flex>
 
                 <Grid gap="9" align="center" justify="center" columns={{ initial: "1", md: "2" }}>
-                    {serviceList.map((service, index) => {
-                        const isEven = (index + 1) % 2 === 0;
-
-                        return (
-                            <React.Fragment key={service.title}>
-                                {isEven ? renderText(service) : renderImage(service)}
-                                
-                                {isEven ? renderImage(service) : renderText(service)}
-                            </React.Fragment>
-                        )
-                    })}
+                    <Conditional isVisible={isEven}>
+                        {renderText()}
+                        {renderImage()}
+                    </Conditional>
+                    
+                    <Conditional isVisible={!isEven}>
+                        {renderImage()}
+                        {renderText()}
+                    </Conditional>
                 </Grid>
             </Container>
         </section>

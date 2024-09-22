@@ -391,108 +391,54 @@
 							"titleTwo": "Anywhere",
 							"bgClass": "",
 							"iconKey": "money-transfer",
-							"serviceList": [
-								{
-									"src": "/partnerships.jpg",
-									"title": "Effortless Money Transfers at Your Fingertips ",
-									"description": "At Exactrem, we believe that sending money should be as easy as a text message. Our person-to-person transfer service is designed for simplicity and convenience, allowing you to send funds with just a few clicks. Whether you're supporting family overseas, splitting a bill with friends, or sending a special gift, our platform ensures a smooth and intuitive experience every time"
-								},
-								{
-									"src": "/ladies.jpg",
-									"title": "Instant Delivery",
-									"description": "Time is of the essence when transferring money to someone you care about. With Exactrem, your funds are delivered almost instantly. Say goodbye to waiting days for bank transfers and hello to real-time money movement that keeps you connected with those who matter most. "
-								}
-							]
+							"src": "/payment_1.jpg",
+							"description": "At Exactrem, we believe that sending money should be as easy as a text message. Our person-to-person transfer service is designed for simplicity and convenience, allowing you to send funds with just a few clicks. Whether you're supporting family overseas, splitting a bill with friends, or sending a special gift, our platform ensures a smooth and intuitive experience every time",
+							"labels": ["Effortless Money Transfers at Your Fingertips ", "Instant Delivery"]
 						},
 						{
 							"titleOne": "Unmatched Security and ",
 							"titleTwo": "Reliability",
 							"iconKey": "lock",
 							"bgClass": "bg-slate-800 text-white dark:bg-[#222]",
-							"serviceList": [
-								{
-									"src": "/tea.jpg",
-									"title": "Your Security is Our Priority ",
-									"description": "When it comes to transferring money, trust is essential. Exactrem employs state-of-the-art encryption and security measures to protect your personal and financial information. Our robust security protocols ensure that your transactions are safe from fraud and unauthorized access, giving you peace of mind with every transfer. "
-								},
-								{
-									"src": "/boardroom.jpg",
-									"title": "Reliable Transactions ",
-									"description": "Count on Exactrem for reliable and consistent service. Our advanced technology and secure infrastructure ensure that your money reaches its destination quickly and without errors. Enjoy the confidence that comes with knowing your transactions are handled with the utmost precision. "
-								}
-							]
+							"src": "/secure_1.jpg",
+							"description": "When it comes to transferring money, trust is essential. Exactrem employs state-of-the-art encryption and security measures to protect your personal and financial information. Our robust security protocols ensure that your transactions are safe from fraud and unauthorized access, giving you peace of mind with every transfer. ",
+							"labels": ["Your Security is Our Priority  ", "Reliable Transactions"]
 						},
 						{
 							"titleOne": "Global Reach, Local ",
 							"titleTwo": "Convenience",
 							"bgClass": "",
 							"iconKey": "globe",
-							"serviceList": [
-								{
-									"src": "/shake.jpg",
-									"title": "Connecting You Worldwide ",
-									"description": "No matter where your loved ones are, Exactrem makes global transfers simple. Our extensive network spans across countries, allowing you to send money to virtually any location around the world. Experience the convenience of managing international transactions with a local touch. "
-								},
-								{
-									"src": "/waiter.jpg",
-									"title": "Localized Support",
-									"description": "We understand that dealing with international transfers can be daunting. That’s why Exactrem provides localized support to help you navigate any challenges. Our customer service team is well-versed in various regions and currencies, offering assistance tailored to your specific needs. "
-								}
-							]
+							"src": "/globe_1.jpg",
+							"description": "No matter where your loved ones are, Exactrem makes global transfers simple. Our extensive network spans across countries, allowing you to send money to virtually any location around the world. Experience the convenience of managing international transactions with a local touch. ",
+							"labels": ["Connecting You Worldwide  ", "Localized Support"]
 						},
 						{
 							"titleOne": "Transparent and Fair ",
 							"titleTwo": "Pricing",
 							"iconKey": "currency-exchange",
 							"bgClass": "bg-orange-50 dark:bg-[#222]",
-							"serviceList": [
-								{
-									"src": "/hero_left.jpg",
-									"title": "Know What You’re Paying For ",
-									"description": "With Exactrem, there are no hidden fees or unexpected charges. Our pricing is transparent, with clearly outlined fees and exchange rates. You'll know exactly how much you're paying and how much your recipient will receive, ensuring complete transparency in every transaction. "
-								},
-								{
-									"src": "/cfo.jpg",
-									"title": "Competitive Rates ",
-									"description": "We strive to offer competitive rates that provide excellent value for your money. Our goal is to make person-to-person transfers affordable without compromising on quality or service. Get more for less with Exactrem’s fair pricing structure. "
-								}
-							]
+							"src": "/money_1.jpg",
+							"description": "With Exactrem, there are no hidden fees or unexpected charges. Our pricing is transparent, with clearly outlined fees and exchange rates. You'll know exactly how much you're paying and how much your recipient will receive, ensuring complete transparency in every transaction. ",
+							"labels": ["Know What You’re Paying For", "Competitive Rates"]
 						},
 						{
 							"titleOne": "Effortless Experience with ",
 							"titleTwo": "Cutting-Edge Technology",
 							"bgClass": "",
 							"iconKey": "cutting-edge",
-							"serviceList": [
-								{
-									"src": "/tie.jpg",
-									"title": "User-Friendly Platform ",
-									"description": "Exactrem’s platform is designed with you in mind. Our intuitive interface makes it easy to set up and manage transfers, track transactions, and handle your account with minimal effort. Whether you're using our mobile app or website, you’ll find our technology enhances your transfer experience. "
-								},
-								{
-									"src": "/phone_call.jpg",
-									"title": "Innovative Features ",
-									"description": "Stay ahead with our advanced features designed to simplify your transactions. From real-time tracking and notifications to easy recipient management, Exactrem integrates cutting-edge technology to provide a seamless and enjoyable user experience. "
-								}
-							]
+							"src": "/tech_1.jpg",
+							"description": "Exactrem’s platform is designed with you in mind. Our intuitive interface makes it easy to set up and manage transfers, track transactions, and handle your account with minimal effort. Whether you're using our mobile app or website, you’ll find our technology enhances your transfer experience. ",
+							"labels": ["User-Friendly Platform", "Innovative Features"]
 						},
 						{
 							"titleOne": "Dedicated ",
 							"titleTwo": "Customer Support",
 							"iconKey": "customer-support",
 							"bgClass": "bg-orange-50 dark:bg-[#222]",
-							"serviceList": [
-								{
-									"src": "/p2p.jpg",
-									"title": "24/7 Assistance When You Need It ",
-									"description": "We are here to support you around the clock. Exactrem’s dedicated customer support team is available 24/7 to assist with any questions or concerns. Whether you need help with a transfer, have questions about our services, or require technical support, our knowledgeable team is ready to help. "
-								},
-								{
-									"src": "/mission.jpg",
-									"title": "Personalized Service ",
-									"description": "Expect personalized and attentive service from our support staff. We take the time to understand your needs and provide solutions that meet your specific requirements. Experience exceptional customer care with Exactrem. "
-								}
-							]
+							"src": "/support_1.jpg",
+							"description": "We are here to support you around the clock. Exactrem’s dedicated customer support team is available 24/7 to assist with any questions or concerns. Whether you need help with a transfer, have questions about our services, or require technical support, our knowledgeable team is ready to help. ",
+							"labels": ["24/7 Assistance When You Need It", "Personalized Service"]
 						}
 					]
 				},
@@ -514,108 +460,54 @@
 							"titleTwo": "Transactions",
 							"bgClass": "",
 							"iconKey": "money-transfer",
-							"serviceList": [
-								{
-									"src": "/partnerships.jpg",
-									"title": "Simplify Your Purchases ",
-									"description": "At Exactrem, we make person-to-business transactions seamless and straightforward. Whether you’re paying for a subscription, making an online purchase, or settling a bill, our platform offers a hassle-free payment experience. Enjoy the ease of sending money directly from your account to any business, anywhere in the world, with just a few clicks."
-								},
-								{
-									"src": "/ladies.jpg",
-									"title": "Instant Processing",
-									"description": "Time is money, and we value yours. Exactrem ensures that your payments are processed instantly, allowing businesses to receive funds in real-time. Forget about the delays associated with traditional banking methods—our cutting-edge technology guarantees fast and efficient transactions every time."
-								}
-							]
+							"src": "/payment_2.jpg",
+							"description": "At Exactrem, we make person-to-business transactions seamless and straightforward. Whether you’re paying for a subscription, making an online purchase, or settling a bill, our platform offers a hassle-free payment experience. Enjoy the ease of sending money directly from your account to any business, anywhere in the world, with just a few clicks.",
+							"labels": ["Simplify Your Purchases ", "Instant Processing"]
 						},
 						{
 							"titleOne": "Secure and Reliable ",
 							"titleTwo": "Transactions ",
 							"iconKey": "lock",
 							"bgClass": "bg-slate-800 text-white dark:bg-[#222]",
-							"serviceList": [
-								{
-									"src": "/tea.jpg",
-									"title": "Top-Notch Security ",
-									"description": "Your financial safety is our top priority. Exactrem employs advanced encryption and security measures to protect your payment details. Each transaction is safeguarded against fraud and unauthorized access, so you can pay with confidence knowing your information is secure. "
-								},
-								{
-									"src": "/boardroom.jpg",
-									"title": "Dependable Service ",
-									"description": "Count on Exactrem for consistent and reliable transactions. Our platform is built with robust infrastructure to handle your payments accurately and without interruption. We are dedicated to providing a trustworthy service that you can rely on for all your person-to-business payment needs. "
-								}
-							]
+							"src": "/secure_2.jpg",
+							"description": "Your financial safety is our top priority. Exactrem employs advanced encryption and security measures to protect your payment details. Each transaction is safeguarded against fraud and unauthorized access, so you can pay with confidence knowing your information is secure. ",
+							"labels": ["Top-Notch Security", "Dependable Service"]
 						},
 						{
 							"titleOne": "Global Reach, Local ",
 							"titleTwo": "Convenience",
 							"bgClass": "",
 							"iconKey": "globe",
-							"serviceList": [
-								{
-									"src": "/shake.jpg",
-									"title": "Connecting with Business Worldwide ",
-									"description": "Understanding the nuances of different markets is crucial. Exactrem offers localized payment options and support to ensure your transactions align with regional requirements and preferences. Experience smooth cross-border payments with a local touch."
-								},
-								{
-									"src": "/waiter.jpg",
-									"title": "Localized Payment Options",
-									"description": "Understanding the nuances of different markets is crucial. Exactrem offers localized payment options and support to ensure your transactions align with regional requirements and preferences. Experience smooth cross-border payments with a local touch."
-								}
-							]
+							"src": "/globe_2.jpg",
+							"description": "Understanding the nuances of different markets is crucial. Exactrem offers localized payment options and support to ensure your transactions align with regional requirements and preferences. Experience smooth cross-border payments with a local touch.",
+							"labels": ["Connecting with Business Worldwide", "Localized Payment Options"]
 						},
 						{
 							"titleOne": "Transparent and Fair ",
 							"titleTwo": "Pricing",
 							"iconKey": "currency-exchange",
 							"bgClass": "bg-orange-50 dark:bg-[#222]",
-							"serviceList": [
-								{
-									"src": "/hero_left.jpg",
-									"title": "Clear and Honest Pricing",
-									"description": "At Exactrem, we believe in transparency. Our pricing structure is straightforward, with no hidden fees or unexpected charges. Know exactly what you’re paying for and how much will be deducted from your account. Our clear fee model ensures you always have full visibility into your transactions. "
-								},
-								{
-									"src": "/cfo.jpg",
-									"title": "Competitive Rates ",
-									"description": "Get value for your money with Exactrem’s competitive rates. We strive to offer fair pricing that provides excellent service without breaking the bank. Enjoy cost-effective person-to-business payments that don’t compromise on quality or speed."
-								}
-							]
+							"src": "/money_2.jpg",
+							"description": "At Exactrem, we believe in transparency. Our pricing structure is straightforward, with no hidden fees or unexpected charges. Know exactly what you’re paying for and how much will be deducted from your account. Our clear fee model ensures you always have full visibility into your transactions. ",
+							"labels": ["Clear and Honest Pricing", "Competitive Rates"]
 						},
 						{
 							"titleOne": "Advanced Features for a ",
 							"titleTwo": "Superior Experience",
 							"bgClass": "",
 							"iconKey": "cutting-edge",
-							"serviceList": [
-								{
-									"src": "/tie.jpg",
-									"title": "Streamlined Payment Solutions ",
-									"description": "Exactrem offers advanced features designed to enhance your payment experience. From automated recurring payments to one-click processing, our platform is equipped with tools to make transactions more efficient. Manage your payments easily with features tailored to meet your needs."
-								},
-								{
-									"src": "/phone_call.jpg",
-									"title": "Streamlined Payment Solutions",
-									"description": "Stay informed with real-time tracking and notifications. Monitor the status of your payments and receive instant updates, so you’re always in the loop. Our advanced tracking ensures you have complete visibility throughout the payment process. "
-								}
-							]
+							"src": "/tech_2.jpg",
+							"description": "Exactrem offers advanced features designed to enhance your payment experience. From automated recurring payments to one-click processing, our platform is equipped with tools to make transactions more efficient. Manage your payments easily with features tailored to meet your needs.",
+							"labels": ["Streamlined Payment Solutions", "Innovative Features"]
 						},
 						{
 							"titleOne": "Exceptional ",
 							"titleTwo": "Customer Support",
 							"iconKey": "customer-support",
 							"bgClass": "bg-orange-50 dark:bg-[#222]",
-							"serviceList": [
-								{
-									"src": "/p2p.jpg",
-									"title": "24/7 Assistance When You Need It ",
-									"description": "Our commitment to customer satisfaction extends to our support services. Exactrem’s dedicated customer support team is available around the clock to assist with any questions or issues. Whether you need help with a payment or have inquiries about our services, we’re here to provide prompt and professional assistance. "
-								},
-								{
-									"src": "/mission.jpg",
-									"title": "Personalized Assistance ",
-									"description": "Experience personalized care with Exactrem’s customer support. Our knowledgeable team takes the time to understand your specific needs and offers tailored solutions. Enjoy the confidence that comes with knowing you have expert support whenever you need it."
-								}
-							]
+							"src": "/support_2.jpg",
+							"description": "Our commitment to customer satisfaction extends to our support services. Exactrem’s dedicated customer support team is available around the clock to assist with any questions or issues. Whether you need help with a payment or have inquiries about our services, we’re here to provide prompt and professional assistance. ",
+							"labels": ["24/7 Assistance When You Need It", "Personalized Assistance"]
 						}
 					]
 				},
@@ -637,109 +529,54 @@
 							"titleTwo": "Global Marketplace",
 							"bgClass": "",
 							"iconKey": "money-transfer",
-							"serviceList": [
-								{
-									"src": "/partnerships.jpg",
-									"title": "Seamless B2B Transactions",
-									"description": "At Exactrem, we understand that efficiency and reliability are key in business-to-business transactions. Our platform is designed to facilitate smooth and swift payments between businesses, whether you’re handling vendor payments, settling invoices, or managing inter-company transfers. Experience effortless transactions that keep your operations running smoothly. "
-								},
-								{
-									"src": "/ladies.jpg",
-									"title": "Instant and Reliable Transfers",
-									"description": "Time is money in the business world, and we value yours. Exactrem ensures that your B2B payments are processed instantly, allowing businesses to receive funds without delay. Our advanced technology guarantees timely and reliable transactions, so you can focus on growing your business. "
-								}
-							]
+							"src": "/payment_3.jpg",
+							"description": "At Exactrem, we understand that efficiency and reliability are key in business-to-business transactions. Our platform is designed to facilitate smooth and swift payments between businesses, whether you’re handling vendor payments, settling invoices, or managing inter-company transfers. Experience effortless transactions that keep your operations running smoothly. ",
+							"labels": ["Seamless B2B Transactions", "Instant and Reliable Transfers"]
 						},
 						{
 							"titleOne": "Unmatched Security and ",
 							"titleTwo": "Compliance",
 							"iconKey": "lock",
 							"bgClass": "bg-slate-800 text-white dark:bg-[#222]",
-							"serviceList": [
-								{
-									"src": "/tea.jpg",
-									"title": "Robust Security Measures ",
-									"description": "Security is a top priority for Exactrem. Our platform utilizes cutting-edge encryption and security protocols to protect your sensitive financial information. We ensure that every transaction is secure, so you can confidently manage your business payments without worrying about fraud or data breaches. "
-								},
-								{
-									"src": "/boardroom.jpg",
-									"title": "Regulatory Compliance ",
-									"description": "Navigating financial regulations can be complex. Exactrem is committed to maintaining the highest standards of compliance with global financial regulations. Our platform adheres to stringent regulatory requirements, providing peace of mind and ensuring that your transactions meet all legal standards. "
-								}
-							]
+							"src": "/secure_3.jpg",
+							"description": "Navigating financial regulations can be complex. Exactrem is committed to maintaining the highest standards of compliance with global financial regulations. Our platform adheres to stringent regulatory requirements, providing peace of mind and ensuring that your transactions meet all legal standards. ",
+							"labels": ["Robust Security Measures", "Regulatory Compliance"]
 						},
 						{
 							"titleOne": "Global Reach, Local ",
 							"titleTwo": "Expertise",
 							"bgClass": "",
 							"iconKey": "globe",
-							"serviceList": [
-								{
-									"src": "/shake.jpg",
-									"title": "Connect Across Borders ",
-									"description": "Expand your business horizons with Exactrem’s global network. Our platform enables you to conduct B2B transactions with partners, suppliers, and clients around the world. Enjoy the flexibility of managing international payments with the convenience of a local solution. "
-								},
-								{
-									"src": "/waiter.jpg",
-
-									"title": "Localized Solutions",
-									"description": "We offer tailored solutions to meet the specific needs of different regions. Exactrem provides localized support and payment options, ensuring that your transactions align with regional practices and currencies. Benefit from a global reach with personalized service."
-								}
-							]
+							"src": "/globe_3.jpg",
+							"description": "Expand your business horizons with Exactrem’s global network. Our platform enables you to conduct B2B transactions with partners, suppliers, and clients around the world. Enjoy the flexibility of managing international payments with the convenience of a local solution. ",
+							"labels": ["Connect Across Borders", "Localized Solutions"]
 						},
 						{
 							"titleOne": "Transparent and Fair ",
 							"titleTwo": "Pricing",
 							"iconKey": "currency-exchange",
 							"bgClass": "bg-orange-50 dark:bg-[#222]",
-							"serviceList": [
-								{
-									"src": "/hero_left.jpg",
-									"title": "Clear Fee Structure",
-									"description": "Our goal is to offer competitive rates that provide excellent value for your business. Exactrem’s pricing structure is designed to be fair and cost-effective, ensuring that you get top-quality service without overspending. "
-								},
-								{
-									"src": "/cfo.jpg",
-									"title": "Competitive Rates ",
-									"description": "Get value for your money with Exactrem’s competitive rates. We strive to offer fair pricing that provides excellent service without breaking the bank. Enjoy cost-effective person-to-business payments that don’t compromise on quality or speed."
-								}
-							]
+							"src": "/money_3.jpg",
+							"description": "Our goal is to offer competitive rates that provide excellent value for your business. Exactrem’s pricing structure is designed to be fair and cost-effective, ensuring that you get top-quality service without overspending. ",
+							"labels": ["Clear Fee Structure", "Competitive Rates"]
 						},
 						{
 							"titleOne": "Advanced Features for ",
 							"titleTwo": "Business Efficiency",
 							"bgClass": "",
 							"iconKey": "cutting-edge",
-							"serviceList": [
-								{
-									"src": "/tie.jpg",
-									"title": "Streamlined Payment Solutions ",
-									"description": "Enhance your business operations with Exactrem’s advanced features. Our platform includes tools for automating payments, managing recurring transactions, and handling bulk payments with ease. Enjoy a more efficient payment process that saves time and reduces administrative overhead. "
-								},
-								{
-									"src": "/phone_call.jpg",
-									"title": "Real-Time Tracking and Reporting ",
-									"description": "Stay on top of your transactions with real-time tracking and comprehensive reporting. Monitor the status of your payments, track transaction histories, and generate detailed reports to gain insights into your financial operations. Our platform provides the visibility you need to manage your B2B payments effectively. "
-								}
-							]
+							"src": "/tech_3.jpg",
+							"description": "Enhance your business operations with Exactrem’s advanced features. Our platform includes tools for automating payments, managing recurring transactions, and handling bulk payments with ease. Enjoy a more efficient payment process that saves time and reduces administrative overhead. ",
+							"labels": ["Streamlined Payment Solutions", "Real-Time Tracking and Reporting"]
 						},
 						{
 							"titleOne": "Dedicated ",
 							"titleTwo": "Customer Support",
 							"iconKey": "customer-support",
 							"bgClass": "bg-orange-50 dark:bg-[#222]",
-							"serviceList": [
-								{
-									"src": "/p2p.jpg",
-									"title": "24/7 Assistance ",
-									"description": "Exactrem’s commitment to customer service extends to our support team, available 24/7 to assist with any queries or issues. Whether you need help with transactions, have questions about our services, or require technical support, our dedicated team is here to provide prompt and professional assistance. "
-								},
-								{
-									"src": "/mission.jpg",
-									"title": "Personalized Support ",
-									"description": "Experience tailored support with Exactrem. Our knowledgeable customer service representatives understand the complexities of B2B transactions and offer solutions customized to your business needs. Enjoy the confidence of having expert support whenever you need it. "
-								}
-							]
+							"src": "/support_3.jpg",
+							"description": "Exactrem’s commitment to customer service extends to our support team, available 24/7 to assist with any queries or issues. Whether you need help with transactions, have questions about our services, or require technical support, our dedicated team is here to provide prompt and professional assistance. ",
+							"labels": ["24/7 Assistance", "Personalized Support"]
 						}
 					]
 				},
@@ -761,108 +598,54 @@
 							"titleTwo": "Modern Business Needs",
 							"bgClass": "",
 							"iconKey": "money-transfer",
-							"serviceList": [
-								{
-									"src": "/partnerships.jpg",
-									"title": "Effortless Transactions with a Click",
-									"description": "At Exactrem, we streamline business-to-person payments to make managing your financial interactions simple and efficient. Whether you’re disbursing salaries, paying contractors, or handling customer refunds, our platform ensures that every transaction is completed with ease. Experience seamless payments that enhance your business operations and improve satisfaction. "
-								},
-								{
-									"src": "/ladies.jpg",
-									"title": "Instant Delivery",
-									"description": "Time is crucial when it comes to business payments. With Exactrem, your transactions are processed instantly, ensuring that recipients receive their funds without delay. Whether it’s a one-time payment or recurring disbursements, our technology guarantees swift and reliable delivery every time. "
-								}
-							]
+							"src": "/payment_4.jpg",
+							"description": "At Exactrem, we streamline business-to-person payments to make managing your financial interactions simple and efficient. Whether you’re disbursing salaries, paying contractors, or handling customer refunds, our platform ensures that every transaction is completed with ease. Experience seamless payments that enhance your business operations and improve satisfaction. ",
+							"labels": ["Effortless Transactions with a Click", "Instant Delivery"]
 						},
 						{
 							"titleOne": "Uncompromising Security and  ",
 							"titleTwo": "Trust",
 							"iconKey": "lock",
 							"bgClass": "bg-slate-800 text-white dark:bg-[#222]",
-							"serviceList": [
-								{
-									"src": "/tea.jpg",
-									"title": "Top-Tier Security for Peace of Mind ",
-									"description": "Security is at the heart of Exactrem’s operations. We utilize advanced encryption and security protocols to protect your financial data and ensure that each transaction is secure. Our commitment to safeguarding your information means you can manage business-to-person payments with complete confidence. "
-								},
-								{
-									"src": "/boardroom.jpg",
-									"title": "Regulatory Compliance ",
-									"description": "Exactrem adheres to stringent regulatory standards to ensure that all transactions are compliant with financial regulations. Our platform meets the highest compliance requirements, providing you with a trustworthy solution for all your business-to-person payment needs. "
-								}
-							]
+							"src": "/secure_4.jpg",
+							"description": "Security is at the heart of Exactrem’s operations. We utilize advanced encryption and security protocols to protect your financial data and ensure that each transaction is secure. Our commitment to safeguarding your information means you can manage business-to-person payments with complete confidence. ",
+							"labels": ["Top-Tier Security for Peace of Mind", "Regulatory Compliance"]
 						},
 						{
 							"titleOne": "Global Reach, Local ",
 							"titleTwo": "Adaptability",
 							"bgClass": "",
 							"iconKey": "globe",
-							"serviceList": [
-								{
-									"src": "/shake.jpg",
-									"title": "Connect with Recipients Worldwide ",
-									"description": "Expand your business’s reach with Exactrem’s global payment capabilities. Our platform allows you to make payments to individuals across the globe, providing flexibility and convenience for international operations. Manage payments effortlessly, whether you’re dealing with domestic or international recipients. "
-								},
-								{
-									"src": "/waiter.jpg",
-									"title": "Localized Payment Solutions",
-									"description": "We understand that different regions have unique needs. Exactrem offers localized payment solutions tailored to various currencies and regional requirements, ensuring that your payments are processed in line with local practices and preferences. "
-								}
-							]
+							"src": "/globe_4.jpg",
+							"description": "Expand your business’s reach with Exactrem’s global payment capabilities. Our platform allows you to make payments to individuals across the globe, providing flexibility and convenience for international operations. Manage payments effortlessly, whether you’re dealing with domestic or international recipients. ",
+							"labels": ["Connect with Recipients Worldwide", "Localized Payment Solutions"]
 						},
 						{
 							"titleOne": "Transparent and Fair ",
 							"titleTwo": "Fees",
 							"iconKey": "currency-exchange",
 							"bgClass": "bg-orange-50 dark:bg-[#222]",
-							"serviceList": [
-								{
-									"src": "/hero_left.jpg",
-									"title": "Clear and Predictable Pricing",
-									"description": "At Exactrem, transparency is a priority. Our pricing model is designed to be straightforward, with no hidden fees or unexpected costs. You’ll always know exactly what you’re paying for and how much will be deducted, allowing for clear budgeting and financial planning. "
-								},
-								{
-									"src": "/cfo.jpg",
-									"title": "Competitive Rates ",
-									"description": "We offer competitive rates that deliver exceptional value for your business. Exactrem’s pricing is structured to provide cost-effective solutions without compromising on service quality, ensuring you get the best return on your investment. "
-								}
-							]
+							"src": "/money_4.jpg",
+							"description": "At Exactrem, transparency is a priority. Our pricing model is designed to be straightforward, with no hidden fees or unexpected costs. You’ll always know exactly what you’re paying for and how much will be deducted, allowing for clear budgeting and financial planning. ",
+							"labels": ["Clear and Predictable Pricing", "Competitive Rates"]
 						},
 						{
 							"titleOne": "Advanced Features for ",
 							"titleTwo": "Enhanced Efficiency",
 							"bgClass": "",
 							"iconKey": "cutting-edge",
-							"serviceList": [
-								{
-									"src": "/tie.jpg",
-									"title": "Automated Payment Solutions ",
-									"description": "Boost your business efficiency with Exactrem’s advanced features. Our platform supports automated payments, allowing you to schedule and manage recurring transactions effortlessly. Enjoy the convenience of automated processes that save time and reduce administrative tasks. "
-								},
-								{
-									"src": "/phone_call.jpg",
-									"title": "Real-Time Tracking and Notifications ",
-									"description": "Stay informed with real-time tracking and notifications. Our platform provides updates on the status of your payments, so you’re always in the loop. Track transactions, receive alerts, and gain insights into your payment activities with ease. "
-								}
-							]
+							"src": "/tech_4.jpg",
+							"description": "Boost your business efficiency with Exactrem’s advanced features. Our platform supports automated payments, allowing you to schedule and manage recurring transactions effortlessly. Enjoy the convenience of automated processes that save time and reduce administrative tasks. ",
+							"labels": ["Automated Payment Solutions", "Real-Time Tracking and Notifications"]
 						},
 						{
 							"titleOne": "Exceptional ",
 							"titleTwo": "Customer Support",
 							"iconKey": "customer-support",
 							"bgClass": "bg-orange-50 dark:bg-[#222]",
-							"serviceList": [
-								{
-									"src": "/p2p.jpg",
-									"title": "24/7 Support for Your Peace of Mind ",
-									"description": "Exactrem is dedicated to providing top-notch customer support. Our team is available 24/7 to assist with any questions or issues you might have. From troubleshooting to general inquiries, we’re here to offer prompt and professional assistance. "
-								},
-								{
-									"src": "/mission.jpg",
-									"title": "Personalized Service ",
-									"description": "Receive personalized support tailored to your specific needs. Our knowledgeable customer service representatives are equipped to handle the complexities of business-to-person payments and offer solutions that align with your business requirements."
-								}
-							]
+							"src": "/support_4.jpg",
+							"description": "Exactrem is dedicated to providing top-notch customer support. Our team is available 24/7 to assist with any questions or issues you might have. From troubleshooting to general inquiries, we’re here to offer prompt and professional assistance. ",
+							"labels": ["24/7 Support for Your Peace of Mind", "Personalized Service"]
 						}
 					]
 				},
@@ -884,108 +667,54 @@
 							"titleTwo": "Management",
 							"bgClass": "",
 							"iconKey": "money-transfer",
-							"serviceList": [
-								{
-									"src": "/partnerships.jpg",
-									"title": "Streamlined FX Solutions for Modern CFOs ",
-									"description": "At Exactrem, we understand the complexities CFOs face when managing foreign exchange needs. Our platform provides a streamlined approach to FX management, allowing you to handle currency conversions and international transactions with ease. From budgeting to hedging strategies, our solutions simplify every aspect of FX management, enabling you to focus on strategic financial planning. "
-								},
-								{
-									"src": "/ladies.jpg",
-									"title": "Seamless Integration ",
-									"description": "Integrate Exactrem’s FX solutions effortlessly with your existing financial systems. Our platform is designed to work seamlessly with your ERP or accounting software, ensuring smooth operations and accurate data synchronization. Simplify your FX management with technology that fits right into your workflow. "
-								}
-							]
+							"src": "/payment_5.jpg",
+							"description": "At Exactrem, we understand the complexities CFOs face when managing foreign exchange needs. Our platform provides a streamlined approach to FX management, allowing you to handle currency conversions and international transactions with ease. From budgeting to hedging strategies, our solutions simplify every aspect of FX management, enabling you to focus on strategic financial planning. ",
+							"labels": ["Streamlined FX Solutions for Modern CFOs", "Seamless Integration"]
 						},
 						{
 							"titleOne": "Real-Time Currency ",
 							"titleTwo": "Exchange",
 							"iconKey": "lock",
 							"bgClass": "bg-slate-800 text-white dark:bg-[#222]",
-							"serviceList": [
-								{
-									"src": "/tea.jpg",
-									"title": "Instantaneous FX Rates for Informed Decisions ",
-									"description": "Stay ahead of the market with Exactrem’s real-time currency exchange rates. Our platform provides up-to-the-minute FX rates, allowing you to make informed decisions and execute transactions at the most advantageous times. Benefit from accurate, real-time data that helps you manage currency risks and optimize your financial strategies. "
-								},
-								{
-									"src": "/boardroom.jpg",
-									"title": "Dynamic Rate Alerts ",
-									"description": "Set up customized alerts for currency rate fluctuations that matter most to you. Exactrem’s dynamic rate alerts notify you of significant changes, ensuring you’re always aware of market conditions and can act quickly to secure favorable rates. "
-								}
-							]
+							"src": "/secure_5.jpg",
+							"description": "Stay ahead of the market with Exactrem’s real-time currency exchange rates. Our platform provides up-to-the-minute FX rates, allowing you to make informed decisions and execute transactions at the most advantageous times. Benefit from accurate, real-time data that helps you manage currency risks and optimize your financial strategies. ",
+							"labels": ["Instantaneous FX Rates for Informed Decisions", "Dynamic Rate Alerts"]
 						},
 						{
 							"titleOne": "Advanced Hedging ",
 							"titleTwo": "Strategies",
 							"bgClass": "",
 							"iconKey": "globe",
-							"serviceList": [
-								{
-									"src": "/shake.jpg",
-									"title": "Protect Your Business from FX Volatility ",
-									"description": "Minimize the impact of currency fluctuations with Exactrem’s advanced hedging strategies. Our platform offers a range of hedging tools and solutions designed to protect your business from market volatility. Implement strategies that align with your financial goals and safeguard your bottom line. "
-								},
-								{
-									"src": "/waiter.jpg",
-									"title": "Customized Hedging Solutions ",
-									"description": "Work with our experts to develop hedging solutions tailored to your specific needs. Exactrem provides personalized guidance to create effective hedging strategies that manage risk and ensure financial stability. Benefit from strategies that are designed to meet your company’s unique FX exposure. "
-								}
-							]
+							"src": "/secure_5.jpg",
+							"description": "Minimize the impact of currency fluctuations with Exactrem’s advanced hedging strategies. Our platform offers a range of hedging tools and solutions designed to protect your business from market volatility. Implement strategies that align with your financial goals and safeguard your bottom line. ",
+							"labels": ["Protect Your Business from FX Volatility", "Customized Hedging Solutions"]
 						},
 						{
 							"titleOne": "Transparent and Fair ",
 							"titleTwo": "Cost Control",
 							"iconKey": "currency-exchange",
 							"bgClass": "bg-orange-50 dark:bg-[#222]",
-							"serviceList": [
-								{
-									"src": "/hero_left.jpg",
-									"title": "Clear and Predictable FX Costs",
-									"description": "At Exactrem, we believe in transparency. Our pricing model for FX services is straightforward, with no hidden fees or unexpected charges. You’ll have a clear understanding of the costs associated with your transactions, allowing for better financial planning and cost control. "
-								},
-								{
-									"src": "/cfo.jpg",
-									"title": "Competitive Exchange Rates ",
-									"description": "Take advantage of competitive exchange rates that offer excellent value for your FX needs. Exactrem is committed to providing favorable rates that enhance your cost efficiency and improve your financial outcomes. Enjoy a pricing structure that supports your business’s financial goals. "
-								}
-							]
+							"src": "/money_5.jpg",
+							"description": "At Exactrem, we believe in transparency. Our pricing model for FX services is straightforward, with no hidden fees or unexpected charges. You’ll have a clear understanding of the costs associated with your transactions, allowing for better financial planning and cost control. ",
+							"labels": ["Clear and Predictable FX Costs", "Competitive Exchange Rates"]
 						},
 						{
 							"titleOne": "Comprehensive Reporting and ",
 							"titleTwo": "Analytics",
 							"bgClass": "",
 							"iconKey": "cutting-edge",
-							"serviceList": [
-								{
-									"src": "/tie.jpg",
-									"title": "In-Depth FX Reporting ",
-									"description": "Gain valuable insights with Exactrem’s comprehensive reporting and analytics tools. Our platform provides detailed reports on your FX transactions, currency exposure, and market trends. Access in-depth analytics that help you understand your FX activities and make data-driven decisions. "
-								},
-								{
-									"src": "/phone_call.jpg",
-									"title": "Customized Dashboards ",
-									"description": "Create customized dashboards to monitor your FX performance in real-time. Exactrem’s flexible reporting tools allow you to track key metrics and visualize data that matter most to your business. Stay informed and make strategic decisions with tailored insights. "
-								}
-							]
+							"src": "/tech_5.jpg",
+							"description": "Gain valuable insights with Exactrem’s comprehensive reporting and analytics tools. Our platform provides detailed reports on your FX transactions, currency exposure, and market trends. Access in-depth analytics that help you understand your FX activities and make data-driven decisions. ",
+							"labels": ["In-Depth FX Reporting", "Customized Dashboards"]
 						},
 						{
 							"titleOne": "Dedicated Support for ",
 							"titleTwo": "CFOs",
 							"iconKey": "customer-support",
 							"bgClass": "bg-orange-50 dark:bg-[#222]",
-							"serviceList": [
-								{
-									"src": "/p2p.jpg",
-									"title": "Expert Guidance at Your Fingertips ",
-									"description": "Exactrem’s dedicated support team is here to assist CFOs with any FX-related queries or challenges. Our experienced professionals provide expert guidance and support to ensure you get the most out of our FX solutions. Receive the help you need to navigate complex FX scenarios and achieve your financial objectives. "
-								},
-								{
-									"src": "/mission.jpg",
-									"title": "Personalized Customer Service ",
-									"description": "Experience personalized customer service tailored to your specific FX needs. Our support team takes the time to understand your business’s unique requirements and offers solutions designed to address your challenges. Enjoy the confidence of having expert support when you need it most. "
-								}
-							]
+							"src": "/support_5.jpg",
+							"description": "Exactrem’s dedicated support team is here to assist CFOs with any FX-related queries or challenges. Our experienced professionals provide expert guidance and support to ensure you get the most out of our FX solutions. Receive the help you need to navigate complex FX scenarios and achieve your financial objectives. ",
+							"labels": ["Expert Guidance at Your Fingertips", "Personalized Customer Service"]
 						}
 					]
 				}
