@@ -42,7 +42,8 @@
 			"arrives_in_minutes": "Arrives in minutes",
 			"sending_from": "Sending from",
 			"receiver_gets": "Receiver gets",
-			"free": "x2 Free"
+			"free": "x2 Free",
+			"naira_converter_message": "Naira conversion to other currencies is not yet available!"
 		},
 		"contact": {
 			"title": "Contact our team",

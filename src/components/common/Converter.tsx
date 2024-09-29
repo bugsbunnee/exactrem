@@ -121,7 +121,7 @@ const Converter = () => {
 							size="1"
 							className="transition-all bg-black duration-500 ease-in-out hover:rotate-180"
 							onClick={() => {
-								if (receiverInfo.value === Currency.NGN) return toast.error('Naira conversion to other currencies is not yet available!');
+								if (receiverInfo.value === Currency.NGN) return toast.error(page.calculator.naira_converter_message);
 
 								const currentSender = senderInfo;
 								const currentReceiver = receiverInfo;
