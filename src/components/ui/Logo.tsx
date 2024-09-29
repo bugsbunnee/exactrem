@@ -12,9 +12,9 @@ const Logo = () => {
 				<Image 
 					width={30}
 					height={30}
-					src='/logo.jpeg'
+					src='/exactrem.png'
 					alt='Exactrem'
-					className='w-10 h-10 rounded-sm object-fit'
+					className='w-32 h-10 rounded-sm object-fit'
 				/>
 			</Link>
 		</Flex>

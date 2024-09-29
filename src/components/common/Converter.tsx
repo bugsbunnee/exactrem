@@ -2,6 +2,7 @@
 
 import classNames from 'classnames';
 
+import { toast } from 'react-hot-toast';
 import { useCallback, useEffect, useState } from 'react';
 import { BoxModelIcon, CaretSortIcon, LightningBoltIcon } from '@radix-ui/react-icons';
 import { Box, Flex, Text, IconButton, Button } from '@radix-ui/themes';
@@ -120,6 +121,8 @@ const Converter = () => {
 							size="1"
 							className="transition-all bg-black duration-500 ease-in-out hover:rotate-180"
 							onClick={() => {
+								if (receiverInfo.value === Currency.NGN) return toast.error('Naira conversion to other currencies is not yet available!');
+
 								const currentSender = senderInfo;
 								const currentReceiver = receiverInfo;
 
