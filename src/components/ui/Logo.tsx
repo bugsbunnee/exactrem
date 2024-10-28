@@ -12,7 +12,7 @@ const Logo = () => {
 				<Image 
 					width={30}
 					height={30}
-					src='/exactrem.png'
+					src='/exactrem.jpeg'
 					alt='Exactrem'
 					className='w-32 h-10 rounded-sm object-fit'
 				/>
